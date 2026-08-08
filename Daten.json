@@ -39,12 +39,17 @@
     {
       "text": "Test Laptop",
       "erledigt": false
+    },
+    {
+      "text": "Handy Test",
+      "erledigt": false
     }
   ],
   "woerter": [
     "Brot",
     "Butter",
     "Buttermilch",
+    "Handy",
     "Käse",
     "Kekse",
     "Laptop",
