@@ -1,4 +1,51 @@
 {
-  "notizen": [],
-  "woerter": []
+  "notizen": [
+    {
+      "text": "Käse",
+      "erledigt": false
+    },
+    {
+      "text": "Milch",
+      "erledigt": false
+    },
+    {
+      "text": "Butter",
+      "erledigt": false
+    },
+    {
+      "text": "Milchreis",
+      "erledigt": false
+    },
+    {
+      "text": "Buttermilch",
+      "erledigt": false
+    },
+    {
+      "text": "Mehl",
+      "erledigt": false
+    },
+    {
+      "text": "Nutella",
+      "erledigt": false
+    },
+    {
+      "text": "Brot",
+      "erledigt": false
+    },
+    {
+      "text": "Kekse",
+      "erledigt": false
+    }
+  ],
+  "woerter": [
+    "Brot",
+    "Butter",
+    "Buttermilch",
+    "Käse",
+    "Kekse",
+    "Mehl",
+    "Milch",
+    "Milchreis",
+    "Nutella"
+  ]
 }
