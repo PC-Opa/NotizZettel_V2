@@ -25,6 +25,10 @@
       "erledigt": false
     },
     {
+      "text": "Handy-Test-2026",
+      "erledigt": false
+    },
+    {
       "text": "Nutella",
       "erledigt": false
     },
@@ -54,6 +58,7 @@
     "Butter",
     "Buttermilch",
     "Handy",
+    "Handy-Test-2026",
     "Käse",
     "Kekse",
     "Laptop",
