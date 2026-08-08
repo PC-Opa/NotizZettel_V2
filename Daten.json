@@ -35,6 +35,10 @@
     {
       "text": "Kekse",
       "erledigt": false
+    },
+    {
+      "text": "Test Laptop",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -43,9 +47,11 @@
     "Buttermilch",
     "Käse",
     "Kekse",
+    "Laptop",
     "Mehl",
     "Milch",
     "Milchreis",
-    "Nutella"
+    "Nutella",
+    "Test"
   ]
 }
