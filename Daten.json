@@ -51,6 +51,10 @@
     {
       "text": "Test Test",
       "erledigt": false
+    },
+    {
+      "text": "NeuerTest",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -65,6 +69,7 @@
     "Mehl",
     "Milch",
     "Milchreis",
+    "NeuerTest",
     "Nutella",
     "Test"
   ]
