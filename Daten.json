@@ -71,12 +71,17 @@
     {
       "text": "Waschmittel",
       "erledigt": false
+    },
+    {
+      "text": "Fruchtzucker",
+      "erledigt": false
     }
   ],
   "woerter": [
     "Brot",
     "Butter",
     "Buttermilch",
+    "Fruchtzucker",
     "Gurken",
     "Handy",
     "Handy-Test-2026",
