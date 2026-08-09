@@ -1,6 +1,10 @@
 {
   "notizen": [
     {
+      "text": "Gurken",
+      "erledigt": false
+    },
+    {
       "text": "Butter",
       "erledigt": true
     },
@@ -65,6 +69,7 @@
     "Brot",
     "Butter",
     "Buttermilch",
+    "Gurken",
     "Handy",
     "Handy-Test-2026",
     "Käse",
@@ -76,6 +81,7 @@
     "Milchreis",
     "NeuerTest",
     "Nutella",
+    "pc-opa",
     "Test"
   ]
 }
