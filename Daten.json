@@ -29,19 +29,27 @@
       "erledigt": false
     },
     {
-      "text": "Handy-Test-2026",
-      "erledigt": false
-    },
-    {
-      "text": "Nutella",
-      "erledigt": false
-    },
-    {
       "text": "Brot",
       "erledigt": false
     },
     {
       "text": "Kekse",
+      "erledigt": false
+    },
+    {
+      "text": "pc-opa",
+      "erledigt": false
+    },
+    {
+      "text": "Waschmittel",
+      "erledigt": false
+    },
+    {
+      "text": "Handy-Test-2026",
+      "erledigt": false
+    },
+    {
+      "text": "Nutella",
       "erledigt": false
     },
     {
@@ -82,6 +90,7 @@
     "NeuerTest",
     "Nutella",
     "pc-opa",
-    "Test"
+    "Test",
+    "Waschmittel"
   ]
 }
