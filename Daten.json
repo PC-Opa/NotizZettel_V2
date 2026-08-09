@@ -1,8 +1,8 @@
 {
   "notizen": [
     {
-      "text": "Gurken",
-      "erledigt": false
+      "text": "Butter",
+      "erledigt": true
     },
     {
       "text": "Käse",
@@ -25,35 +25,19 @@
       "erledigt": false
     },
     {
-      "text": "Brot",
-      "erledigt": false
-    },
-    {
-      "text": "Kekse",
-      "erledigt": false
-    },
-    {
-      "text": "pc-opa",
-      "erledigt": false
-    },
-    {
-      "text": "Waschmittel",
-      "erledigt": false
-    },
-    {
-      "text": "Fruchtzucker",
-      "erledigt": false
-    },
-    {
-      "text": "Butter",
-      "erledigt": true
-    },
-    {
       "text": "Handy-Test-2026",
       "erledigt": false
     },
     {
       "text": "Nutella",
+      "erledigt": false
+    },
+    {
+      "text": "Brot",
+      "erledigt": false
+    },
+    {
+      "text": "Kekse",
       "erledigt": false
     },
     {
@@ -66,14 +50,30 @@
     },
     {
       "text": "Test Test",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "NeuerTest",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "LAPTOP-TEST-123",
+      "erledigt": true
+    },
+    {
+      "text": "Gurken",
+      "erledigt": true
+    },
+    {
+      "text": "pc-opa",
+      "erledigt": true
+    },
+    {
+      "text": "Waschmittel",
+      "erledigt": true
+    },
+    {
+      "text": "Fruchtzucker",
       "erledigt": false
     }
   ],
