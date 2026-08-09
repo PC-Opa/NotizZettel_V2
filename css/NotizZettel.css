@@ -1,143 +1,142 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:"Segoe UI",Arial,sans-serif;
-    background:#eceff3;
-    color:#222;
-    padding:25px;
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #eceff3;
+    color: #222;
+    padding: 25px;
 }
 
-#App{
-    max-width:900px;
-    margin:auto;
-    background:#ffffff;
-    border-radius:16px;
-    box-shadow:0 4px 18px rgba(0,0,0,.15);
-    padding:25px;
+#App {
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .15);
+    padding: 25px;
 }
 
-header{
-    margin-bottom:25px;
+header {
+    margin-bottom: 25px;
 }
 
-header h1{
-    font-size:42px;
-    margin-bottom:8px;
+header h1 {
+    font-size: 42px;
+    margin-bottom: 8px;
 }
 
-header p{
-    font-size:18px;
-    color:#666;
+header p {
+    font-size: 18px;
+    color: #666;
 }
 
-#Arbeitsbereich{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
+#Arbeitsbereich {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
-#EingabeBereich{
-    display:flex;
-    gap:12px;
+#EingabeBereich {
+    display: flex;
+    gap: 12px;
 }
 
-#NeueNotiz{
-    flex:1;
-    height:58px;
-    padding:0 18px;
-    font-size:20px;
-    border:2px solid #d0d0d0;
-    border-radius:10px;
-    outline:none;
+#NeueNotiz {
+    flex: 1;
+    height: 58px;
+    padding: 0 18px;
+    font-size: 20px;
+    border: 2px solid #d0d0d0;
+    border-radius: 10px;
+    outline: none;
 }
 
-#NeueNotiz:focus{
-    border-color:#2563eb;
+#NeueNotiz:focus {
+    border-color: #2563eb;
 }
 
-#BtnHinzufuegen{
-    width:210px;
-    border:none;
-    border-radius:10px;
-    background:#2563eb;
-    color:#fff;
-    font-size:20px;
-    cursor:pointer;
+#BtnHinzufuegen {
+    width: 210px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-#BtnHinzufuegen:hover{
-    background:#1d4ed8;
+#BtnHinzufuegen:hover {
+    background: #1d4ed8;
 }
 
-#VorschlagBereich{
-    min-height:45px;
-    border:1px dashed #d8d8d8;
-    border-radius:8px;
+#VorschlagBereich {
+    min-height: 45px;
+    border: 1px dashed #d8d8d8;
+    border-radius: 8px;
 }
 
-#WerkzeugBereich{
-    display:flex;
-    justify-content:flex-end;
+#WerkzeugBereich {
+    display: flex;
+    justify-content: flex-end;
 }
 
-#BtnMarkierteLoeschen{
-    background:#dc2626;
-    color:#fff;
-    border:none;
-    border-radius:8px;
-    padding:12px 18px;
-    font-size:18px;
-    cursor:pointer;
+#BtnMarkierteLoeschen {
+    background: #dc2626;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
-#BtnMarkierteLoeschen:hover{
-    background:#b91c1c;
+#BtnMarkierteLoeschen:hover {
+    background: #b91c1c;
 }
 
-#ListenBereich{
-    min-height:350px;
-    border:1px solid #dddddd;
-    border-radius:10px;
-    background:#ffffff;
-    padding:15px;
+#ListenBereich {
+    min-height: 350px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    background: #ffffff;
+    padding: 15px;
 }
 
-#StatusBereich{
-    border-top:1px solid #dddddd;
-    padding-top:12px;
-    color:#666;
-    font-size:15px;
+#StatusBereich {
+    border-top: 1px solid #dddddd;
+    padding-top: 12px;
+    color: #666;
+    font-size: 15px;
 }
 
-@media(max-width:700px){
+@media (max-width: 700px) {
 
-    body{
-        padding:10px;
+    body {
+        padding: 10px;
     }
 
-    #App{
-        padding:15px;
+    #App {
+        padding: 15px;
     }
 
-    #EingabeBereich{
-        flex-direction:column;
+    #EingabeBereich {
+        flex-direction: column;
     }
 
-    #BtnHinzufuegen{
-        width:100%;
-        height:55px;
+    #BtnHinzufuegen {
+        width: 100%;
+        height: 55px;
     }
 
-    #WerkzeugBereich{
-        justify-content:stretch;
+    #WerkzeugBereich {
+        justify-content: stretch;
     }
 
-    #BtnMarkierteLoeschen{
-        width:100%;
+    #BtnMarkierteLoeschen {
+        width: 100%;
     }
-
 }
