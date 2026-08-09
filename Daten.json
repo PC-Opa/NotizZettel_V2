@@ -41,6 +41,10 @@
       "erledigt": false
     },
     {
+      "text": "Fruchtzucker",
+      "erledigt": false
+    },
+    {
       "text": "Butter",
       "erledigt": true
     },
@@ -70,10 +74,6 @@
     },
     {
       "text": "LAPTOP-TEST-123",
-      "erledigt": false
-    },
-    {
-      "text": "Fruchtzucker",
       "erledigt": false
     }
   ],
