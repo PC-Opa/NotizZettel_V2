@@ -1,15 +1,15 @@
 {
   "notizen": [
     {
+      "text": "Butter",
+      "erledigt": true
+    },
+    {
       "text": "Käse",
       "erledigt": false
     },
     {
       "text": "Milch",
-      "erledigt": false
-    },
-    {
-      "text": "Butter",
       "erledigt": false
     },
     {
