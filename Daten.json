@@ -1,10 +1,6 @@
 {
   "notizen": [
     {
-      "text": "Butter",
-      "erledigt": true
-    },
-    {
       "text": "Käse",
       "erledigt": false
     },
@@ -49,6 +45,14 @@
       "erledigt": false
     },
     {
+      "text": "Fruchtzucker",
+      "erledigt": false
+    },
+    {
+      "text": "Butter",
+      "erledigt": true
+    },
+    {
       "text": "Test Test",
       "erledigt": true
     },
@@ -71,10 +75,6 @@
     {
       "text": "Waschmittel",
       "erledigt": true
-    },
-    {
-      "text": "Fruchtzucker",
-      "erledigt": false
     }
   ],
   "woerter": [
