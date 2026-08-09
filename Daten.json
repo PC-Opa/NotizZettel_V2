@@ -1,6 +1,10 @@
 {
   "notizen": [
     {
+      "text": "Gurken",
+      "erledigt": true
+    },
+    {
       "text": "Käse",
       "erledigt": false
     },
@@ -21,10 +25,6 @@
       "erledigt": false
     },
     {
-      "text": "Nutella",
-      "erledigt": false
-    },
-    {
       "text": "Brot",
       "erledigt": false
     },
@@ -33,7 +33,19 @@
       "erledigt": false
     },
     {
+      "text": "pc-opa",
+      "erledigt": true
+    },
+    {
+      "text": "Waschmittel",
+      "erledigt": true
+    },
+    {
       "text": "Fruchtzucker",
+      "erledigt": false
+    },
+    {
+      "text": "Nutella",
       "erledigt": false
     },
     {
@@ -62,18 +74,6 @@
     },
     {
       "text": "LAPTOP-TEST-123",
-      "erledigt": true
-    },
-    {
-      "text": "Gurken",
-      "erledigt": true
-    },
-    {
-      "text": "pc-opa",
-      "erledigt": true
-    },
-    {
-      "text": "Waschmittel",
       "erledigt": true
     }
   ],
