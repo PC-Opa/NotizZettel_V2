@@ -5,6 +5,10 @@
       "erledigt": false
     },
     {
+      "text": "Milch",
+      "erledigt": false
+    },
+    {
       "text": "Buttermilch",
       "erledigt": false
     },
@@ -18,6 +22,14 @@
     },
     {
       "text": "Kekse",
+      "erledigt": false
+    },
+    {
+      "text": "Nutella",
+      "erledigt": false
+    },
+    {
+      "text": "Limetten",
       "erledigt": false
     }
   ],
@@ -33,6 +45,7 @@
     "Kekse",
     "Laptop",
     "LAPTOP-TEST-123",
+    "Limetten",
     "Mehl",
     "Milch",
     "Milchreis",
@@ -43,11 +56,9 @@
     "Waschmittel"
   ],
   "geloescht": [
-    "milch",
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
-    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
