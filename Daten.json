@@ -17,10 +17,6 @@
       "erledigt": false
     },
     {
-      "text": "NeuerTest",
-      "erledigt": true
-    },
-    {
       "text": "Mehl",
       "erledigt": false
     },
@@ -51,6 +47,10 @@
     {
       "text": "Handy Test",
       "erledigt": false
+    },
+    {
+      "text": "NeuerTest",
+      "erledigt": true
     },
     {
       "text": "Butter",
@@ -97,5 +97,6 @@
     "pc-opa",
     "Test",
     "Waschmittel"
-  ]
+  ],
+  "geloescht": []
 }
