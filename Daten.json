@@ -9,6 +9,10 @@
       "erledigt": false
     },
     {
+      "text": "Butter",
+      "erledigt": true
+    },
+    {
       "text": "Milchreis",
       "erledigt": false
     },
@@ -21,11 +25,7 @@
       "erledigt": false
     },
     {
-      "text": "Brot",
-      "erledigt": false
-    },
-    {
-      "text": "Kekse",
+      "text": "Handy-Test-2026",
       "erledigt": false
     },
     {
@@ -33,11 +33,11 @@
       "erledigt": false
     },
     {
-      "text": "Fruchtzucker",
+      "text": "Brot",
       "erledigt": false
     },
     {
-      "text": "Handy-Test-2026",
+      "text": "Kekse",
       "erledigt": false
     },
     {
@@ -49,16 +49,16 @@
       "erledigt": false
     },
     {
-      "text": "Butter",
-      "erledigt": true
-    },
-    {
       "text": "Test Test",
       "erledigt": true
     },
     {
       "text": "NeuerTest",
       "erledigt": true
+    },
+    {
+      "text": "Fruchtzucker",
+      "erledigt": false
     },
     {
       "text": "LAPTOP-TEST-123",
