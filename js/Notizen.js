@@ -1,5 +1,4 @@
 const SPEICHER_NOTIZEN = "NotizZettel_V2";
-const SPEICHER_GELOESCHT = "NotizZettel_Geloescht";
 
 let notizen = [];
 let geloeschteNotizen = [];
