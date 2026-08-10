@@ -2,11 +2,9 @@ const SPEICHER_GITHUB = "NotizZettel_GitHub";
 const SPEICHER_SYNC_STAND = "NotizZettel_SyncStand";
 
 let github = {
-
     benutzer: "",
     repository: "",
     token: ""
-
 };
 
 
@@ -16,9 +14,7 @@ let github = {
 
 function githubLaden() {
 
-    const daten = localStorage.getItem(
-        SPEICHER_GITHUB
-    );
+    const daten = localStorage.getItem(SPEICHER_GITHUB);
 
     if (daten) {
 
@@ -29,11 +25,9 @@ function githubLaden() {
         } catch (fehler) {
 
             github = {
-
                 benutzer: "",
                 repository: "",
                 token: ""
-
             };
 
         }
@@ -43,20 +37,11 @@ function githubLaden() {
 }
 
 
-function githubSpeichern(
-    benutzer,
-    repository,
-    token
-) {
+function githubSpeichern(benutzer, repository, token) {
 
-    github.benutzer =
-        benutzer.trim();
-
-    github.repository =
-        repository.trim();
-
-    github.token =
-        token.trim();
+    github.benutzer = benutzer.trim();
+    github.repository = repository.trim();
+    github.token = token.trim();
 
     localStorage.setItem(
         SPEICHER_GITHUB,
@@ -69,11 +54,9 @@ function githubSpeichern(
 function githubVorhanden() {
 
     return (
-
         github.benutzer.trim() !== "" &&
         github.repository.trim() !== "" &&
         github.token.trim() !== ""
-
     );
 
 }
@@ -86,35 +69,23 @@ function githubVorhanden() {
 function githubBereichUmschalten() {
 
     const bereich =
-        document.getElementById(
-            "GitHubBereich"
-        );
+        document.getElementById("GitHubBereich");
 
     if (!bereich) {
-
         return;
-
     }
 
-    if (
-        bereich.style.display === "none"
-    ) {
+    if (bereich.style.display === "none") {
 
         bereich.style.display = "block";
 
-        document.getElementById(
-            "GitBenutzer"
-        ).value =
+        document.getElementById("GitBenutzer").value =
             github.benutzer;
 
-        document.getElementById(
-            "GitRepository"
-        ).value =
+        document.getElementById("GitRepository").value =
             github.repository;
 
-        document.getElementById(
-            "GitToken"
-        ).value =
+        document.getElementById("GitToken").value =
             github.token;
 
     } else {
@@ -139,8 +110,7 @@ function textFuerGitHubKodieren(text) {
 
     daten.forEach(function (zeichen) {
 
-        binaer +=
-            String.fromCharCode(zeichen);
+        binaer += String.fromCharCode(zeichen);
 
     });
 
@@ -156,14 +126,10 @@ function textFuerGitHubKodieren(text) {
 function textAusGitHubDekodieren(text) {
 
     const binaer =
-        atob(
-            text.replace(/\s/g, "")
-        );
+        atob(text.replace(/\s/g, ""));
 
     const daten =
-        new Uint8Array(
-            binaer.length
-        );
+        new Uint8Array(binaer.length);
 
     for (
         let i = 0;
@@ -176,9 +142,7 @@ function textAusGitHubDekodieren(text) {
 
     }
 
-    return new TextDecoder(
-        "utf-8"
-    ).decode(daten);
+    return new TextDecoder("utf-8").decode(daten);
 
 }
 
@@ -214,14 +178,12 @@ async function githubDateiLesen() {
                 url,
 
                 {
-
                     method: "GET",
 
                     headers: {
 
                         Authorization:
-                            "Bearer " +
-                            github.token,
+                            "Bearer " + github.token,
 
                         Accept:
                             "application/vnd.github+json"
@@ -238,13 +200,11 @@ async function githubDateiLesen() {
                 await antwort.text();
 
             alert(
-
                 "GitHub konnte Daten.json nicht lesen.\n\n" +
                 "HTTP: " +
                 antwort.status +
                 "\n\n" +
                 fehler
-
             );
 
             return null;
@@ -264,21 +224,16 @@ async function githubDateiLesen() {
 
         return {
 
-            sha:
-                daten.sha,
-
-            daten:
-                inhalt
+            sha: daten.sha,
+            daten: inhalt
 
         };
 
     } catch (fehler) {
 
         alert(
-
             "Fehler beim Lesen von GitHub:\n\n" +
             fehler.message
-
         );
 
         return null;
@@ -335,8 +290,7 @@ async function githubDateiSpeichern(
                     headers: {
 
                         Authorization:
-                            "Bearer " +
-                            github.token,
+                            "Bearer " + github.token,
 
                         Accept:
                             "application/vnd.github+json",
@@ -357,8 +311,7 @@ async function githubDateiSpeichern(
                                     text
                                 ),
 
-                            sha:
-                                sha
+                            sha: sha
 
                         })
 
@@ -372,13 +325,11 @@ async function githubDateiSpeichern(
                 await antwort.text();
 
             alert(
-
                 "GitHub konnte Daten.json nicht speichern.\n\n" +
                 "HTTP: " +
                 antwort.status +
                 "\n\n" +
                 fehler
-
             );
 
             return false;
@@ -390,10 +341,8 @@ async function githubDateiSpeichern(
     } catch (fehler) {
 
         alert(
-
             "Fehler beim Speichern auf GitHub:\n\n" +
             fehler.message
-
         );
 
         return false;
@@ -429,17 +378,13 @@ function notizSchluessel(eintrag) {
 // NOTIZEN VEREINHEITLICHEN
 // ============================================================
 
-function notizenVereinheitlichen(
-    liste
-) {
+function notizenVereinheitlichen(liste) {
 
     const ergebnis = [];
     const vorhanden = new Set();
 
     if (!Array.isArray(liste)) {
-
         return ergebnis;
-
     }
 
     liste.forEach(function (eintrag) {
@@ -457,108 +402,26 @@ function notizenVereinheitlichen(
             eintrag.text.trim();
 
         if (text === "") {
-
             return;
-
         }
 
         const schluessel =
             text.toLowerCase();
 
-        if (
-            vorhanden.has(schluessel)
-        ) {
-
+        if (vorhanden.has(schluessel)) {
             return;
-
         }
 
-        vorhanden.add(
-            schluessel
-        );
+        vorhanden.add(schluessel);
 
         ergebnis.push({
 
-            text:
-                text,
+            text: text,
 
             erledigt:
                 eintrag.erledigt === true
 
         });
-
-    });
-
-    return ergebnis;
-
-}
-
-
-// ============================================================
-// LÖSCHMARKIERUNGEN VEREINHEITLICHEN
-// ============================================================
-
-function loeschungenVereinheitlichen(
-    liste
-) {
-
-    const ergebnis = [];
-    const vorhanden = new Set();
-
-    if (!Array.isArray(liste)) {
-
-        return ergebnis;
-
-    }
-
-    liste.forEach(function (eintrag) {
-
-        let schluessel = "";
-
-        if (
-            typeof eintrag === "string"
-        ) {
-
-            schluessel =
-                eintrag
-                    .trim()
-                    .toLowerCase();
-
-        } else if (
-            eintrag &&
-            typeof eintrag.schluessel === "string"
-        ) {
-
-            schluessel =
-                eintrag.schluessel
-                    .trim()
-                    .toLowerCase();
-
-        }
-
-        if (
-            schluessel === ""
-        ) {
-
-            return;
-
-        }
-
-        if (
-            vorhanden.has(schluessel)
-        ) {
-
-            return;
-
-        }
-
-        vorhanden.add(
-            schluessel
-        );
-
-        ergebnis.push(
-            schluessel
-        );
 
     });
 
@@ -579,9 +442,7 @@ function syncStandLaden() {
         );
 
     if (!daten) {
-
         return null;
-
     }
 
     try {
@@ -613,9 +474,7 @@ function syncStandLaden() {
 // LETZTEN SYNCHRONISATIONSSTAND SPEICHERN
 // ============================================================
 
-function syncStandSpeichern(
-    daten
-) {
+function syncStandSpeichern(daten) {
 
     localStorage.setItem(
 
@@ -629,16 +488,14 @@ function syncStandSpeichern(
                 ),
 
             woerter:
-                Array.isArray(
-                    daten.woerter
-                )
+                Array.isArray(daten.woerter)
                     ? daten.woerter
                     : [],
 
             geloescht:
-                loeschungenVereinheitlichen(
-                    daten.geloescht
-                )
+                Array.isArray(daten.geloescht)
+                    ? daten.geloescht
+                    : []
 
         })
 
@@ -651,53 +508,22 @@ function syncStandSpeichern(
 // NOTIZ VERGLEICHEN
 // ============================================================
 
-function notizGleich(
-    a,
-    b
-) {
+function notizGleich(a, b) {
 
     if (!a || !b) {
-
         return false;
-
     }
 
     return (
 
         notizSchluessel(a) ===
-            notizSchluessel(b)
+        notizSchluessel(b)
 
         &&
 
         a.erledigt ===
-            b.erledigt
+        b.erledigt
 
-    );
-
-}
-
-
-// ============================================================
-// PRÜFEN, OB EINE NOTIZ GELÖSCHT IST
-// ============================================================
-
-function loeschungEnthalten(
-    geloeschteListe,
-    schluessel
-) {
-
-    if (
-        !Array.isArray(
-            geloeschteListe
-        )
-    ) {
-
-        return false;
-
-    }
-
-    return geloeschteListe.includes(
-        schluessel
     );
 
 }
@@ -712,8 +538,7 @@ function notizenZusammenfuehren(
     lokaleNotizen,
     githubNotizen,
     letzterStand,
-    lokaleLoeschungen,
-    githubLoeschungen
+    githubGeloescht
 
 ) {
 
@@ -722,7 +547,7 @@ function notizenZusammenfuehren(
             lokaleNotizen
         );
 
-    const githubDaten =
+    const vonGitHub =
         notizenVereinheitlichen(
             githubNotizen
         );
@@ -734,234 +559,180 @@ function notizenZusammenfuehren(
             )
             : [];
 
-    const vorherLoeschungen =
-        letzterStand
-            ? loeschungenVereinheitlichen(
-                letzterStand.geloescht
-            )
-            : [];
-
-
-    const lokalMap =
-        new Map();
-
-    const githubMap =
-        new Map();
-
-    const vorherMap =
-        new Map();
-
+    const lokalMap = new Map();
+    const githubMap = new Map();
+    const vorherMap = new Map();
 
     lokal.forEach(function (eintrag) {
 
         lokalMap.set(
-
-            notizSchluessel(
-                eintrag
-            ),
-
+            notizSchluessel(eintrag),
             eintrag
-
         );
 
     });
 
+    vonGitHub.forEach(function (eintrag) {
 
-    githubDaten.forEach(
-        function (eintrag) {
+        githubMap.set(
+            notizSchluessel(eintrag),
+            eintrag
+        );
 
-            githubMap.set(
-
-                notizSchluessel(
-                    eintrag
-                ),
-
-                eintrag
-
-            );
-
-        }
-    );
-
+    });
 
     vorher.forEach(function (eintrag) {
 
         vorherMap.set(
-
-            notizSchluessel(
-                eintrag
-            ),
-
+            notizSchluessel(eintrag),
             eintrag
-
         );
 
     });
 
-
-    const lokaleGeloeschte =
-        loeschungenVereinheitlichen(
-            lokaleLoeschungen
-        );
-
-
-    const githubGeloeschte =
-        loeschungenVereinheitlichen(
-            githubLoeschungen
-        );
-
-
-    const alteGeloeschte =
-        vorherLoeschungen;
-
+    const geloescht =
+        Array.isArray(githubGeloescht)
+            ? githubGeloescht
+            : [];
 
     const alleSchluessel =
         new Set([
 
             ...lokalMap.keys(),
-
             ...githubMap.keys(),
-
-            ...vorherMap.keys(),
-
-            ...lokaleGeloeschte,
-
-            ...githubGeloeschte,
-
-            ...alteGeloeschte
+            ...vorherMap.keys()
 
         ]);
 
-
     const ergebnis = [];
-
-    const endgueltigGeloescht =
-        new Set();
+    const neueLoeschungen = new Set(geloescht);
 
 
-    alleSchluessel.forEach(
-        function (schluessel) {
+    alleSchluessel.forEach(function (schluessel) {
 
-            const lokalEintrag =
-                lokalMap.get(
-                    schluessel
-                );
+        const lokalEintrag =
+            lokalMap.get(schluessel);
 
-            const githubEintrag =
-                githubMap.get(
-                    schluessel
-                );
+        const githubEintrag =
+            githubMap.get(schluessel);
 
-            const vorherEintrag =
-                vorherMap.get(
-                    schluessel
-                );
+        const vorherEintrag =
+            vorherMap.get(schluessel);
 
 
-            const lokalGeloescht =
-                loeschungEnthalten(
-                    lokaleGeloeschte,
-                    schluessel
-                );
+        // ----------------------------------------------------
+        // GITHUB HAT DIE NOTIZ BEREITS ALS GELÖSCHT GEMERKT
+        // ----------------------------------------------------
 
-
-            const githubGeloescht =
-                loeschungEnthalten(
-                    githubGeloeschte,
-                    schluessel
-                );
-
-
-            const alteLoeschung =
-                loeschungEnthalten(
-                    alteGeloeschte,
-                    schluessel
-                );
-
-
-            // ------------------------------------------------
-            // LOKAL GELÖSCHT
-            // ------------------------------------------------
+        if (
+            geloescht.includes(schluessel)
+        ) {
 
             if (
-                lokalGeloescht
+                lokalEintrag &&
+                vorherEintrag &&
+                !notizGleich(
+                    lokalEintrag,
+                    vorherEintrag
+                )
             ) {
 
-                endgueltigGeloescht.add(
-                    schluessel
+                ergebnis.push(
+                    lokalEintrag
                 );
 
-                return;
+                neueLoeschungen.delete(
+                    schluessel
+                );
 
             }
 
+            return;
 
-            // ------------------------------------------------
-            // GITHUB GELÖSCHT
-            // ------------------------------------------------
+        }
+
+
+        // ----------------------------------------------------
+        // LOKAL GELÖSCHT
+        // ----------------------------------------------------
+
+        if (
+            vorherEintrag &&
+            !lokalEintrag
+        ) {
+
+            neueLoeschungen.add(
+                schluessel
+            );
+
+            return;
+
+        }
+
+
+        // ----------------------------------------------------
+        // GITHUB GELÖSCHT
+        // ----------------------------------------------------
+
+        if (
+            vorherEintrag &&
+            !githubEintrag
+        ) {
 
             if (
-                githubGeloescht
+                lokalEintrag &&
+                !notizGleich(
+                    lokalEintrag,
+                    vorherEintrag
+                )
             ) {
 
-                if (
-                    lokalEintrag &&
-                    vorherEintrag &&
-                    !notizGleich(
-                        lokalEintrag,
-                        vorherEintrag
-                    )
-                ) {
+                ergebnis.push(
+                    lokalEintrag
+                );
 
-                    ergebnis.push(
-                        lokalEintrag
-                    );
+            } else {
 
-                    return;
-
-                }
-
-                endgueltigGeloescht.add(
+                neueLoeschungen.add(
                     schluessel
                 );
 
-                return;
-
             }
 
+            return;
 
-            // ------------------------------------------------
-            // ALTE LÖSCHMARKIERUNG
-            // ------------------------------------------------
+        }
+
+
+        // ----------------------------------------------------
+        // BEIDE VORHANDEN
+        // ----------------------------------------------------
+
+        if (
+            lokalEintrag &&
+            githubEintrag
+        ) {
 
             if (
-                alteLoeschung
+                vorherEintrag
             ) {
 
-                if (
-                    lokalEintrag &&
-                    vorherEintrag &&
+                const lokalGeaendert =
                     !notizGleich(
                         lokalEintrag,
                         vorherEintrag
-                    )
-                ) {
-
-                    ergebnis.push(
-                        lokalEintrag
                     );
 
-                    return;
-
-                }
-
-                if (
-                    githubEintrag &&
-                    vorherEintrag &&
+                const githubGeaendert =
                     !notizGleich(
                         githubEintrag,
                         vorherEintrag
-                    )
+                    );
+
+
+                if (
+                    !lokalGeaendert &&
+                    githubGeaendert
                 ) {
 
                     ergebnis.push(
@@ -972,149 +743,46 @@ function notizenZusammenfuehren(
 
                 }
 
-                endgueltigGeloescht.add(
-                    schluessel
-                );
-
-                return;
-
             }
 
 
-            // ------------------------------------------------
-            // LOKAL NICHT VORHANDEN
-            // ABER VORHER VORHANDEN
-            // ------------------------------------------------
-
-            if (
-                !lokalEintrag &&
-                vorherEintrag &&
-                githubEintrag &&
-                notizGleich(
-                    githubEintrag,
-                    vorherEintrag
-                )
-            ) {
-
-                endgueltigGeloescht.add(
-                    schluessel
-                );
-
-                return;
-
-            }
-
-
-            // ------------------------------------------------
-            // GITHUB NICHT VORHANDEN
-            // ABER VORHER VORHANDEN
-            // ------------------------------------------------
-
-            if (
-                !githubEintrag &&
-                vorherEintrag &&
-                lokalEintrag &&
-                notizGleich(
-                    lokalEintrag,
-                    vorherEintrag
-                )
-            ) {
-
-                endgueltigGeloescht.add(
-                    schluessel
-                );
-
-                return;
-
-            }
-
-
-            // ------------------------------------------------
-            // BEIDE VORHANDEN
-            // ------------------------------------------------
-
-            if (
-                lokalEintrag &&
-                githubEintrag
-            ) {
-
-                if (
-                    vorherEintrag
-                ) {
-
-                    const lokalGeaendert =
-                        !notizGleich(
-                            lokalEintrag,
-                            vorherEintrag
-                        );
-
-                    const githubGeaendert =
-                        !notizGleich(
-                            githubEintrag,
-                            vorherEintrag
-                        );
-
-
-                    if (
-                        !lokalGeaendert &&
-                        githubGeaendert
-                    ) {
-
-                        ergebnis.push(
-                            githubEintrag
-                        );
-
-                        return;
-
-                    }
-
-                }
-
-
-                ergebnis.push(
-                    lokalEintrag
-                );
-
-                return;
-
-            }
-
-
-            // ------------------------------------------------
-            // NUR LOKAL VORHANDEN
-            // ------------------------------------------------
-
-            if (
+            ergebnis.push(
                 lokalEintrag
-            ) {
+            );
 
-                ergebnis.push(
-                    lokalEintrag
-                );
-
-                return;
-
-            }
-
-
-            // ------------------------------------------------
-            // NUR GITHUB VORHANDEN
-            // ------------------------------------------------
-
-            if (
-                githubEintrag
-            ) {
-
-                ergebnis.push(
-                    githubEintrag
-                );
-
-                return;
-
-            }
+            return;
 
         }
-    );
+
+
+        // ----------------------------------------------------
+        // NUR LOKAL VORHANDEN
+        // ----------------------------------------------------
+
+        if (lokalEintrag) {
+
+            ergebnis.push(
+                lokalEintrag
+            );
+
+            return;
+
+        }
+
+
+        // ----------------------------------------------------
+        // NUR GITHUB VORHANDEN
+        // ----------------------------------------------------
+
+        if (githubEintrag) {
+
+            ergebnis.push(
+                githubEintrag
+            );
+
+        }
+
+    });
 
 
     return {
@@ -1124,7 +792,7 @@ function notizenZusammenfuehren(
 
         geloescht:
             Array.from(
-                endgueltigGeloescht
+                neueLoeschungen
             )
 
     };
@@ -1137,25 +805,16 @@ function notizenZusammenfuehren(
 // ============================================================
 
 function woerterZusammenfuehren(
-
     lokaleWoerter,
     githubWoerter
-
 ) {
 
     const ergebnis = [];
-
-    const vorhanden =
-        new Set();
+    const vorhanden = new Set();
 
     const alleWoerter = [];
 
-
-    if (
-        Array.isArray(
-            lokaleWoerter
-        )
-    ) {
+    if (Array.isArray(lokaleWoerter)) {
 
         alleWoerter.push(
             ...lokaleWoerter
@@ -1163,12 +822,7 @@ function woerterZusammenfuehren(
 
     }
 
-
-    if (
-        Array.isArray(
-            githubWoerter
-        )
-    ) {
+    if (Array.isArray(githubWoerter)) {
 
         alleWoerter.push(
             ...githubWoerter
@@ -1176,64 +830,52 @@ function woerterZusammenfuehren(
 
     }
 
+    alleWoerter.forEach(function (wort) {
 
-    alleWoerter.forEach(
-        function (wort) {
+        if (
+            typeof wort !== "string"
+        ) {
 
-            if (
-                typeof wort !== "string"
-            ) {
-
-                return;
-
-            }
-
-            wort =
-                wort.trim();
-
-            if (
-                wort === ""
-            ) {
-
-                return;
-
-            }
-
-            const schluessel =
-                wort.toLowerCase();
-
-
-            if (
-                !vorhanden.has(
-                    schluessel
-                )
-            ) {
-
-                vorhanden.add(
-                    schluessel
-                );
-
-                ergebnis.push(
-                    wort
-                );
-
-            }
+            return;
 
         }
-    );
 
+        wort =
+            wort.trim();
 
-    ergebnis.sort(
-        function (a, b) {
+        if (wort === "") {
+            return;
+        }
 
-            return a.localeCompare(
-                b,
-                "de"
+        const schluessel =
+            wort.toLowerCase();
+
+        if (
+            !vorhanden.has(
+                schluessel
+            )
+        ) {
+
+            vorhanden.add(
+                schluessel
+            );
+
+            ergebnis.push(
+                wort
             );
 
         }
-    );
 
+    });
+
+    ergebnis.sort(function (a, b) {
+
+        return a.localeCompare(
+            b,
+            "de"
+        );
+
+    });
 
     return ergebnis;
 
@@ -1245,11 +887,9 @@ function woerterZusammenfuehren(
 // ============================================================
 
 function zusammenfuehren(
-
     lokaleDaten,
     githubDaten,
     letzterStand
-
 ) {
 
     if (
@@ -1260,7 +900,6 @@ function zusammenfuehren(
         lokaleDaten = {};
 
     }
-
 
     if (
         !githubDaten ||
@@ -1280,8 +919,6 @@ function zusammenfuehren(
             githubDaten.notizen,
 
             letzterStand,
-
-            lokaleDaten.geloescht,
 
             githubDaten.geloescht
 
@@ -1319,12 +956,10 @@ function lokaleDatenErstellen() {
     const letzterStand =
         syncStandLaden();
 
-
     const lokaleNotizen =
         Array.isArray(notizen)
             ? notizen
             : [];
-
 
     const vorherigeNotizen =
         letzterStand &&
@@ -1334,40 +969,7 @@ function lokaleDatenErstellen() {
             ? letzterStand.notizen
             : [];
 
-
-    const vorhandeneLokaleSchluessel =
-        new Set();
-
-
-    lokaleNotizen.forEach(
-        function (eintrag) {
-
-            const schluessel =
-                notizSchluessel(
-                    eintrag
-                );
-
-            if (
-                schluessel !== ""
-            ) {
-
-                vorhandeneLokaleSchluessel.add(
-                    schluessel
-                );
-
-            }
-
-        }
-    );
-
-
-    const lokaleLoeschungen =
-        letzterStand
-            ? loeschungenVereinheitlichen(
-                letzterStand.geloescht
-            )
-            : [];
-
+    const lokaleGeloeschte = [];
 
     vorherigeNotizen.forEach(
         function (eintrag) {
@@ -1385,24 +987,24 @@ function lokaleDatenErstellen() {
 
             }
 
+            const vorhanden =
+                lokaleNotizen.some(
+                    function (lokal) {
 
-            if (
-                !vorhandeneLokaleSchluessel.has(
+                        return (
+                            notizSchluessel(
+                                lokal
+                            ) === schluessel
+                        );
+
+                    }
+                );
+
+            if (!vorhanden) {
+
+                lokaleGeloeschte.push(
                     schluessel
-                )
-            ) {
-
-                if (
-                    !lokaleLoeschungen.includes(
-                        schluessel
-                    )
-                ) {
-
-                    lokaleLoeschungen.push(
-                        schluessel
-                    );
-
-                }
+                );
 
             }
 
@@ -1421,7 +1023,7 @@ function lokaleDatenErstellen() {
                 : [],
 
         geloescht:
-            lokaleLoeschungen
+            lokaleGeloeschte
 
     };
 
@@ -1442,7 +1044,6 @@ function lokaleDatenUebernehmen(
         )
             ? daten.notizen
             : [];
-
 
     woerter =
         Array.isArray(
@@ -1482,9 +1083,7 @@ function lokaleDatenUebernehmen(
 
 async function synchronisieren() {
 
-    if (
-        !githubVorhanden()
-    ) {
+    if (!githubVorhanden()) {
 
         alert(
             "Bitte zuerst die GitHub-Zugangsdaten speichern."
@@ -1495,42 +1094,23 @@ async function synchronisieren() {
     }
 
 
-    // --------------------------------------------------------
-    // GITHUB LESEN
-    // --------------------------------------------------------
-
     const githubErgebnis =
         await githubDateiLesen();
 
-
-    if (
-        !githubErgebnis
-    ) {
+    if (!githubErgebnis) {
 
         return false;
 
     }
 
 
-    // --------------------------------------------------------
-    // LETZTEN STAND LADEN
-    // --------------------------------------------------------
-
     const letzterStand =
         syncStandLaden();
 
 
-    // --------------------------------------------------------
-    // LOKALE DATEN ERSTELLEN
-    // --------------------------------------------------------
-
     const lokaleDaten =
         lokaleDatenErstellen();
 
-
-    // --------------------------------------------------------
-    // DATEN ZUSAMMENFÜHREN
-    // --------------------------------------------------------
 
     const gemeinsameDaten =
         zusammenfuehren(
@@ -1544,10 +1124,6 @@ async function synchronisieren() {
         );
 
 
-    // --------------------------------------------------------
-    // GITHUB SPEICHERN
-    // --------------------------------------------------------
-
     const gespeichert =
         await githubDateiSpeichern(
 
@@ -1558,36 +1134,22 @@ async function synchronisieren() {
         );
 
 
-    if (
-        !gespeichert
-    ) {
+    if (!gespeichert) {
 
         return false;
 
     }
 
 
-    // --------------------------------------------------------
-    // LOKAL ÜBERNEHMEN
-    // --------------------------------------------------------
-
     lokaleDatenUebernehmen(
         gemeinsameDaten
     );
 
 
-    // --------------------------------------------------------
-    // NEUEN SYNCHRONISATIONSSTAND SPEICHERN
-    // --------------------------------------------------------
-
     syncStandSpeichern(
         gemeinsameDaten
     );
 
-
-    // --------------------------------------------------------
-    // ANZEIGE AKTUALISIEREN
-    // --------------------------------------------------------
 
     if (
         typeof anzeigen === "function"
