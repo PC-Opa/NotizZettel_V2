@@ -17,6 +17,10 @@
       "erledigt": false
     },
     {
+      "text": "NeuerTest",
+      "erledigt": true
+    },
+    {
       "text": "Mehl",
       "erledigt": false
     },
@@ -57,10 +61,6 @@
       "erledigt": true
     },
     {
-      "text": "NeuerTest",
-      "erledigt": true
-    },
-    {
       "text": "LAPTOP-TEST-123",
       "erledigt": true
     },
@@ -97,6 +97,5 @@
     "pc-opa",
     "Test",
     "Waschmittel"
-  ],
-  "geloescht": []
+  ]
 }
