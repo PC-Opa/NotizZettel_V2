@@ -3,115 +3,117 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NotizZettel V2</title>
+<title>NotizZettel V2</title>
 
-    <link rel="stylesheet" href="css/NotizZettel.css">
+<link rel="icon" type="image/png" href="EK.Bild.png">
+
+<link rel="stylesheet" href="css/NotizZettel.css">
 
 </head>
 
 <body>
 
-    <div id="App">
+<div id="App">
 
-        <header>
+    <header>
 
-            <h1>NotizZettel</h1>
+        <h1>NotizZettel</h1>
 
-            <p>Version 2.0</p>
+        <p>Version 2.0</p>
 
-        </header>
+    </header>
 
-        <main id="Arbeitsbereich">
+    <main id="Arbeitsbereich">
 
-            <section id="EingabeBereich">
+        <section id="EingabeBereich">
 
-                <input
-                    type="text"
-                    id="NeueNotiz"
-                    name="notiz"
-                    placeholder="Neue Notiz eingeben..."
-                    autocomplete="off"
-                    autocorrect="off"
-                    autocapitalize="sentences"
-                    spellcheck="false">
+            <input
+                type="text"
+                id="NeueNotiz"
+                name="notiz"
+                placeholder="Neue Notiz eingeben..."
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="sentences"
+                spellcheck="false">
 
-                <button id="BtnHinzufuegen">
-                    Hinzufügen
-                </button>
+            <button id="BtnHinzufuegen">
+                Hinzufügen
+            </button>
 
-            </section>
+        </section>
 
-            <section id="VorschlagBereich">
-            </section>
+        <section id="VorschlagBereich">
+        </section>
 
-            <section id="WerkzeugBereich">
+        <section id="WerkzeugBereich">
 
-                <button id="BtnMarkierteLoeschen">
-                    🗑️ Markierte löschen
-                </button>
+            <button id="BtnMarkierteLoeschen">
+                🗑️ Markierte löschen
+            </button>
 
-                <button id="BtnGitHub">
-                    ☁️ GitHub
-                </button>
+            <button id="BtnGitHub">
+                ☁️ GitHub
+            </button>
 
-                <button id="BtnSync">
-                    🔄 Sync
-                </button>
+            <button id="BtnSync">
+                🔄 Sync
+            </button>
 
-            </section>
+        </section>
 
-            <section id="GitHubBereich" style="display:none;">
+        <section id="GitHubBereich" style="display:none;">
 
-                <input
-                    type="text"
-                    id="GitBenutzer"
-                    name="github-benutzer"
-                    placeholder="GitHub-Benutzer"
-                    autocomplete="off"
-                    autocorrect="off"
-                    autocapitalize="none"
-                    spellcheck="false">
+            <input
+                type="text"
+                id="GitBenutzer"
+                name="github-benutzer"
+                placeholder="GitHub-Benutzer"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="none"
+                spellcheck="false">
 
-                <input
-                    type="text"
-                    id="GitRepository"
-                    name="github-repository"
-                    placeholder="Repository"
-                    autocomplete="off"
-                    autocorrect="off"
-                    autocapitalize="none"
-                    spellcheck="false">
+            <input
+                type="text"
+                id="GitRepository"
+                name="github-repository"
+                placeholder="Repository"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="none"
+                spellcheck="false">
 
-                <input
-                    type="password"
-                    id="GitToken"
-                    name="github-token"
-                    placeholder="GitHub-Token"
-                    autocomplete="new-password">
+            <input
+                type="password"
+                id="GitToken"
+                name="github-token"
+                placeholder="GitHub-Token"
+                autocomplete="new-password">
 
-                <button id="BtnGitSpeichern">
-                    Zugangsdaten speichern
-                </button>
+            <button id="BtnGitSpeichern">
+                Zugangsdaten speichern
+            </button>
 
-            </section>
+        </section>
 
-            <section id="ListenBereich">
-            </section>
+        <section id="ListenBereich">
+        </section>
 
-            <section id="StatusBereich">
-            </section>
+        <section id="StatusBereich">
+        </section>
 
-        </main>
+    </main>
 
-    </div>
+</div>
 
-    <script src="js/Woerterbuch.js"></script>
-    <script src="js/Notizen.js"></script>
-    <script src="js/Synchronisation.js"></script>
-    <script src="js/App.js"></script>
+<script src="js/Woerterbuch.js"></script>
+<script src="js/Notizen.js"></script>
+<script src="js/Synchronisation.js"></script>
+<script src="js/App.js"></script>
 
 </body>
 
