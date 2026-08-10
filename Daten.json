@@ -5,14 +5,6 @@
       "erledigt": false
     },
     {
-      "text": "Milch",
-      "erledigt": false
-    },
-    {
-      "text": "Milchreis",
-      "erledigt": false
-    },
-    {
       "text": "Buttermilch",
       "erledigt": false
     },
@@ -27,54 +19,6 @@
     {
       "text": "Kekse",
       "erledigt": false
-    },
-    {
-      "text": "Fruchtzucker",
-      "erledigt": false
-    },
-    {
-      "text": "Handy-Test-2026",
-      "erledigt": false
-    },
-    {
-      "text": "Nutella",
-      "erledigt": false
-    },
-    {
-      "text": "Test Laptop",
-      "erledigt": false
-    },
-    {
-      "text": "Handy Test",
-      "erledigt": false
-    },
-    {
-      "text": "NeuerTest",
-      "erledigt": true
-    },
-    {
-      "text": "Butter",
-      "erledigt": true
-    },
-    {
-      "text": "Test Test",
-      "erledigt": true
-    },
-    {
-      "text": "LAPTOP-TEST-123",
-      "erledigt": true
-    },
-    {
-      "text": "Gurken",
-      "erledigt": true
-    },
-    {
-      "text": "pc-opa",
-      "erledigt": true
-    },
-    {
-      "text": "Waschmittel",
-      "erledigt": true
     }
   ],
   "woerter": [
@@ -98,5 +42,20 @@
     "Test",
     "Waschmittel"
   ],
-  "geloescht": []
+  "geloescht": [
+    "milch",
+    "milchreis",
+    "fruchtzucker",
+    "handy-test-2026",
+    "nutella",
+    "test laptop",
+    "handy test",
+    "neuertest",
+    "butter",
+    "test test",
+    "laptop-test-123",
+    "gurken",
+    "pc-opa",
+    "waschmittel"
+  ]
 }
