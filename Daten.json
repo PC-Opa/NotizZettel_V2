@@ -1,15 +1,53 @@
 {
-  "notizen": [],
+  "notizen": [
+    {
+      "text": "Brot",
+      "erledigt": false
+    },
+    {
+      "text": "Knabberkram",
+      "erledigt": false
+    },
+    {
+      "text": "Selter",
+      "erledigt": false
+    },
+    {
+      "text": "Selter f Heinke",
+      "erledigt": false
+    },
+    {
+      "text": "Balsamico",
+      "erledigt": false
+    },
+    {
+      "text": "Putenbrust",
+      "erledigt": false
+    },
+    {
+      "text": "RiHa",
+      "erledigt": false
+    },
+    {
+      "text": "Almighurt ?",
+      "erledigt": false
+    }
+  ],
   "woerter": [
+    "Almighurt",
+    "Balsamico",
     "Brot",
     "Butter",
     "Buttermilch",
+    "f",
     "Fruchtzucker",
     "Gurken",
     "Handy",
     "Handy-Test-2026",
+    "Heinke",
     "Käse",
     "Kekse",
+    "Knabberkram",
     "Laptop",
     "LAPTOP-TEST-123",
     "Limetten",
@@ -20,6 +58,9 @@
     "Nutella",
     "pc-opa",
     "Pudding",
+    "Putenbrust",
+    "RiHa",
+    "Selter",
     "Test",
     "Waschmittel"
   ],
@@ -42,7 +83,6 @@
     "käse",
     "buttermilch",
     "mehl",
-    "brot",
     "kekse",
     "pudding"
   ]
