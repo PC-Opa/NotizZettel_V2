@@ -5,6 +5,10 @@
       "erledigt": false
     },
     {
+      "text": "Milch",
+      "erledigt": false
+    },
+    {
       "text": "Buttermilch",
       "erledigt": false
     },
@@ -21,19 +25,15 @@
       "erledigt": false
     },
     {
-      "text": "Pudding",
-      "erledigt": false
-    },
-    {
-      "text": "Milch",
-      "erledigt": false
-    },
-    {
       "text": "Nutella",
       "erledigt": false
     },
     {
       "text": "Limetten",
+      "erledigt": false
+    },
+    {
+      "text": "Pudding",
       "erledigt": false
     }
   ],
