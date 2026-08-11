@@ -31,6 +31,38 @@
     {
       "text": "Almighurt ?",
       "erledigt": false
+    },
+    {
+      "text": "Old Spice-Aftershafe",
+      "erledigt": false
+    },
+    {
+      "text": "Nudeln",
+      "erledigt": false
+    },
+    {
+      "text": "Reis",
+      "erledigt": false
+    },
+    {
+      "text": "Spätzle",
+      "erledigt": false
+    },
+    {
+      "text": "Wein",
+      "erledigt": false
+    },
+    {
+      "text": "Sahne",
+      "erledigt": false
+    },
+    {
+      "text": "Div.Konserven",
+      "erledigt": false
+    },
+    {
+      "text": "Leinenöl",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -39,6 +71,7 @@
     "Brot",
     "Butter",
     "Buttermilch",
+    "DivKonserven",
     "f",
     "Fruchtzucker",
     "Gurken",
@@ -50,26 +83,32 @@
     "Knabberkram",
     "Laptop",
     "LAPTOP-TEST-123",
+    "Leinenöl",
     "Limetten",
     "Mehl",
     "Milch",
     "Milchreis",
     "NeuerTest",
+    "Nudeln",
     "Nutella",
+    "Old",
     "pc-opa",
     "Pudding",
     "Putenbrust",
+    "Reis",
     "RiHa",
+    "Sahne",
     "Selter",
+    "Spätzle",
+    "Spice-Aftershafe",
     "Test",
-    "Waschmittel"
+    "Waschmittel",
+    "Wein"
   ],
   "geloescht": [
-    "milch",
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
-    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
@@ -79,6 +118,8 @@
     "gurken",
     "pc-opa",
     "waschmittel",
+    "milch",
+    "nutella",
     "limetten",
     "käse",
     "buttermilch",
