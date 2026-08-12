@@ -5,10 +5,6 @@
       "erledigt": false
     },
     {
-      "text": "Selter f Heinke",
-      "erledigt": false
-    },
-    {
       "text": "Balsamico",
       "erledigt": false
     },
@@ -119,6 +115,7 @@
     "kekse",
     "pudding",
     "knabberkram",
-    "brot"
+    "brot",
+    "selter f heinke"
   ]
 }
