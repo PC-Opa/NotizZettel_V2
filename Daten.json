@@ -42,7 +42,7 @@
     },
     {
       "text": "Sahne",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Div.Konserven",
@@ -51,10 +51,15 @@
     {
       "text": "Leinenöl",
       "erledigt": false
+    },
+    {
+      "text": "Apotheke",
+      "erledigt": false
     }
   ],
   "woerter": [
     "Almighurt",
+    "Apotheke",
     "Balsamico",
     "Brot",
     "Butter",
@@ -94,11 +99,9 @@
     "Wein"
   ],
   "geloescht": [
-    "milch",
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
-    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
@@ -108,6 +111,8 @@
     "gurken",
     "pc-opa",
     "waschmittel",
+    "milch",
+    "nutella",
     "limetten",
     "käse",
     "buttermilch",
