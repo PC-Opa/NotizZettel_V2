@@ -1,142 +1,114 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="de">
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #eceff3;
-    color: #222;
-    padding: 25px;
-}
+<head>
 
-#App {
-    max-width: 900px;
-    margin: auto;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, .15);
-    padding: 25px;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-header {
-    margin-bottom: 25px;
-}
+    <title>NotizZettel V2</title>
 
-header h1 {
-    font-size: 42px;
-    margin-bottom: 8px;
-}
+    <link rel="icon" type="image/png" href="EK.Bild.png">
 
-header p {
-    font-size: 18px;
-    color: #666;
-}
+    <link rel="stylesheet" href="css/NotizZettel.css">
 
-#Arbeitsbereich {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
+</head>
 
-#EingabeBereich {
-    display: flex;
-    gap: 12px;
-}
+<body>
 
-#NeueNotiz {
-    flex: 1;
-    height: 58px;
-    padding: 0 18px;
-    font-size: 20px;
-    border: 2px solid #d0d0d0;
-    border-radius: 10px;
-    outline: none;
-}
+    <div id="App">
 
-#NeueNotiz:focus {
-    border-color: #2563eb;
-}
+        <header>
 
-#BtnHinzufuegen {
-    width: 210px;
-    border: none;
-    border-radius: 10px;
-    background: #2563eb;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-}
+            <h1>NotizZettel</h1>
 
-#BtnHinzufuegen:hover {
-    background: #1d4ed8;
-}
+            <p>Version 2.0</p>
 
-#VorschlagBereich {
-    min-height: 45px;
-    border: 1px dashed #d8d8d8;
-    border-radius: 8px;
-}
+        </header>
 
-#WerkzeugBereich {
-    display: flex;
-    justify-content: flex-end;
-}
+        <main id="Arbeitsbereich">
 
-#BtnMarkierteLoeschen {
-    background: #dc2626;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 18px;
-    font-size: 18px;
-    cursor: pointer;
-}
+            <section id="EingabeBereich">
 
-#BtnMarkierteLoeschen:hover {
-    background: #b91c1c;
-}
+                <input
+                    type="text"
+                    id="NeueNotiz"
+                    placeholder="Neue Notiz eingeben..."
+                    autocomplete="off">
 
-#ListenBereich {
-    min-height: 350px;
-    border: 1px solid #dddddd;
-    border-radius: 10px;
-    background: #ffffff;
-    padding: 15px;
-}
+                <select id="HaendlerAuswahl">
 
-#StatusBereich {
-    border-top: 1px solid #dddddd;
-    padding-top: 12px;
-    color: #666;
-    font-size: 15px;
-}
+                    <option value="">Händler</option>
+                    <option value="A">A</option>
+                    <option value="N">N</option>
+                    <option value="E">E</option>
+                    <option value="L">L</option>
 
-@media (max-width: 700px) {
+                </select>
 
-    body {
-        padding: 10px;
-    }
+                <button id="BtnHinzufuegen">
+                    Hinzufügen
+                </button>
 
-    #App {
-        padding: 15px;
-    }
+            </section>
 
-    #EingabeBereich {
-        flex-direction: column;
-    }
+            <section id="VorschlagBereich">
+            </section>
 
-    #BtnHinzufuegen {
-        width: 100%;
-        height: 55px;
-    }
+            <section id="WerkzeugBereich">
 
-    #WerkzeugBereich {
-        justify-content: stretch;
-    }
+                <button id="BtnMarkierteLoeschen">
+                    🗑️ Markierte löschen
+                </button>
 
-    #BtnMarkierteLoeschen {
-        width: 100%;
-    }
-}
+                <button id="BtnGitHub">
+                    ☁️ GitHub
+                </button>
+
+                <button id="BtnSync">
+                    🔄 Sync
+                </button>
+
+            </section>
+
+            <section id="GitHubBereich" style="display:none;">
+
+                <input
+                    type="text"
+                    id="GitBenutzer"
+                    placeholder="GitHub-Benutzer">
+
+                <input
+                    type="text"
+                    id="GitRepository"
+                    placeholder="Repository">
+
+                <input
+                    type="password"
+                    id="GitToken"
+                    placeholder="GitHub-Token">
+
+                <button id="BtnGitSpeichern">
+                    Zugangsdaten speichern
+                </button>
+
+            </section>
+
+            <section id="ListenBereich">
+            </section>
+
+            <section id="StatusBereich">
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/Woerterbuch.js"></script>
+    <script src="js/Notizen.js"></script>
+    <script src="js/Synchronisation.js"></script>
+    <script src="js/App.js"></script>
+
+</body>
+
+</html>
