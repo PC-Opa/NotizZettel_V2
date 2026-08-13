@@ -19,6 +19,9 @@ function starten() {
     const feld =
         document.getElementById("NeueNotiz");
 
+    const haendler =
+        document.getElementById("HaendlerAuswahl");
+
 
     document
         .getElementById("BtnHinzufuegen")
@@ -79,6 +82,9 @@ function notizHinzufuegen() {
     const bereich =
         document.getElementById("VorschlagBereich");
 
+    const haendler =
+        document.getElementById("HaendlerAuswahl");
+
 
     const text =
         feld.value.trim();
@@ -117,6 +123,8 @@ function notizHinzufuegen() {
 
         text: text,
 
+        haendler: haendler.value,
+
         erledigt: false
 
     });
@@ -132,6 +140,8 @@ function notizHinzufuegen() {
     bereich.innerHTML = "";
 
     feld.value = "";
+
+    haendler.value = "";
 
     feld.focus();
 
@@ -350,6 +360,44 @@ function anzeigen() {
 
             text.style.fontSize =
                 "22px";
+
+
+            if (
+                eintrag.haendler &&
+                eintrag.haendler !== ""
+            ) {
+
+                const trennpunkte =
+                    document.createElement("span");
+
+                trennpunkte.textContent =
+                    " ··· ";
+
+                trennpunkte.style.color =
+                    "#999999";
+
+                text.appendChild(
+                    trennpunkte
+                );
+
+
+                const haendlerText =
+                    document.createElement("span");
+
+                haendlerText.textContent =
+                    eintrag.haendler;
+
+                haendlerText.style.fontWeight =
+                    "bold";
+
+                haendlerText.style.color =
+                    "#555555";
+
+                text.appendChild(
+                    haendlerText
+                );
+
+            }
 
 
             if (eintrag.erledigt) {
