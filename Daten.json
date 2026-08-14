@@ -9,10 +9,6 @@
       "erledigt": false
     },
     {
-      "text": "RiHa",
-      "erledigt": false
-    },
-    {
       "text": "Old Spice-Aftershafe",
       "erledigt": false
     },
@@ -22,6 +18,14 @@
     },
     {
       "text": "Sahne",
+      "erledigt": false
+    },
+    {
+      "text": "Rotwein",
+      "erledigt": false
+    },
+    {
+      "text": "Pilze",
       "erledigt": false
     }
   ],
@@ -54,10 +58,12 @@
     "Nutella",
     "Old",
     "pc-opa",
+    "Pilze",
     "Pudding",
     "Putenbrust",
     "Reis",
     "RiHa",
+    "Rotwein",
     "Sahne",
     "Selter",
     "Spätzle",
@@ -67,11 +73,9 @@
     "Wein"
   ],
   "geloescht": [
-    "milch",
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
-    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
@@ -81,6 +85,8 @@
     "gurken",
     "pc-opa",
     "waschmittel",
+    "milch",
+    "nutella",
     "limetten",
     "käse",
     "buttermilch",
@@ -98,6 +104,7 @@
     "nudeln",
     "almighurt ?",
     "selter",
-    "leinenöl"
+    "leinenöl",
+    "riha"
   ]
 }
