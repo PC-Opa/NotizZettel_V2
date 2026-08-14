@@ -15,6 +15,10 @@
     {
       "text": "Sahne",
       "erledigt": false
+    },
+    {
+      "text": "Pilze",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -61,9 +65,11 @@
     "Wein"
   ],
   "geloescht": [
+    "milch",
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
+    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
@@ -73,8 +79,6 @@
     "gurken",
     "pc-opa",
     "waschmittel",
-    "milch",
-    "nutella",
     "limetten",
     "käse",
     "buttermilch",
@@ -95,7 +99,6 @@
     "leinenöl",
     "riha",
     "old spice-aftershafe",
-    "rotwein",
-    "pilze"
+    "rotwein"
   ]
 }
