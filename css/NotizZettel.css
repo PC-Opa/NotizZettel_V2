@@ -153,34 +153,23 @@ header p {
         flex-direction: column;
     }
 
-    #NeueNotiz,
-    #HaendlerAuswahl {
-        height: 64px;
-        font-size: 21px;
-    }
-
-    #HaendlerAuswahl {
-        width: 100%;
-    }
-
     #BtnHinzufuegen {
         width: 100%;
-        height: 64px;
-        font-size: 21px;
+        height: 55px;
+    }
+
+    #HaendlerAuswahl {
+        width: 100%;
+        height: 55px;
     }
 
     #WerkzeugBereich {
         justify-content: stretch;
-        flex-direction: column;
-        gap: 10px;
     }
 
-    #BtnMarkierteLoeschen,
-    #BtnGitHub,
-    #BtnSync {
+    #BtnMarkierteLoeschen {
         width: 100%;
-        height: 64px;
-        padding: 12px 18px;
-        font-size: 21px;
     }
 }
+
+   
