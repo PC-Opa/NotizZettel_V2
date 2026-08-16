@@ -5,15 +5,27 @@
       "erledigt": false
     },
     {
-      "text": "Putenbrust",
-      "erledigt": false
-    },
-    {
       "text": "Reis",
       "erledigt": false
     },
     {
       "text": "Sahne",
+      "erledigt": false
+    },
+    {
+      "text": "Bockwurst",
+      "erledigt": false
+    },
+    {
+      "text": "Steak",
+      "erledigt": false
+    },
+    {
+      "text": "Schw.Rücken",
+      "erledigt": false
+    },
+    {
+      "text": "Lavazza",
       "erledigt": false
     }
   ],
@@ -21,6 +33,7 @@
     "Almighurt",
     "Apotheke",
     "Balsamico",
+    "Bockwurst",
     "Brot",
     "Butter",
     "Buttermilch",
@@ -36,6 +49,7 @@
     "Knabberkram",
     "Laptop",
     "LAPTOP-TEST-123",
+    "Lavazza",
     "Leinenöl",
     "Limetten",
     "Mehl",
@@ -53,9 +67,11 @@
     "RiHa",
     "Rotwein",
     "Sahne",
+    "SchwRücken",
     "Selter",
     "Spätzle",
     "Spice-Aftershafe",
+    "Steak",
     "Test",
     "Waschmittel",
     "Wein"
@@ -96,6 +112,7 @@
     "pilze",
     "riha",
     "old spice-aftershafe",
-    "rotwein"
+    "rotwein",
+    "putenbrust"
   ]
 }
