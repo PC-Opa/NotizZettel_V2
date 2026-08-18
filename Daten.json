@@ -9,14 +9,6 @@
       "erledigt": false
     },
     {
-      "text": "Magentropfen",
-      "erledigt": false
-    },
-    {
-      "text": "Magnesium",
-      "erledigt": false
-    },
-    {
       "text": "Balsamico",
       "erledigt": false
     },
@@ -55,6 +47,10 @@
     {
       "text": "Lavazza",
       "erledigt": false
+    },
+    {
+      "text": "Beckensteine",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -62,6 +58,7 @@
     "Apfel-Breaburn",
     "Apotheke",
     "Balsamico",
+    "Beckensteine",
     "Birne",
     "Bockwurst",
     "Brot",
@@ -148,6 +145,8 @@
     "old spice-aftershafe",
     "rotwein",
     "pilze",
-    "putenbrust"
+    "putenbrust",
+    "magnesium",
+    "magentropfen"
   ]
 }
