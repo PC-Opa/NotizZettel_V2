@@ -9,10 +9,6 @@
       "erledigt": false
     },
     {
-      "text": "Balsamico",
-      "erledigt": false
-    },
-    {
       "text": "Steak",
       "erledigt": false
     },
@@ -22,10 +18,6 @@
     },
     {
       "text": "Lavazza",
-      "erledigt": false
-    },
-    {
-      "text": "Beckensteine",
       "erledigt": false
     }
   ],
@@ -124,6 +116,8 @@
     "putenbrust",
     "magnesium",
     "magentropfen",
+    "beckensteine",
+    "balsamico",
     "bockwurst",
     "kartoffeln",
     "petersilie",
