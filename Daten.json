@@ -1,40 +1,16 @@
 {
   "notizen": [
     {
+      "text": "Balsamico",
+      "erledigt": false
+    },
+    {
       "text": "Reis",
       "erledigt": false
     },
     {
       "text": "Sahne",
       "erledigt": false
-    },
-    {
-      "text": "Balsamico",
-      "erledigt": false
-    },
-    {
-      "text": "Kartoffeln",
-      "erledigt": true
-    },
-    {
-      "text": "Petersilie",
-      "erledigt": true
-    },
-    {
-      "text": "Apfel-Breaburn",
-      "erledigt": true
-    },
-    {
-      "text": "Birne",
-      "erledigt": true
-    },
-    {
-      "text": "Zwiebeln",
-      "erledigt": true
-    },
-    {
-      "text": "Bockwurst",
-      "erledigt": true
     },
     {
       "text": "Steak",
@@ -109,9 +85,11 @@
     "Zwiebeln"
   ],
   "geloescht": [
+    "milch",
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
+    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
@@ -121,8 +99,6 @@
     "gurken",
     "pc-opa",
     "waschmittel",
-    "milch",
-    "nutella",
     "limetten",
     "käse",
     "buttermilch",
@@ -141,12 +117,18 @@
     "almighurt ?",
     "selter",
     "leinenöl",
+    "pilze",
     "riha",
     "old spice-aftershafe",
     "rotwein",
-    "pilze",
     "putenbrust",
     "magnesium",
-    "magentropfen"
+    "magentropfen",
+    "bockwurst",
+    "kartoffeln",
+    "petersilie",
+    "apfel-breaburn",
+    "birne",
+    "zwiebeln"
   ]
 }
