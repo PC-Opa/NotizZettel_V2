@@ -1,11 +1,12 @@
 const SPEICHER_NOTIZEN = "NotizZettel_V2";
+const SPEICHER_GELOESCHT = "NotizZettel_Geloescht";
 
 let notizen = [];
 let geloeschteNotizen = [];
 
 
 // ============================================================
-// START
+// APP STARTEN
 // ============================================================
 
 function starten() {
@@ -14,55 +15,93 @@ function starten() {
 
     geloeschteNotizenLaden();
 
-    woerterLaden();
+    if (
+        typeof woerterLaden === "function"
+    ) {
+        woerterLaden();
+    }
+
 
     const feld =
         document.getElementById("NeueNotiz");
 
 
-    document
-        .getElementById("BtnHinzufuegen")
-        .addEventListener(
-            "click",
-            notizHinzufuegen
+    const haendler =
+        document.getElementById("HaendlerAuswahl");
+
+
+    const btnHinzufuegen =
+        document.getElementById("BtnHinzufuegen");
+
+
+    const btnMarkierteLoeschen =
+        document.getElementById(
+            "BtnMarkierteLoeschen"
         );
 
 
-    document
-        .getElementById("BtnMarkierteLoeschen")
-        .addEventListener(
-            "click",
-            markierteLoeschen
-        );
+    if (
+        btnHinzufuegen
+    ) {
+
+        btnHinzufuegen.onclick =
+            notizHinzufuegen;
+
+    }
 
 
-    feld.addEventListener(
-        "keydown",
-        function (e) {
+    if (
+        btnMarkierteLoeschen
+    ) {
 
-            if (e.key === "Enter") {
+        btnMarkierteLoeschen.onclick =
+            markierteLoeschen;
 
-                notizHinzufuegen();
+    }
+
+
+    if (
+        feld
+    ) {
+
+        feld.addEventListener(
+            "keydown",
+            function (e) {
+
+                if (
+                    e.key === "Enter"
+                ) {
+
+                    notizHinzufuegen();
+
+                }
 
             }
-
-        }
-    );
+        );
 
 
-    feld.addEventListener(
-        "input",
-        function () {
+        feld.addEventListener(
+            "input",
+            function () {
 
-            zeigeVorschlaege();
+                zeigeVorschlaege();
 
-        }
-    );
+            }
+        );
+
+    }
 
 
     anzeigen();
 
-    feld.focus();
+
+    if (
+        feld
+    ) {
+
+        feld.focus();
+
+    }
 
 }
 
@@ -74,7 +113,9 @@ function starten() {
 function notizHinzufuegen() {
 
     const feld =
-        document.getElementById("NeueNotiz");
+        document.getElementById(
+            "NeueNotiz"
+        );
 
 
     const bereich =
@@ -83,11 +124,28 @@ function notizHinzufuegen() {
         );
 
 
+    const haendler =
+        document.getElementById(
+            "HaendlerAuswahl"
+        );
+
+
+    if (
+        !feld
+    ) {
+
+        return;
+
+    }
+
+
     const text =
         feld.value.trim();
 
 
-    if (text === "") {
+    if (
+        text === ""
+    ) {
 
         feld.focus();
 
@@ -96,45 +154,79 @@ function notizHinzufuegen() {
     }
 
 
+    const kuerzel =
+        haendler
+            ? haendler.value
+            : "";
+
+
     const schluessel =
         text.toLowerCase();
 
-
-    // Alte Löschmarkierung entfernen,
-    // wenn die Notiz neu angelegt wird.
 
     geloeschteNotizen =
         geloeschteNotizen.filter(
             function (eintrag) {
 
-                return eintrag !== schluessel;
+                return (
+                    eintrag !==
+                    schluessel
+                );
 
             }
         );
-
-
-    geloeschteNotizenSpeichern();
 
 
     notizen.push({
 
         text: text,
 
+        haendler: kuerzel,
+
         erledigt: false
 
     });
 
 
-    wortMerken(text);
+    if (
+        typeof wortMerken === "function"
+    ) {
+
+        wortMerken(text);
+
+    }
+
+
+    geloeschteNotizenSpeichern();
 
     speichern();
 
     anzeigen();
 
 
-    bereich.innerHTML = "";
+    if (
+        bereich
+    ) {
 
-    feld.value = "";
+        bereich.innerHTML =
+            "";
+
+    }
+
+
+    feld.value =
+        "";
+
+
+    if (
+        haendler
+    ) {
+
+        haendler.value =
+            "";
+
+    }
+
 
     feld.focus();
 
@@ -142,7 +234,7 @@ function notizHinzufuegen() {
 
 
 // ============================================================
-// VORSCHLÄGE
+// AUTOVERVOLLSTÄNDIGUNG
 // ============================================================
 
 function zeigeVorschlaege() {
@@ -159,14 +251,37 @@ function zeigeVorschlaege() {
         );
 
 
-    bereich.innerHTML = "";
+    if (
+        !feld ||
+        !bereich
+    ) {
+
+        return;
+
+    }
+
+
+    bereich.innerHTML =
+        "";
 
 
     const text =
         feld.value.trim();
 
 
-    if (text === "") {
+    if (
+        text === ""
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        typeof sucheWoerter !==
+        "function"
+    ) {
 
         return;
 
@@ -177,7 +292,10 @@ function zeigeVorschlaege() {
         sucheWoerter(text);
 
 
-    if (treffer.length === 0) {
+    if (
+        !Array.isArray(treffer) ||
+        treffer.length === 0
+    ) {
 
         return;
 
@@ -287,10 +405,22 @@ function anzeigen() {
         );
 
 
-    liste.innerHTML = "";
+    if (
+        !liste
+    ) {
+
+        return;
+
+    }
 
 
-    if (notizen.length === 0) {
+    liste.innerHTML =
+        "";
+
+
+    if (
+        notizen.length === 0
+    ) {
 
         liste.innerHTML =
             "<p>Noch keine Notizen vorhanden.</p>";
@@ -340,7 +470,7 @@ function anzeigen() {
 
 
             haken.checked =
-                eintrag.erledigt;
+                !!eintrag.erledigt;
 
 
             haken.addEventListener(
@@ -365,10 +495,6 @@ function anzeigen() {
                 );
 
 
-            text.textContent =
-                eintrag.text;
-
-
             text.style.flex =
                 "1";
 
@@ -377,7 +503,61 @@ function anzeigen() {
                 "22px";
 
 
-            if (eintrag.erledigt) {
+            text.textContent =
+                eintrag.text;
+
+
+            if (
+                eintrag.haendler
+            ) {
+
+                const trennzeichen =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                trennzeichen.textContent =
+                    " ··· ";
+
+
+                trennzeichen.style.color =
+                    "#999999";
+
+
+                const kuerzel =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                kuerzel.textContent =
+                    eintrag.haendler;
+
+
+                kuerzel.style.color =
+                    "#555555";
+
+
+                kuerzel.style.fontWeight =
+                    "bold";
+
+
+                text.appendChild(
+                    trennzeichen
+                );
+
+
+                text.appendChild(
+                    kuerzel
+                );
+
+            }
+
+
+            if (
+                eintrag.erledigt
+            ) {
 
                 text.style.textDecoration =
                     "line-through";
@@ -464,7 +644,9 @@ function anzeigen() {
 // EINZELNE NOTIZ LÖSCHEN
 // ============================================================
 
-function notizLoeschen(index) {
+function notizLoeschen(
+    index
+) {
 
     if (
         index < 0 ||
@@ -476,13 +658,19 @@ function notizLoeschen(index) {
     }
 
 
+    const eintrag =
+        notizen[index];
+
+
     const schluessel =
         notizSchluesselFuerLoeschung(
-            notizen[index]
+            eintrag
         );
 
 
-    if (schluessel !== "") {
+    if (
+        schluessel !== ""
+    ) {
 
         geloeschteNotizen.push(
             schluessel
@@ -520,7 +708,8 @@ function notizLoeschen(index) {
 
 function markierteLoeschen() {
 
-    const neueNotizen = [];
+    const neueNotizen =
+        [];
 
 
     notizen.forEach(
@@ -589,7 +778,8 @@ function notizSchluesselFuerLoeschung(
 
     if (
         !eintrag ||
-        typeof eintrag.text !== "string"
+        typeof eintrag.text !==
+            "string"
     ) {
 
         return "";
@@ -611,13 +801,10 @@ function notizSchluesselFuerLoeschung(
 function speichern() {
 
     localStorage.setItem(
-
         SPEICHER_NOTIZEN,
-
         JSON.stringify(
             notizen
         )
-
     );
 
 }
@@ -635,34 +822,48 @@ function laden() {
         );
 
 
-    if (daten) {
+    if (
+        !daten
+    ) {
 
-        try {
+        notizen =
+            [];
 
-            const geladen =
-                JSON.parse(daten);
+        return;
+
+    }
 
 
-            if (
-                Array.isArray(
-                    geladen
-                )
-            ) {
+    try {
 
-                notizen =
-                    geladen;
+        const geladen =
+            JSON.parse(
+                daten
+            );
 
-            } else {
 
-                notizen = [];
+        if (
+            Array.isArray(
+                geladen
+            )
+        ) {
 
-            }
+            notizen =
+                geladen;
 
-        } catch (fehler) {
+        } else {
 
-            notizen = [];
+            notizen =
+                [];
 
         }
+
+    } catch (
+        fehler
+    ) {
+
+        notizen =
+            [];
 
     }
 
@@ -681,9 +882,12 @@ function geloeschteNotizenLaden() {
         );
 
 
-    if (!daten) {
+    if (
+        !daten
+    ) {
 
-        geloeschteNotizen = [];
+        geloeschteNotizen =
+            [];
 
         return;
 
@@ -693,7 +897,9 @@ function geloeschteNotizenLaden() {
     try {
 
         const geladen =
-            JSON.parse(daten);
+            JSON.parse(
+                daten
+            );
 
 
         if (
@@ -707,13 +913,17 @@ function geloeschteNotizenLaden() {
 
         } else {
 
-            geloeschteNotizen = [];
+            geloeschteNotizen =
+                [];
 
         }
 
-    } catch (fehler) {
+    } catch (
+        fehler
+    ) {
 
-        geloeschteNotizen = [];
+        geloeschteNotizen =
+            [];
 
     }
 
@@ -727,13 +937,10 @@ function geloeschteNotizenLaden() {
 function geloeschteNotizenSpeichern() {
 
     localStorage.setItem(
-
         SPEICHER_GELOESCHT,
-
         JSON.stringify(
             geloeschteNotizen
         )
-
     );
 
 }
