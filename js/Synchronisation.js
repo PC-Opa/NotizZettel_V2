@@ -593,6 +593,11 @@ function notizenVereinheitlichen(liste) {
                 text:
                     text,
 
+                haendler:
+                    typeof eintrag.haendler === "string"
+                        ? eintrag.haendler
+                        : "",
+
                 erledigt:
                     eintrag.erledigt === true
 
@@ -843,6 +848,11 @@ function notizGleich(
 
         a.erledigt ===
         b.erledigt
+
+        &&
+
+        (a.haendler || "") ===
+        (b.haendler || "")
 
     );
 
@@ -1096,6 +1106,29 @@ function notizenSynchronisieren(
                 lokalEintrag &&
                 githubEintrag
             ) {
+
+                // Händler-Kürzel erhalten, wenn nur eine Seite
+                // das Kürzel besitzt.
+
+                if (
+                    lokalEintrag.haendler &&
+                    !githubEintrag.haendler
+                ) {
+
+                    githubEintrag.haendler =
+                        lokalEintrag.haendler;
+
+                }
+
+                if (
+                    githubEintrag.haendler &&
+                    !lokalEintrag.haendler
+                ) {
+
+                    lokalEintrag.haendler =
+                        githubEintrag.haendler;
+
+                }
 
                 if (
                     vorherEintrag
