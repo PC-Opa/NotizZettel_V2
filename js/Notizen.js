@@ -19,9 +19,6 @@ function starten() {
     const feld =
         document.getElementById("NeueNotiz");
 
-    const haendler =
-        document.getElementById("HaendlerAuswahl");
-
 
     document
         .getElementById("BtnHinzufuegen")
@@ -79,11 +76,11 @@ function notizHinzufuegen() {
     const feld =
         document.getElementById("NeueNotiz");
 
-    const bereich =
-        document.getElementById("VorschlagBereich");
 
-    const haendler =
-        document.getElementById("HaendlerAuswahl");
+    const bereich =
+        document.getElementById(
+            "VorschlagBereich"
+        );
 
 
     const text =
@@ -123,8 +120,6 @@ function notizHinzufuegen() {
 
         text: text,
 
-        haendler: haendler.value,
-
         erledigt: false
 
     });
@@ -141,8 +136,6 @@ function notizHinzufuegen() {
 
     feld.value = "";
 
-    haendler.value = "";
-
     feld.focus();
 
 }
@@ -155,10 +148,15 @@ function notizHinzufuegen() {
 function zeigeVorschlaege() {
 
     const feld =
-        document.getElementById("NeueNotiz");
+        document.getElementById(
+            "NeueNotiz"
+        );
+
 
     const bereich =
-        document.getElementById("VorschlagBereich");
+        document.getElementById(
+            "VorschlagBereich"
+        );
 
 
     bereich.innerHTML = "";
@@ -190,7 +188,9 @@ function zeigeVorschlaege() {
         function (wort) {
 
             const vorschlag =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
 
             vorschlag.textContent =
@@ -200,20 +200,26 @@ function zeigeVorschlaege() {
             vorschlag.style.padding =
                 "8px";
 
+
             vorschlag.style.margin =
                 "2px 0";
+
 
             vorschlag.style.background =
                 "#f3f3f3";
 
+
             vorschlag.style.border =
                 "1px solid #dddddd";
+
 
             vorschlag.style.borderRadius =
                 "6px";
 
+
             vorschlag.style.color =
                 "#666666";
+
 
             vorschlag.style.cursor =
                 "pointer";
@@ -248,8 +254,10 @@ function zeigeVorschlaege() {
                     feld.value =
                         wort;
 
+
                     bereich.innerHTML =
                         "";
+
 
                     feld.focus();
 
@@ -296,20 +304,26 @@ function anzeigen() {
         function (eintrag, index) {
 
             const zeile =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
 
             zeile.style.display =
                 "flex";
 
+
             zeile.style.alignItems =
                 "center";
+
 
             zeile.style.gap =
                 "12px";
 
+
             zeile.style.padding =
                 "10px";
+
 
             zeile.style.borderBottom =
                 "1px solid #dddddd";
@@ -358,59 +372,16 @@ function anzeigen() {
             text.style.flex =
                 "1";
 
+
             text.style.fontSize =
                 "22px";
-
-
-            if (
-                eintrag.haendler &&
-                eintrag.haendler !== ""
-            ) {
-
-                const trennpunkte =
-                    document.createElement("span");
-
-
-                trennpunkte.textContent =
-                    " ··· ";
-
-
-                trennpunkte.style.color =
-                    "#999999";
-
-
-                text.appendChild(
-                    trennpunkte
-                );
-
-
-                const haendlerText =
-                    document.createElement("span");
-
-
-                haendlerText.textContent =
-                    eintrag.haendler;
-
-
-                haendlerText.style.fontWeight =
-                    "bold";
-
-
-                haendlerText.style.color =
-                    "#555555";
-
-
-                text.appendChild(
-                    haendlerText
-                );
-
-            }
 
 
             if (eintrag.erledigt) {
 
                 text.style.textDecoration =
                     "line-through";
+
 
                 text.style.color =
                     "#888888";
@@ -431,17 +402,22 @@ function anzeigen() {
             loeschen.style.background =
                 "#dc2626";
 
+
             loeschen.style.color =
                 "#ffffff";
+
 
             loeschen.style.border =
                 "none";
 
+
             loeschen.style.padding =
                 "8px 14px";
 
+
             loeschen.style.borderRadius =
                 "6px";
+
 
             loeschen.style.cursor =
                 "pointer";
@@ -463,9 +439,11 @@ function anzeigen() {
                 haken
             );
 
+
             zeile.appendChild(
                 text
             );
+
 
             zeile.appendChild(
                 loeschen
