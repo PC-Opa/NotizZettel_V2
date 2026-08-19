@@ -1,57 +1,32 @@
 const SPEICHER_GITHUB = "NotizZettel_GitHub";
-const SPEICHER_SYNC_STAND = "NotizZettel_SyncStand";
-const SPEICHER_GELOESCHT = "NotizZettel_Geloescht";
 
 let github = {
+
     benutzer: "",
     repository: "",
     token: ""
+
 };
 
 
-// ============================================================
-// GITHUB-ZUGANGSDATEN
-// ============================================================
-
 function githubLaden() {
 
-    const daten =
-        localStorage.getItem(
-            SPEICHER_GITHUB
-        );
+    const daten = localStorage.getItem(SPEICHER_GITHUB);
 
     if (daten) {
 
         try {
 
-            const geladen =
-                JSON.parse(daten);
-
-            github = {
-
-                benutzer:
-                    typeof geladen.benutzer === "string"
-                        ? geladen.benutzer
-                        : "",
-
-                repository:
-                    typeof geladen.repository === "string"
-                        ? geladen.repository
-                        : "",
-
-                token:
-                    typeof geladen.token === "string"
-                        ? geladen.token
-                        : ""
-
-            };
+            github = JSON.parse(daten);
 
         } catch (fehler) {
 
             github = {
+
                 benutzer: "",
                 repository: "",
                 token: ""
+
             };
 
         }
@@ -61,65 +36,42 @@ function githubLaden() {
 }
 
 
-// ============================================================
-// GITHUB-ZUGANGSDATEN SPEICHERN
-// ============================================================
-
 function githubSpeichern(
     benutzer,
     repository,
     token
 ) {
 
-    github.benutzer =
-        typeof benutzer === "string"
-            ? benutzer.trim()
-            : "";
-
-    github.repository =
-        typeof repository === "string"
-            ? repository.trim()
-            : "";
-
-    github.token =
-        typeof token === "string"
-            ? token.trim()
-            : "";
+    github.benutzer = benutzer.trim();
+    github.repository = repository.trim();
+    github.token = token.trim();
 
 
     localStorage.setItem(
+
         SPEICHER_GITHUB,
+
         JSON.stringify(github)
+
     );
 
 }
 
 
-// ============================================================
-// GITHUB-ZUGANGSDATEN PRÜFEN
-// ============================================================
-
 function githubVorhanden() {
 
     return (
 
-        typeof github.benutzer === "string" &&
         github.benutzer.trim() !== "" &&
 
-        typeof github.repository === "string" &&
         github.repository.trim() !== "" &&
 
-        typeof github.token === "string" &&
         github.token.trim() !== ""
 
     );
 
 }
 
-
-// ============================================================
-// GITHUB-BEREICH
-// ============================================================
 
 function githubBereichUmschalten() {
 
@@ -128,60 +80,32 @@ function githubBereichUmschalten() {
             "GitHubBereich"
         );
 
-    if (!bereich) {
-
-        return;
-
-    }
-
 
     if (
-        bereich.style.display === "none" ||
-        bereich.style.display === ""
+        bereich.style.display === "none"
     ) {
 
         bereich.style.display =
             "block";
 
 
-        const benutzer =
-            document.getElementById(
-                "GitBenutzer"
-            );
-
-        const repository =
-            document.getElementById(
-                "GitRepository"
-            );
-
-        const token =
-            document.getElementById(
-                "GitToken"
-            );
+        document.getElementById(
+            "GitBenutzer"
+        ).value =
+            github.benutzer;
 
 
-        if (benutzer) {
-
-            benutzer.value =
-                github.benutzer;
-
-        }
+        document.getElementById(
+            "GitRepository"
+        ).value =
+            github.repository;
 
 
-        if (repository) {
+        document.getElementById(
+            "GitToken"
+        ).value =
+            github.token;
 
-            repository.value =
-                github.repository;
-
-        }
-
-
-        if (token) {
-
-            token.value =
-                github.token;
-
-        }
 
     } else {
 
@@ -193,53 +117,20 @@ function githubBereichUmschalten() {
 }
 
 
-// ============================================================
-// TEXT FÜR GITHUB KODIEREN
-// ============================================================
-
-function textFuerGitHubKodieren(text) {
-
-    const daten =
-        new TextEncoder().encode(
-            text
-        );
-
-    let binaer = "";
-
-
-    daten.forEach(
-        function (zeichen) {
-
-            binaer +=
-                String.fromCharCode(
-                    zeichen
-                );
-
-        }
-    );
-
-
-    return btoa(binaer);
-
-}
-
-
-// ============================================================
-// TEXT VON GITHUB DEKODIEREN
-// ============================================================
-
-function textAusGitHubDekodieren(text) {
+function textAusGitHubDekodieren(
+    base64
+) {
 
     const binaer =
         atob(
-            text.replace(
+            base64.replace(
                 /\s/g,
                 ""
             )
         );
 
 
-    const daten =
+    const bytes =
         new Uint8Array(
             binaer.length
         );
@@ -251,7 +142,7 @@ function textAusGitHubDekodieren(text) {
         i++
     ) {
 
-        daten[i] =
+        bytes[i] =
             binaer.charCodeAt(i);
 
     }
@@ -259,18 +150,48 @@ function textAusGitHubDekodieren(text) {
 
     return new TextDecoder(
         "utf-8"
-    ).decode(daten);
+    ).decode(bytes);
 
 }
 
 
-// ============================================================
-// DATEN.JSON VON GITHUB LESEN
-// ============================================================
+function textFuerGitHubKodieren(
+    text
+) {
+
+    const bytes =
+        new TextEncoder().encode(
+            text
+        );
+
+
+    let binaer = "";
+
+
+    for (
+        let i = 0;
+        i < bytes.length;
+        i++
+    ) {
+
+        binaer +=
+            String.fromCharCode(
+                bytes[i]
+            );
+
+    }
+
+
+    return btoa(binaer);
+
+}
+
 
 async function githubDateiLesen() {
 
-    if (!githubVorhanden()) {
+    if (
+        !githubVorhanden()
+    ) {
 
         alert(
             "Bitte zuerst die GitHub-Zugangsdaten speichern."
@@ -282,10 +203,15 @@ async function githubDateiLesen() {
 
 
     const url =
+
         "https://api.github.com/repos/" +
+
         github.benutzer +
+
         "/" +
+
         github.repository +
+
         "/contents/Daten.json";
 
 
@@ -295,19 +221,17 @@ async function githubDateiLesen() {
             await fetch(
                 url,
                 {
+
                     method: "GET",
 
                     headers: {
 
-                        "Authorization":
+                        Authorization:
                             "Bearer " +
                             github.token,
 
-                        "Accept":
-                            "application/vnd.github.v3+json",
-
-                        "X-GitHub-Api-Version":
-                            "2022-11-28"
+                        Accept:
+                            "application/vnd.github+json"
 
                     }
 
@@ -315,18 +239,25 @@ async function githubDateiLesen() {
             );
 
 
-        if (!antwort.ok) {
+        if (
+            !antwort.ok
+        ) {
 
             const fehler =
                 await antwort.text();
 
 
             alert(
+
                 "GitHub konnte Daten.json nicht lesen.\n\n" +
+
                 "HTTP: " +
                 antwort.status +
-                "\n\n" +
+
+                "\n" +
+
                 fehler
+
             );
 
 
@@ -363,8 +294,11 @@ async function githubDateiLesen() {
     } catch (fehler) {
 
         alert(
+
             "Fehler beim Lesen von GitHub:\n\n" +
+
             fehler.message
+
         );
 
 
@@ -375,16 +309,14 @@ async function githubDateiLesen() {
 }
 
 
-// ============================================================
-// DATEN.JSON NACH GITHUB SCHREIBEN
-// ============================================================
-
 async function githubDateiSpeichern(
     inhalt,
     sha
 ) {
 
-    if (!githubVorhanden()) {
+    if (
+        !githubVorhanden()
+    ) {
 
         alert(
             "Bitte zuerst die GitHub-Zugangsdaten speichern."
@@ -396,10 +328,15 @@ async function githubDateiSpeichern(
 
 
     const url =
+
         "https://api.github.com/repos/" +
+
         github.benutzer +
+
         "/" +
+
         github.repository +
+
         "/contents/Daten.json";
 
 
@@ -413,44 +350,21 @@ async function githubDateiSpeichern(
 
     try {
 
-        const bodyDaten = {
-
-            message:
-                "NotizZettel Synchronisation",
-
-            content:
-                textFuerGitHubKodieren(
-                    text
-                )
-
-        };
-
-
-        if (sha) {
-
-            bodyDaten.sha =
-                sha;
-
-        }
-
-
         const antwort =
             await fetch(
                 url,
                 {
+
                     method: "PUT",
 
                     headers: {
 
-                        "Authorization":
+                        Authorization:
                             "Bearer " +
                             github.token,
 
-                        "Accept":
-                            "application/vnd.github.v3+json",
-
-                        "X-GitHub-Api-Version":
-                            "2022-11-28",
+                        Accept:
+                            "application/vnd.github+json",
 
                         "Content-Type":
                             "application/json"
@@ -458,26 +372,44 @@ async function githubDateiSpeichern(
                     },
 
                     body:
-                        JSON.stringify(
-                            bodyDaten
-                        )
+                        JSON.stringify({
+
+                            message:
+                                "NotizZettel Synchronisation",
+
+                            content:
+                                textFuerGitHubKodieren(
+                                    text
+                                ),
+
+                            sha:
+                                sha
+
+                        })
 
                 }
             );
 
 
-        if (!antwort.ok) {
+        if (
+            !antwort.ok
+        ) {
 
             const fehler =
                 await antwort.text();
 
 
             alert(
+
                 "GitHub konnte Daten.json nicht speichern.\n\n" +
+
                 "HTTP: " +
                 antwort.status +
-                "\n\n" +
+
+                "\n" +
+
                 fehler
+
             );
 
 
@@ -492,8 +424,11 @@ async function githubDateiSpeichern(
     } catch (fehler) {
 
         alert(
+
             "Fehler beim Speichern auf GitHub:\n\n" +
+
             fehler.message
+
         );
 
 
@@ -504,47 +439,47 @@ async function githubDateiSpeichern(
 }
 
 
-// ============================================================
-// NOTIZ-SCHLÜSSEL
-// ============================================================
-
-function notizSchluessel(eintrag) {
-
-    if (
-        !eintrag ||
-        typeof eintrag.text !== "string"
-    ) {
-
-        return "";
-
-    }
-
-
-    return eintrag.text
-        .trim()
-        .toLowerCase();
-
-}
-
-
-// ============================================================
-// NOTIZEN VEREINHEITLICHEN
-// ============================================================
-
-function notizenVereinheitlichen(liste) {
+function notizenZusammenfuehren(
+    lokaleNotizen,
+    githubNotizen
+) {
 
     const ergebnis = [];
-    const vorhanden = new Set();
+
+    const positionen =
+        new Map();
 
 
-    if (!Array.isArray(liste)) {
+    const alleNotizen = [];
 
-        return ergebnis;
+
+    if (
+        Array.isArray(
+            lokaleNotizen
+        )
+    ) {
+
+        alleNotizen.push(
+            ...lokaleNotizen
+        );
 
     }
 
 
-    liste.forEach(
+    if (
+        Array.isArray(
+            githubNotizen
+        )
+    ) {
+
+        alleNotizen.push(
+            ...githubNotizen
+        );
+
+    }
+
+
+    alleNotizen.forEach(
         function (eintrag) {
 
             if (
@@ -561,7 +496,9 @@ function notizenVereinheitlichen(liste) {
                 eintrag.text.trim();
 
 
-            if (text === "") {
+            if (
+                text === ""
+            ) {
 
                 return;
 
@@ -573,35 +510,56 @@ function notizenVereinheitlichen(liste) {
 
 
             if (
-                vorhanden.has(
+                !positionen.has(
                     schluessel
                 )
             ) {
 
-                return;
+                const neuerEintrag = {
 
-            }
+                    text:
+                        text,
+
+                    erledigt:
+                        eintrag.erledigt === true
+
+                };
 
 
-            vorhanden.add(
-                schluessel
-            );
+                positionen.set(
+
+                    schluessel,
+
+                    ergebnis.length
+
+                );
 
 
-            ergebnis.push({
+                ergebnis.push(
+                    neuerEintrag
+                );
 
-                text:
-                    text,
 
-                haendler:
-                    typeof eintrag.haendler === "string"
-                        ? eintrag.haendler
-                        : "",
+            } else {
 
-                erledigt:
+                const position =
+                    positionen.get(
+                        schluessel
+                    );
+
+
+                if (
                     eintrag.erledigt === true
+                ) {
 
-            });
+                    ergebnis[
+                        position
+                    ].erledigt =
+                        true;
+
+                }
+
+            }
 
         }
     );
@@ -611,648 +569,17 @@ function notizenVereinheitlichen(liste) {
 
 }
 
-
-// ============================================================
-// LÖSCHLISTE VEREINHEITLICHEN
-// ============================================================
-
-function loeschungenVereinheitlichen(liste) {
-
-    const ergebnis = [];
-    const vorhanden = new Set();
-
-
-    if (!Array.isArray(liste)) {
-
-        return ergebnis;
-
-    }
-
-
-    liste.forEach(
-        function (eintrag) {
-
-            if (
-                typeof eintrag !== "string"
-            ) {
-
-                return;
-
-            }
-
-
-            const schluessel =
-                eintrag.trim().toLowerCase();
-
-
-            if (schluessel === "") {
-
-                return;
-
-            }
-
-
-            if (
-                vorhanden.has(
-                    schluessel
-                )
-            ) {
-
-                return;
-
-            }
-
-
-            vorhanden.add(
-                schluessel
-            );
-
-
-            ergebnis.push(
-                schluessel
-            );
-
-        }
-    );
-
-
-    return ergebnis;
-
-}
-
-
-// ============================================================
-// LOKALE LÖSCHLISTE LADEN
-// ============================================================
-
-function lokaleLoeschungenLaden() {
-
-    const daten =
-        localStorage.getItem(
-            SPEICHER_GELOESCHT
-        );
-
-
-    if (!daten) {
-
-        return [];
-
-    }
-
-
-    try {
-
-        return loeschungenVereinheitlichen(
-            JSON.parse(daten)
-        );
-
-    } catch (fehler) {
-
-        return [];
-
-    }
-
-}
-
-
-// ============================================================
-// LÖSCHLISTE LOKAL SPEICHERN
-// ============================================================
-
-function lokaleLoeschungenSpeichern(
-    liste
-) {
-
-    localStorage.setItem(
-
-        SPEICHER_GELOESCHT,
-
-        JSON.stringify(
-            loeschungenVereinheitlichen(
-                liste
-            )
-        )
-
-    );
-
-}
-
-
-// ============================================================
-// LETZTEN SYNCHRONISATIONSSTAND LADEN
-// ============================================================
-
-function syncStandLaden() {
-
-    const daten =
-        localStorage.getItem(
-            SPEICHER_SYNC_STAND
-        );
-
-
-    if (!daten) {
-
-        return null;
-
-    }
-
-
-    try {
-
-        const stand =
-            JSON.parse(daten);
-
-
-        if (
-            !stand ||
-            typeof stand !== "object"
-        ) {
-
-            return null;
-
-        }
-
-
-        return stand;
-
-
-    } catch (fehler) {
-
-        return null;
-
-    }
-
-}
-
-
-// ============================================================
-// LETZTEN SYNCHRONISATIONSSTAND SPEICHERN
-// ============================================================
-
-function syncStandSpeichern(
-    daten
-) {
-
-    localStorage.setItem(
-
-        SPEICHER_SYNC_STAND,
-
-        JSON.stringify({
-
-            notizen:
-                notizenVereinheitlichen(
-                    daten.notizen
-                ),
-
-            woerter:
-                Array.isArray(
-                    daten.woerter
-                )
-                    ? daten.woerter
-                    : [],
-
-            geloescht:
-                loeschungenVereinheitlichen(
-                    daten.geloescht
-                )
-
-        })
-
-    );
-
-}
-
-
-// ============================================================
-// NOTIZEN VERGLEICHEN
-// ============================================================
-
-function notizGleich(
-    a,
-    b
-) {
-
-    if (!a || !b) {
-
-        return false;
-
-    }
-
-
-    return (
-
-        notizSchluessel(a) ===
-        notizSchluessel(b)
-
-        &&
-
-        a.erledigt ===
-        b.erledigt
-
-        &&
-
-        (a.haendler || "") ===
-        (b.haendler || "")
-
-    );
-
-}
-
-
-// ============================================================
-// NOTIZEN SYNCHRONISIEREN
-// ============================================================
-
-function notizenSynchronisieren(
-
-    lokaleNotizen,
-    githubNotizen,
-    letzterStand,
-    lokaleGeloescht,
-    githubGeloescht
-
-) {
-
-    const lokal =
-        notizenVereinheitlichen(
-            lokaleNotizen
-        );
-
-
-    const vonGitHub =
-        notizenVereinheitlichen(
-            githubNotizen
-        );
-
-
-    const vorher =
-        letzterStand
-            ? notizenVereinheitlichen(
-                letzterStand.notizen
-            )
-            : [];
-
-
-    const geloescht =
-        new Set();
-
-
-    lokaleGeloescht =
-        loeschungenVereinheitlichen(
-            lokaleGeloescht
-        );
-
-
-    githubGeloescht =
-        loeschungenVereinheitlichen(
-            githubGeloescht
-        );
-
-
-    lokaleGeloescht.forEach(
-        function (schluessel) {
-
-            geloescht.add(
-                schluessel
-            );
-
-        }
-    );
-
-
-    githubGeloescht.forEach(
-        function (schluessel) {
-
-            geloescht.add(
-                schluessel
-            );
-
-        }
-    );
-
-
-    const lokalMap =
-        new Map();
-
-    const githubMap =
-        new Map();
-
-    const vorherMap =
-        new Map();
-
-
-    lokal.forEach(
-        function (eintrag) {
-
-            lokalMap.set(
-
-                notizSchluessel(
-                    eintrag
-                ),
-
-                eintrag
-
-            );
-
-        }
-    );
-
-
-    vonGitHub.forEach(
-        function (eintrag) {
-
-            githubMap.set(
-
-                notizSchluessel(
-                    eintrag
-                ),
-
-                eintrag
-
-            );
-
-        }
-    );
-
-
-    vorher.forEach(
-        function (eintrag) {
-
-            vorherMap.set(
-
-                notizSchluessel(
-                    eintrag
-                ),
-
-                eintrag
-
-            );
-
-        }
-    );
-
-
-    // --------------------------------------------------------
-    // ALLE SCHLÜSSEL
-    // --------------------------------------------------------
-
-    const alleSchluessel =
-        new Set([
-
-            ...lokalMap.keys(),
-
-            ...githubMap.keys(),
-
-            ...vorherMap.keys(),
-
-            ...geloescht
-
-        ]);
-
-
-    const ergebnis = [];
-
-
-    alleSchluessel.forEach(
-        function (schluessel) {
-
-            const lokalEintrag =
-                lokalMap.get(
-                    schluessel
-                );
-
-
-            const githubEintrag =
-                githubMap.get(
-                    schluessel
-                );
-
-
-            const vorherEintrag =
-                vorherMap.get(
-                    schluessel
-                );
-
-
-            // ------------------------------------------------
-            // GELÖSCHT
-            // ------------------------------------------------
-
-            if (
-                geloescht.has(
-                    schluessel
-                )
-            ) {
-
-                // Eine neu angelegte Notiz
-                // hebt die alte Löschung auf.
-
-                if (
-                    lokalEintrag &&
-                    (
-                        !vorherEintrag ||
-                        !notizGleich(
-                            lokalEintrag,
-                            vorherEintrag
-                        )
-                    )
-                ) {
-
-                    geloescht.delete(
-                        schluessel
-                    );
-
-
-                    ergebnis.push(
-                        lokalEintrag
-                    );
-
-
-                    return;
-
-                }
-
-
-                if (
-                    githubEintrag &&
-                    !vorherEintrag
-                ) {
-
-                    geloescht.delete(
-                        schluessel
-                    );
-
-
-                    ergebnis.push(
-                        githubEintrag
-                    );
-
-
-                    return;
-
-                }
-
-
-                return;
-
-            }
-
-
-            // ------------------------------------------------
-            // LOKAL UND GITHUB
-            // ------------------------------------------------
-
-            if (
-                lokalEintrag &&
-                githubEintrag
-            ) {
-
-                // Händler-Kürzel erhalten, wenn nur eine Seite
-                // das Kürzel besitzt.
-
-                if (
-                    lokalEintrag.haendler &&
-                    !githubEintrag.haendler
-                ) {
-
-                    githubEintrag.haendler =
-                        lokalEintrag.haendler;
-
-                }
-
-                if (
-                    githubEintrag.haendler &&
-                    !lokalEintrag.haendler
-                ) {
-
-                    lokalEintrag.haendler =
-                        githubEintrag.haendler;
-
-                }
-
-                if (
-                    vorherEintrag
-                ) {
-
-                    const lokalGeaendert =
-                        !notizGleich(
-                            lokalEintrag,
-                            vorherEintrag
-                        );
-
-
-                    const githubGeaendert =
-                        !notizGleich(
-                            githubEintrag,
-                            vorherEintrag
-                        );
-
-
-                    if (
-                        !lokalGeaendert &&
-                        githubGeaendert
-                    ) {
-
-                        ergebnis.push(
-                            githubEintrag
-                        );
-
-
-                        return;
-
-                    }
-
-                }
-
-
-                ergebnis.push(
-                    lokalEintrag
-                );
-
-
-                return;
-
-            }
-
-
-            // ------------------------------------------------
-            // NUR LOKAL
-            // ------------------------------------------------
-
-            if (
-                lokalEintrag
-            ) {
-
-                ergebnis.push(
-                    lokalEintrag
-                );
-
-
-                return;
-
-            }
-
-
-            // ------------------------------------------------
-            // NUR GITHUB
-            // ------------------------------------------------
-
-            if (
-                githubEintrag
-            ) {
-
-                if (
-                    vorherEintrag
-                ) {
-
-                    geloescht.add(
-                        schluessel
-                    );
-
-
-                    return;
-
-                }
-
-
-                ergebnis.push(
-                    githubEintrag
-                );
-
-            }
-
-        }
-    );
-
-
-    return {
-
-        notizen:
-            ergebnis,
-
-        geloescht:
-            Array.from(
-                geloescht
-            )
-
-    };
-
-}
-
-
-// ============================================================
-// WÖRTERBUCH ZUSAMMENFÜHREN
-// ============================================================
 
 function woerterZusammenfuehren(
-
     lokaleWoerter,
     githubWoerter
-
 ) {
 
     const ergebnis = [];
-    const vorhanden = new Set();
+
+    const vorhanden =
+        new Set();
+
 
     const alleWoerter = [];
 
@@ -1299,7 +626,9 @@ function woerterZusammenfuehren(
                 wort.trim();
 
 
-            if (wort === "") {
+            if (
+                wort === ""
+            ) {
 
                 return;
 
@@ -1348,16 +677,9 @@ function woerterZusammenfuehren(
 }
 
 
-// ============================================================
-// ALLE DATEN ZUSAMMENFÜHREN
-// ============================================================
-
 function zusammenfuehren(
-
     lokaleDaten,
-    githubDaten,
-    letzterStand
-
+    githubDaten
 ) {
 
     if (
@@ -1380,26 +702,17 @@ function zusammenfuehren(
     }
 
 
-    const ergebnis =
-        notizenSynchronisieren(
-
-            lokaleDaten.notizen,
-
-            githubDaten.notizen,
-
-            letzterStand,
-
-            lokaleDaten.geloescht,
-
-            githubDaten.geloescht
-
-        );
-
-
     return {
 
         notizen:
-            ergebnis.notizen,
+            notizenZusammenfuehren(
+
+                lokaleDaten.notizen,
+
+                githubDaten.notizen
+
+            ),
+
 
         woerter:
             woerterZusammenfuehren(
@@ -1408,46 +721,36 @@ function zusammenfuehren(
 
                 githubDaten.woerter
 
-            ),
-
-        geloescht:
-            ergebnis.geloescht
+            )
 
     };
 
 }
 
-
-// ============================================================
-// LOKALE DATEN ERSTELLEN
-// ============================================================
 
 function lokaleDatenErstellen() {
 
     return {
 
         notizen:
-            Array.isArray(notizen)
+            Array.isArray(
+                notizen
+            )
                 ? notizen
                 : [],
 
-        woerter:
-            typeof woerter !== "undefined" &&
-            Array.isArray(woerter)
-                ? woerter
-                : [],
 
-        geloescht:
-            lokaleLoeschungenLaden()
+        woerter:
+            Array.isArray(
+                woerter
+            )
+                ? woerter
+                : []
 
     };
 
 }
 
-
-// ============================================================
-// ZUSAMMENGEFÜHRTE DATEN LOKAL SPEICHERN
-// ============================================================
 
 function lokaleDatenUebernehmen(
     daten
@@ -1461,18 +764,12 @@ function lokaleDatenUebernehmen(
             : [];
 
 
-    if (
-        typeof woerter !== "undefined"
-    ) {
-
-        woerter =
-            Array.isArray(
-                daten.woerter
-            )
-                ? daten.woerter
-                : [];
-
-    }
+    woerter =
+        Array.isArray(
+            daten.woerter
+        )
+            ? daten.woerter
+            : [];
 
 
     localStorage.setItem(
@@ -1491,24 +788,13 @@ function lokaleDatenUebernehmen(
         "NotizZettel_Woerter",
 
         JSON.stringify(
-            daten.woerter
+            woerter
         )
-
-    );
-
-
-    lokaleLoeschungenSpeichern(
-
-        daten.geloescht
 
     );
 
 }
 
-
-// ============================================================
-// KOMPLETTE SYNCHRONISATION
-// ============================================================
 
 async function synchronisieren() {
 
@@ -1525,10 +811,6 @@ async function synchronisieren() {
     }
 
 
-    // --------------------------------------------------------
-    // GITHUB LESEN
-    // --------------------------------------------------------
-
     const githubErgebnis =
         await githubDateiLesen();
 
@@ -1542,41 +824,19 @@ async function synchronisieren() {
     }
 
 
-    // --------------------------------------------------------
-    // LETZTEN STAND LADEN
-    // --------------------------------------------------------
-
-    const letzterStand =
-        syncStandLaden();
-
-
-    // --------------------------------------------------------
-    // LOKALE DATEN
-    // --------------------------------------------------------
-
     const lokaleDaten =
         lokaleDatenErstellen();
 
-
-    // --------------------------------------------------------
-    // ZUSAMMENFÜHREN
-    // --------------------------------------------------------
 
     const gemeinsameDaten =
         zusammenfuehren(
 
             lokaleDaten,
 
-            githubErgebnis.daten,
-
-            letzterStand
+            githubErgebnis.daten
 
         );
 
-
-    // --------------------------------------------------------
-    // NACH GITHUB SCHREIBEN
-    // --------------------------------------------------------
 
     const gespeichert =
         await githubDateiSpeichern(
@@ -1597,27 +857,10 @@ async function synchronisieren() {
     }
 
 
-    // --------------------------------------------------------
-    // LOKAL ÜBERNEHMEN
-    // --------------------------------------------------------
-
     lokaleDatenUebernehmen(
         gemeinsameDaten
     );
 
-
-    // --------------------------------------------------------
-    // SYNCHRONISATIONSSTAND SPEICHERN
-    // --------------------------------------------------------
-
-    syncStandSpeichern(
-        gemeinsameDaten
-    );
-
-
-    // --------------------------------------------------------
-    // ANZEIGE AKTUALISIEREN
-    // --------------------------------------------------------
 
     if (
         typeof anzeigen === "function"
