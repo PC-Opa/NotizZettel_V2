@@ -1,9 +1,3 @@
-// ============================================================
-// NotizZettel V2
-// SYNCHRONISATION
-// Smartphone ↔ GitHub ↔ Laptop
-// ============================================================
-
 const GITHUB_BENUTZER =
     "PC-Opa";
 
@@ -19,11 +13,6 @@ const GITHUB_API =
 const SPEICHER_GITHUB =
     "NotizZettel_GitHub";
 
-
-// ============================================================
-// GITHUB-DATEN
-// ============================================================
-
 let github = {
 
     benutzer:
@@ -35,11 +24,6 @@ let github = {
     token:
         ""
 };
-
-
-// ============================================================
-// START
-// ============================================================
 
 function synchronisationStarten() {
 
@@ -60,13 +44,11 @@ function synchronisationStarten() {
             "GitToken"
         );
 
-
     if (benutzer) {
 
         benutzer.value =
             github.benutzer;
     }
-
 
     if (repository) {
 
@@ -74,31 +56,26 @@ function synchronisationStarten() {
             github.repository;
     }
 
-
     if (token) {
 
         token.value =
             github.token;
     }
 
-
     const btnGitHub =
         document.getElementById(
             "BtnGitHub"
         );
-
 
     const btnSync =
         document.getElementById(
             "BtnSync"
         );
 
-
     const btnGitSpeichern =
         document.getElementById(
             "BtnGitSpeichern"
         );
-
 
     if (btnGitHub) {
 
@@ -108,7 +85,6 @@ function synchronisationStarten() {
         );
     }
 
-
     if (btnSync) {
 
         btnSync.addEventListener(
@@ -116,7 +92,6 @@ function synchronisationStarten() {
             synchronisieren
         );
     }
-
 
     if (btnGitSpeichern) {
 
@@ -127,11 +102,6 @@ function synchronisationStarten() {
     }
 }
 
-
-// ============================================================
-// GITHUB-BEREICH ANZEIGEN / AUSBLENDEN
-// ============================================================
-
 function githubBereichAnzeigen() {
 
     const bereich =
@@ -139,12 +109,9 @@ function githubBereichAnzeigen() {
             "GitHubBereich"
         );
 
-
     if (!bereich) {
-
         return;
     }
-
 
     if (
         bereich.style.display ===
@@ -163,11 +130,6 @@ function githubBereichAnzeigen() {
     }
 }
 
-
-// ============================================================
-// GITHUB-DATEN SPEICHERN
-// ============================================================
-
 function githubDatenSpeichern() {
 
     const benutzer =
@@ -185,7 +147,6 @@ function githubDatenSpeichern() {
             "GitToken"
         );
 
-
     const neuerBenutzer =
         benutzer
             ? benutzer.value.trim()
@@ -201,7 +162,6 @@ function githubDatenSpeichern() {
             ? token.value.trim()
             : "";
 
-
     if (
         neuerBenutzer === "" ||
         neuesRepository === "" ||
@@ -215,7 +175,6 @@ function githubDatenSpeichern() {
         return;
     }
 
-
     github.benutzer =
         neuerBenutzer;
 
@@ -225,19 +184,12 @@ function githubDatenSpeichern() {
     github.token =
         neuesToken;
 
-
     githubDatenSpeichernLokal();
-
 
     alert(
         "GitHub-Zugangsdaten gespeichert."
     );
 }
-
-
-// ============================================================
-// GITHUB-DATEN LOKAL SPEICHERN
-// ============================================================
 
 function githubDatenSpeichernLokal() {
 
@@ -249,11 +201,6 @@ function githubDatenSpeichernLokal() {
     );
 }
 
-
-// ============================================================
-// GITHUB-DATEN LADEN
-// ============================================================
-
 function githubDatenLaden() {
 
     const gespeichert =
@@ -261,12 +208,9 @@ function githubDatenLaden() {
             SPEICHER_GITHUB
         );
 
-
     if (!gespeichert) {
-
         return;
     }
-
 
     try {
 
@@ -274,7 +218,6 @@ function githubDatenLaden() {
             JSON.parse(
                 gespeichert
             );
-
 
         if (
             daten &&
@@ -311,56 +254,33 @@ function githubDatenLaden() {
     }
 }
 
-
-// ============================================================
-// GITHUB VORHANDEN?
-// ============================================================
-
 function githubVorhanden() {
 
     return (
 
         github.benutzer !== "" &&
-
         github.repository !== "" &&
-
         github.token !== ""
     );
 }
-
-
-// ============================================================
-// GITHUB-ADRESSE
-// ============================================================
 
 function githubAdresse() {
 
     return (
 
         GITHUB_API +
-
         "/repos/" +
-
         encodeURIComponent(
             github.benutzer
         ) +
-
         "/" +
-
         encodeURIComponent(
             github.repository
         ) +
-
         "/contents/" +
-
         GITHUB_DATEI
     );
 }
-
-
-// ============================================================
-// GITHUB DATEI LESEN
-// ============================================================
 
 async function githubDateiLesen() {
 
@@ -372,7 +292,6 @@ async function githubDateiLesen() {
 
         return null;
     }
-
 
     try {
 
@@ -399,7 +318,6 @@ async function githubDateiLesen() {
                 }
             );
 
-
         if (
             antwort.status ===
             404
@@ -410,15 +328,14 @@ async function githubDateiLesen() {
                 sha:
                     null,
 
-                daten:
-                    {
-                        notizen: [],
-                        woerter: [],
-                        geloeschteNotizen: []
-                    }
+                daten: {
+
+                    notizen: [],
+                    woerter: [],
+                    geloeschteNotizen: []
+                }
             };
         }
-
 
         if (!antwort.ok) {
 
@@ -436,39 +353,15 @@ async function githubDateiLesen() {
             return null;
         }
 
-
         const githubDatei =
             await antwort.json();
-
-
-        if (
-            !githubDatei.content
-        ) {
-
-            return {
-
-                sha:
-                    githubDatei.sha ||
-                    null,
-
-                daten:
-                    {
-                        notizen: [],
-                        woerter: [],
-                        geloeschteNotizen: []
-                    }
-            };
-        }
-
 
         const text =
             githubTextDekodieren(
                 githubDatei.content
             );
 
-
         let daten;
-
 
         try {
 
@@ -486,7 +379,6 @@ async function githubDateiLesen() {
                 geloeschteNotizen: []
             };
         }
-
 
         return {
 
@@ -509,11 +401,6 @@ async function githubDateiLesen() {
     }
 }
 
-
-// ============================================================
-// GITHUB DATEI SPEICHERN
-// ============================================================
-
 async function githubDateiSpeichern(
     daten,
     sha
@@ -528,7 +415,6 @@ async function githubDateiSpeichern(
         return false;
     }
 
-
     try {
 
         const text =
@@ -537,7 +423,6 @@ async function githubDateiSpeichern(
                 null,
                 2
             );
-
 
         const body = {
 
@@ -550,13 +435,11 @@ async function githubDateiSpeichern(
                 )
         };
 
-
         if (sha) {
 
             body.sha =
                 sha;
         }
-
 
         const antwort =
             await fetch(
@@ -589,7 +472,6 @@ async function githubDateiSpeichern(
                 }
             );
 
-
         if (!antwort.ok) {
 
             const fehler =
@@ -606,7 +488,6 @@ async function githubDateiSpeichern(
             return false;
         }
 
-
         return true;
 
     } catch (fehler) {
@@ -620,11 +501,6 @@ async function githubDateiSpeichern(
     }
 }
 
-
-// ============================================================
-// GITHUB TEXT DEKODIEREN
-// ============================================================
-
 function githubTextDekodieren(
     inhalt
 ) {
@@ -635,18 +511,15 @@ function githubTextDekodieren(
             ""
         );
 
-
     const binaer =
         atob(
             basis
         );
 
-
     const bytes =
         new Uint8Array(
             binaer.length
         );
-
 
     for (
         let i = 0;
@@ -660,18 +533,12 @@ function githubTextDekodieren(
             );
     }
 
-
     return new TextDecoder(
         "utf-8"
     ).decode(
         bytes
     );
 }
-
-
-// ============================================================
-// GITHUB TEXT KODIEREN
-// ============================================================
 
 function githubTextKodieren(
     text
@@ -682,14 +549,11 @@ function githubTextKodieren(
             text
         );
 
-
     let binaer =
         "";
 
-
     const block =
         0x8000;
-
 
     for (
         let i = 0;
@@ -706,16 +570,10 @@ function githubTextKodieren(
             );
     }
 
-
     return btoa(
         binaer
     );
 }
-
-
-// ============================================================
-// LOKALE DATEN ERSTELLEN
-// ============================================================
 
 function lokaleDatenErstellen() {
 
@@ -728,7 +586,7 @@ function lokaleDatenErstellen() {
 
         woerter:
             typeof woerter !==
-            "undefined" &&
+                "undefined" &&
             Array.isArray(woerter)
                 ? woerter
                 : [],
@@ -742,26 +600,17 @@ function lokaleDatenErstellen() {
     };
 }
 
-
-// ============================================================
-// NOTIZEN ZUSAMMENFÜHREN
-// ============================================================
-
 function notizenZusammenfuehren(
     lokal,
     githubDaten
 ) {
 
-    const ergebnis =
-        [];
+    const ergebnis = [];
 
     const vorhanden =
         new Map();
 
-
-    const alle =
-        [];
-
+    const alle = [];
 
     if (
         Array.isArray(lokal)
@@ -772,7 +621,6 @@ function notizenZusammenfuehren(
         );
     }
 
-
     if (
         Array.isArray(githubDaten)
     ) {
@@ -782,7 +630,6 @@ function notizenZusammenfuehren(
         );
     }
 
-
     alle.forEach(
         function (eintrag) {
 
@@ -791,26 +638,18 @@ function notizenZusammenfuehren(
                 typeof eintrag.text !==
                     "string"
             ) {
-
                 return;
             }
-
 
             const text =
                 eintrag.text.trim();
 
-
-            if (
-                text === ""
-            ) {
-
+            if (text === "") {
                 return;
             }
 
-
             const schluessel =
                 text.toLowerCase();
-
 
             if (
                 !vorhanden.has(
@@ -832,12 +671,10 @@ function notizenZusammenfuehren(
                         true
                 };
 
-
                 vorhanden.set(
                     schluessel,
                     ergebnis.length
                 );
-
 
                 ergebnis.push(
                     neu
@@ -850,11 +687,6 @@ function notizenZusammenfuehren(
                         schluessel
                     );
 
-
-                // Sobald ein Gerät die Notiz
-                // als erledigt markiert hat,
-                // bleibt sie erledigt.
-
                 if (
                     eintrag.erledigt ===
                     true
@@ -865,10 +697,6 @@ function notizenZusammenfuehren(
                     ].erledigt =
                         true;
                 }
-
-
-                // Händlerangabe übernehmen,
-                // falls sie bisher fehlt.
 
                 if (
                     !ergebnis[
@@ -886,30 +714,20 @@ function notizenZusammenfuehren(
         }
     );
 
-
     return ergebnis;
 }
-
-
-// ============================================================
-// WÖRTERBUCH ZUSAMMENFÜHREN
-// ============================================================
 
 function woerterZusammenfuehren(
     lokal,
     githubDaten
 ) {
 
-    const ergebnis =
-        [];
+    const ergebnis = [];
 
     const vorhanden =
         new Set();
 
-
-    const alle =
-        [];
-
+    const alle = [];
 
     if (
         Array.isArray(lokal)
@@ -920,7 +738,6 @@ function woerterZusammenfuehren(
         );
     }
 
-
     if (
         Array.isArray(githubDaten)
     ) {
@@ -930,7 +747,6 @@ function woerterZusammenfuehren(
         );
     }
 
-
     alle.forEach(
         function (wort) {
 
@@ -938,26 +754,18 @@ function woerterZusammenfuehren(
                 typeof wort !==
                 "string"
             ) {
-
                 return;
             }
-
 
             const text =
                 wort.trim();
 
-
-            if (
-                text === ""
-            ) {
-
+            if (text === "") {
                 return;
             }
 
-
             const schluessel =
                 text.toLowerCase();
-
 
             if (
                 !vorhanden.has(
@@ -969,14 +777,12 @@ function woerterZusammenfuehren(
                     schluessel
                 );
 
-
                 ergebnis.push(
                     text
                 );
             }
         }
     );
-
 
     ergebnis.sort(
         function (a, b) {
@@ -988,31 +794,20 @@ function woerterZusammenfuehren(
         }
     );
 
-
     return ergebnis;
 }
-
-
-// ============================================================
-// GELÖSCHTE NOTIZEN ZUSAMMENFÜHREN
-// ============================================================
 
 function geloeschteNotizenZusammenfuehren(
     lokal,
     githubDaten
 ) {
 
-    const ergebnis =
-        [];
-
+    const ergebnis = [];
 
     const vorhanden =
         new Set();
 
-
-    const alle =
-        [];
-
+    const alle = [];
 
     if (
         Array.isArray(lokal)
@@ -1023,7 +818,6 @@ function geloeschteNotizenZusammenfuehren(
         );
     }
 
-
     if (
         Array.isArray(githubDaten)
     ) {
@@ -1033,7 +827,6 @@ function geloeschteNotizenZusammenfuehren(
         );
     }
 
-
     alle.forEach(
         function (eintrag) {
 
@@ -1041,24 +834,17 @@ function geloeschteNotizenZusammenfuehren(
                 typeof eintrag !==
                 "string"
             ) {
-
                 return;
             }
-
 
             const text =
                 eintrag
                     .trim()
                     .toLowerCase();
 
-
-            if (
-                text === ""
-            ) {
-
+            if (text === "") {
                 return;
             }
-
 
             if (
                 !vorhanden.has(
@@ -1077,14 +863,8 @@ function geloeschteNotizenZusammenfuehren(
         }
     );
 
-
     return ergebnis;
 }
-
-
-// ============================================================
-// GELÖSCHTE NOTIZEN BEREINIGEN
-// ============================================================
 
 function geloeschteNotizenBereinigen(
     daten
@@ -1099,16 +879,13 @@ function geloeschteNotizenBereinigen(
                 : []
         );
 
-
     if (
         !Array.isArray(
             daten.notizen
         )
     ) {
-
         return;
     }
-
 
     daten.notizen =
         daten.notizen.filter(
@@ -1119,10 +896,8 @@ function geloeschteNotizenBereinigen(
                     typeof eintrag.text !==
                         "string"
                 ) {
-
                     return false;
                 }
-
 
                 return !geloescht.has(
                     eintrag.text
@@ -1132,11 +907,6 @@ function geloeschteNotizenBereinigen(
             }
         );
 }
-
-
-// ============================================================
-// DATEN ZUSAMMENFÜHREN
-// ============================================================
 
 function zusammenfuehren(
     lokal,
@@ -1151,7 +921,6 @@ function zusammenfuehren(
             ? lokal.notizen
             : [];
 
-
     const remoteNotizen =
         remote &&
         Array.isArray(
@@ -1159,7 +928,6 @@ function zusammenfuehren(
         )
             ? remote.notizen
             : [];
-
 
     const lokaleWoerter =
         lokal &&
@@ -1169,7 +937,6 @@ function zusammenfuehren(
             ? lokal.woerter
             : [];
 
-
     const remoteWoerter =
         remote &&
         Array.isArray(
@@ -1177,7 +944,6 @@ function zusammenfuehren(
         )
             ? remote.woerter
             : [];
-
 
     const lokaleGeloeschte =
         lokal &&
@@ -1187,7 +953,6 @@ function zusammenfuehren(
             ? lokal.geloeschteNotizen
             : [];
 
-
     const remoteGeloeschte =
         remote &&
         Array.isArray(
@@ -1195,7 +960,6 @@ function zusammenfuehren(
         )
             ? remote.geloeschteNotizen
             : [];
-
 
     const ergebnis = {
 
@@ -1218,29 +982,20 @@ function zusammenfuehren(
             )
     };
 
-
     geloeschteNotizenBereinigen(
         ergebnis
     );
 
-
     return ergebnis;
 }
-
-
-// ============================================================
-// LOKALE DATEN ÜBERNEHMEN
-// ============================================================
 
 function lokaleDatenUebernehmen(
     daten
 ) {
 
     if (!daten) {
-
         return;
     }
-
 
     notizen =
         Array.isArray(
@@ -1248,7 +1003,6 @@ function lokaleDatenUebernehmen(
         )
             ? daten.notizen
             : [];
-
 
     if (
         typeof woerter !==
@@ -1261,29 +1015,6 @@ function lokaleDatenUebernehmen(
             )
                 ? daten.woerter
                 : [];
-    }
-
-
-    geloeschteNotizen =
-        Array.isArray(
-            daten.geloeschteNotizen
-        )
-            ? daten.geloeschteNotizen
-            : [];
-
-
-    localStorage.setItem(
-        "NotizZettel_V2",
-        JSON.stringify(
-            notizen
-        )
-    );
-
-
-    if (
-        typeof woerter !==
-        "undefined"
-    ) {
 
         localStorage.setItem(
             "NotizZettel_Woerter",
@@ -1293,6 +1024,19 @@ function lokaleDatenUebernehmen(
         );
     }
 
+    geloeschteNotizen =
+        Array.isArray(
+            daten.geloeschteNotizen
+        )
+            ? daten.geloeschteNotizen
+            : [];
+
+    localStorage.setItem(
+        "NotizZettel_V2",
+        JSON.stringify(
+            notizen
+        )
+    );
 
     localStorage.setItem(
         "NotizZettel_Geloescht",
@@ -1301,11 +1045,6 @@ function lokaleDatenUebernehmen(
         )
     );
 }
-
-
-// ============================================================
-// SYNCHRONISIEREN
-// ============================================================
 
 async function synchronisieren() {
 
@@ -1320,20 +1059,15 @@ async function synchronisieren() {
         return false;
     }
 
-
     const remote =
         await githubDateiLesen();
 
-
     if (!remote) {
-
         return false;
     }
 
-
     const lokal =
         lokaleDatenErstellen();
-
 
     const gemeinsameDaten =
         zusammenfuehren(
@@ -1341,24 +1075,19 @@ async function synchronisieren() {
             remote.daten
         );
 
-
     const gespeichert =
         await githubDateiSpeichern(
             gemeinsameDaten,
             remote.sha
         );
 
-
     if (!gespeichert) {
-
         return false;
     }
-
 
     lokaleDatenUebernehmen(
         gemeinsameDaten
     );
-
 
     if (
         typeof anzeigen ===
@@ -1368,7 +1097,6 @@ async function synchronisieren() {
         anzeigen();
     }
 
-
     if (
         typeof vorschlaegeLoeschen ===
         "function"
@@ -1377,19 +1105,12 @@ async function synchronisieren() {
         vorschlaegeLoeschen();
     }
 
-
     alert(
         "Synchronisation erfolgreich."
     );
 
-
     return true;
 }
-
-
-// ============================================================
-// START
-// ============================================================
 
 document.addEventListener(
     "DOMContentLoaded",
