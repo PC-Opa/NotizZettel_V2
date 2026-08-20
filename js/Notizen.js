@@ -1,7 +1,3 @@
-// ============================================================
-// NotizZettel V2 – NOTIZEN
-// ============================================================
-
 const SPEICHER_NOTIZEN = "NotizZettel_V2";
 const SPEICHER_GELOESCHT = "NotizZettel_Geloescht";
 
@@ -9,42 +5,65 @@ let notizen = [];
 let geloeschteNotizen = [];
 
 // ============================================================
-// START
+// APP STARTEN
 // ============================================================
 
 function starten() {
+
     laden();
     geloeschteNotizenLaden();
 
-    if (typeof woerterLaden === "function") {
+    if (
+        typeof woerterLaden === "function"
+    ) {
         woerterLaden();
     }
 
-    const feld = document.getElementById("NeueNotiz");
-    const haendler = document.getElementById("HaendlerAuswahl");
-    const btnHinzufuegen = document.getElementById("BtnHinzufuegen");
+    const feld =
+        document.getElementById(
+            "NeueNotiz"
+        );
+
+    const haendler =
+        document.getElementById(
+            "HaendlerAuswahl"
+        );
+
+    const btnHinzufuegen =
+        document.getElementById(
+            "BtnHinzufuegen"
+        );
+
     const btnMarkierteLoeschen =
-        document.getElementById("BtnMarkierteLoeschen");
-
-    if (btnHinzufuegen) {
-        btnHinzufuegen.addEventListener(
-            "click",
-            notizHinzufuegen
+        document.getElementById(
+            "BtnMarkierteLoeschen"
         );
+
+    if (
+        btnHinzufuegen
+    ) {
+        btnHinzufuegen.onclick =
+            notizHinzufuegen;
     }
 
-    if (btnMarkierteLoeschen) {
-        btnMarkierteLoeschen.addEventListener(
-            "click",
-            markierteLoeschen
-        );
+    if (
+        btnMarkierteLoeschen
+    ) {
+        btnMarkierteLoeschen.onclick =
+            markierteLoeschen;
     }
 
-    if (feld) {
+    if (
+        feld
+    ) {
+
         feld.addEventListener(
             "keydown",
             function (e) {
-                if (e.key === "Enter") {
+
+                if (
+                    e.key === "Enter"
+                ) {
                     notizHinzufuegen();
                 }
             }
@@ -52,13 +71,17 @@ function starten() {
 
         feld.addEventListener(
             "input",
-            zeigeVorschlaege
+            function () {
+                zeigeVorschlaege();
+            }
         );
     }
 
     anzeigen();
 
-    if (feld) {
+    if (
+        feld
+    ) {
         feld.focus();
     }
 }
@@ -68,23 +91,34 @@ function starten() {
 // ============================================================
 
 function notizHinzufuegen() {
+
     const feld =
-        document.getElementById("NeueNotiz");
+        document.getElementById(
+            "NeueNotiz"
+        );
 
     const bereich =
-        document.getElementById("VorschlagBereich");
+        document.getElementById(
+            "VorschlagBereich"
+        );
 
     const haendler =
-        document.getElementById("HaendlerAuswahl");
+        document.getElementById(
+            "HaendlerAuswahl"
+        );
 
-    if (!feld) {
+    if (
+        !feld
+    ) {
         return;
     }
 
     const text =
         feld.value.trim();
 
-    if (text === "") {
+    if (
+        text === ""
+    ) {
         feld.focus();
         return;
     }
@@ -99,19 +133,29 @@ function notizHinzufuegen() {
 
     geloeschteNotizen =
         geloeschteNotizen.filter(
-            eintrag =>
-                eintrag !== schluessel
+            function (eintrag) {
+
+                return (
+                    eintrag !==
+                    schluessel
+                );
+            }
         );
 
     notizen.push({
-        text: text,
-        haendler: kuerzel,
-        erledigt: false
+
+        text:
+            text,
+
+        haendler:
+            kuerzel,
+
+        erledigt:
+            false
     });
 
     if (
-        typeof wortMerken ===
-        "function"
+        typeof wortMerken === "function"
     ) {
         wortMerken(text);
     }
@@ -120,14 +164,21 @@ function notizHinzufuegen() {
     speichern();
     anzeigen();
 
-    if (bereich) {
-        bereich.innerHTML = "";
+    if (
+        bereich
+    ) {
+        bereich.innerHTML =
+            "";
     }
 
-    feld.value = "";
+    feld.value =
+        "";
 
-    if (haendler) {
-        haendler.value = "";
+    if (
+        haendler
+    ) {
+        haendler.value =
+            "";
     }
 
     feld.focus();
@@ -138,30 +189,47 @@ function notizHinzufuegen() {
 // ============================================================
 
 function zeigeVorschlaege() {
+
     const feld =
-        document.getElementById("NeueNotiz");
+        document.getElementById(
+            "NeueNotiz"
+        );
 
     const bereich =
-        document.getElementById("VorschlagBereich");
+        document.getElementById(
+            "VorschlagBereich"
+        );
 
-    if (!feld || !bereich) {
+    if (
+        !feld ||
+        !bereich
+    ) {
         return;
     }
 
-    bereich.innerHTML = "";
+    bereich.innerHTML =
+        "";
 
     const text =
         feld.value.trim();
 
     if (
-        text === "" ||
-        typeof sucheWoerter !== "function"
+        text === ""
+    ) {
+        return;
+    }
+
+    if (
+        typeof sucheWoerter !==
+        "function"
     ) {
         return;
     }
 
     const treffer =
-        sucheWoerter(text);
+        sucheWoerter(
+            text
+        );
 
     if (
         !Array.isArray(treffer) ||
@@ -171,9 +239,12 @@ function zeigeVorschlaege() {
     }
 
     treffer.forEach(
-        wort => {
+        function (wort) {
+
             const vorschlag =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
             vorschlag.textContent =
                 wort;
@@ -200,10 +271,33 @@ function zeigeVorschlaege() {
                 "pointer";
 
             vorschlag.addEventListener(
+                "mouseenter",
+                function () {
+
+                    vorschlag.style.background =
+                        "#dbeafe";
+                }
+            );
+
+            vorschlag.addEventListener(
+                "mouseleave",
+                function () {
+
+                    vorschlag.style.background =
+                        "#f3f3f3";
+                }
+            );
+
+            vorschlag.addEventListener(
                 "click",
                 function () {
-                    feld.value = wort;
-                    bereich.innerHTML = "";
+
+                    feld.value =
+                        wort;
+
+                    bereich.innerHTML =
+                        "";
+
                     feld.focus();
                 }
             );
@@ -220,18 +314,25 @@ function zeigeVorschlaege() {
 // ============================================================
 
 function anzeigen() {
+
     const liste =
         document.getElementById(
             "ListenBereich"
         );
 
-    if (!liste) {
+    if (
+        !liste
+    ) {
         return;
     }
 
-    liste.innerHTML = "";
+    liste.innerHTML =
+        "";
 
-    if (notizen.length === 0) {
+    if (
+        notizen.length === 0
+    ) {
+
         liste.innerHTML =
             "<p>Noch keine Notizen vorhanden.</p>";
 
@@ -239,9 +340,15 @@ function anzeigen() {
     }
 
     notizen.forEach(
-        (eintrag, index) => {
+        function (
+            eintrag,
+            index
+        ) {
+
             const zeile =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
             zeile.style.display =
                 "flex";
@@ -272,6 +379,7 @@ function anzeigen() {
             haken.addEventListener(
                 "change",
                 function () {
+
                     notizen[index].erledigt =
                         haken.checked;
 
@@ -294,7 +402,10 @@ function anzeigen() {
             text.textContent =
                 eintrag.text;
 
-            if (eintrag.haendler) {
+            if (
+                eintrag.haendler
+            ) {
+
                 const trennzeichen =
                     document.createElement(
                         "span"
@@ -329,7 +440,10 @@ function anzeigen() {
                 );
             }
 
-            if (eintrag.erledigt) {
+            if (
+                eintrag.erledigt
+            ) {
+
                 text.style.textDecoration =
                     "line-through";
 
@@ -366,7 +480,10 @@ function anzeigen() {
             loeschen.addEventListener(
                 "click",
                 function () {
-                    notizLoeschen(index);
+
+                    notizLoeschen(
+                        index
+                    );
                 }
             );
 
@@ -393,7 +510,10 @@ function anzeigen() {
 // EINZELNE NOTIZ LÖSCHEN
 // ============================================================
 
-function notizLoeschen(index) {
+function notizLoeschen(
+    index
+) {
+
     if (
         index < 0 ||
         index >= notizen.length
@@ -409,15 +529,20 @@ function notizLoeschen(index) {
             eintrag
         );
 
-    if (schluessel !== "") {
+    if (
+        schluessel !== ""
+    ) {
+
         geloeschteNotizen.push(
             schluessel
         );
 
         geloeschteNotizen =
-            [...new Set(
-                geloeschteNotizen
-            )];
+            [
+                ...new Set(
+                    geloeschteNotizen
+                )
+            ];
     }
 
     notizen.splice(
@@ -435,22 +560,33 @@ function notizLoeschen(index) {
 // ============================================================
 
 function markierteLoeschen() {
-    const neueNotizen = [];
+
+    const neueNotizen =
+        [];
 
     notizen.forEach(
-        eintrag => {
-            if (eintrag.erledigt) {
+        function (eintrag) {
+
+            if (
+                eintrag.erledigt
+            ) {
+
                 const schluessel =
                     notizSchluesselFuerLoeschung(
                         eintrag
                     );
 
-                if (schluessel !== "") {
+                if (
+                    schluessel !== ""
+                ) {
+
                     geloeschteNotizen.push(
                         schluessel
                     );
                 }
+
             } else {
+
                 neueNotizen.push(
                     eintrag
                 );
@@ -462,9 +598,11 @@ function markierteLoeschen() {
         neueNotizen;
 
     geloeschteNotizen =
-        [...new Set(
-            geloeschteNotizen
-        )];
+        [
+            ...new Set(
+                geloeschteNotizen
+            )
+        ];
 
     geloeschteNotizenSpeichern();
     speichern();
@@ -478,6 +616,7 @@ function markierteLoeschen() {
 function notizSchluesselFuerLoeschung(
     eintrag
 ) {
+
     if (
         !eintrag ||
         typeof eintrag.text !==
@@ -496,6 +635,7 @@ function notizSchluesselFuerLoeschung(
 // ============================================================
 
 function speichern() {
+
     localStorage.setItem(
         SPEICHER_NOTIZEN,
         JSON.stringify(
@@ -509,29 +649,50 @@ function speichern() {
 // ============================================================
 
 function laden() {
+
     const daten =
         localStorage.getItem(
             SPEICHER_NOTIZEN
         );
 
-    if (!daten) {
-        notizen = [];
+    if (
+        !daten
+    ) {
+
+        notizen =
+            [];
+
         return;
     }
 
     try {
+
         const geladen =
             JSON.parse(
                 daten
             );
 
-        notizen =
-            Array.isArray(geladen)
-                ? geladen
-                : [];
+        if (
+            Array.isArray(
+                geladen
+            )
+        ) {
 
-    } catch (fehler) {
-        notizen = [];
+            notizen =
+                geladen;
+
+        } else {
+
+            notizen =
+                [];
+        }
+
+    } catch (
+        fehler
+    ) {
+
+        notizen =
+            [];
     }
 }
 
@@ -540,29 +701,50 @@ function laden() {
 // ============================================================
 
 function geloeschteNotizenLaden() {
+
     const daten =
         localStorage.getItem(
             SPEICHER_GELOESCHT
         );
 
-    if (!daten) {
-        geloeschteNotizen = [];
+    if (
+        !daten
+    ) {
+
+        geloeschteNotizen =
+            [];
+
         return;
     }
 
     try {
+
         const geladen =
             JSON.parse(
                 daten
             );
 
-        geloeschteNotizen =
-            Array.isArray(geladen)
-                ? geladen
-                : [];
+        if (
+            Array.isArray(
+                geladen
+            )
+        ) {
 
-    } catch (fehler) {
-        geloeschteNotizen = [];
+            geloeschteNotizen =
+                geladen;
+
+        } else {
+
+            geloeschteNotizen =
+                [];
+        }
+
+    } catch (
+        fehler
+    ) {
+
+        geloeschteNotizen =
+            [];
     }
 }
 
@@ -571,26 +753,11 @@ function geloeschteNotizenLaden() {
 // ============================================================
 
 function geloeschteNotizenSpeichern() {
+
     localStorage.setItem(
         SPEICHER_GELOESCHT,
         JSON.stringify(
             geloeschteNotizen
         )
     );
-}
-
-// ============================================================
-// START AUSFÜHREN
-// ============================================================
-
-if (
-    document.readyState ===
-    "loading"
-) {
-    document.addEventListener(
-        "DOMContentLoaded",
-        starten
-    );
-} else {
-    starten();
 }
