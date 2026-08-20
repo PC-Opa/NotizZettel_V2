@@ -2,30 +2,37 @@
   "notizen": [
     {
       "text": "Reis",
+      "haendler": "",
       "erledigt": false
     },
     {
       "text": "Sahne",
+      "haendler": "",
       "erledigt": false
     },
     {
       "text": "Steak",
-      "erledigt": false
-    },
-    {
-      "text": "Schw.Rücken",
-      "erledigt": false
-    },
-    {
-      "text": "Lavazza",
-      "erledigt": false
-    },
-    {
-      "text": "Beckensteine",
+      "haendler": "",
       "erledigt": false
     },
     {
       "text": "Balsamico",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "Butter",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Käse",
+      "haendler": "E",
+      "erledigt": false
+    },
+    {
+      "text": "Kekse",
+      "haendler": "N",
       "erledigt": false
     }
   ],
@@ -84,14 +91,13 @@
     "Wein",
     "Zwiebeln"
   ],
-  "geloescht": [
+  "geloeschteNotizen": [
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
     "test laptop",
     "handy test",
     "neuertest",
-    "butter",
     "test test",
     "laptop-test-123",
     "gurken",
@@ -100,10 +106,8 @@
     "milch",
     "nutella",
     "limetten",
-    "käse",
     "buttermilch",
     "mehl",
-    "kekse",
     "pudding",
     "knabberkram",
     "brot",
@@ -129,6 +133,9 @@
     "petersilie",
     "apfel-breaburn",
     "birne",
-    "zwiebeln"
+    "zwiebeln",
+    "beckensteine",
+    "schw.rücken",
+    "lavazza"
   ]
 }
