@@ -4,13 +4,24 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>NotizZettel V2</title>
 
-<link rel="icon" type="image/png" href="EK.Bild.png">
+<link
+    rel="icon"
+    type="image/png"
+    href="EK.Bild.png"
+>
 
-<link rel="stylesheet" href="https://raw.githubusercontent.com/PC-Opa/NotizZettel_V2/refs/heads/main/css/NotizZettel.css">
+<link
+    rel="stylesheet"
+    href="https://raw.githubusercontent.com/PC-Opa/NotizZettel_V2/refs/heads/main/css/NotizZettel.css"
+>
 
 </head>
 
@@ -26,7 +37,9 @@
 
     </header>
 
+
     <main id="Arbeitsbereich">
+
 
         <section id="EingabeBereich">
 
@@ -38,44 +51,70 @@
                 autocomplete="off"
                 autocorrect="off"
                 autocapitalize="sentences"
-                spellcheck="false">
+                spellcheck="false"
+            >
 
             <select id="HaendlerAuswahl">
 
-                <option value="">Händler</option>
+                <option value="">
+                    Händler
+                </option>
+
                 <option value="A">A</option>
                 <option value="N">N</option>
                 <option value="E">E</option>
                 <option value="L">L</option>
                 <option value="R">R</option>
+
             </select>
 
-            <button id="BtnHinzufuegen">
+
+            <button
+                id="BtnHinzufuegen"
+                type="button"
+            >
                 Hinzufügen
             </button>
 
         </section>
 
+
         <section id="VorschlagBereich">
         </section>
 
+
         <section id="WerkzeugBereich">
 
-            <button id="BtnMarkierteLoeschen">
+            <button
+                id="BtnMarkierteLoeschen"
+                type="button"
+            >
                 🗑️ Markierte löschen
             </button>
 
-            <button id="BtnGitHub">
+
+            <button
+                id="BtnGitHub"
+                type="button"
+            >
                 ☁️ GitHub
             </button>
 
-            <button id="BtnSync">
+
+            <button
+                id="BtnSync"
+                type="button"
+            >
                 🔄 Sync
             </button>
 
         </section>
 
-        <section id="GitHubBereich" style="display:none;">
+
+        <section
+            id="GitHubBereich"
+            style="display:none;"
+        >
 
             <input
                 type="text"
@@ -85,7 +124,9 @@
                 autocomplete="off"
                 autocorrect="off"
                 autocapitalize="none"
-                spellcheck="false">
+                spellcheck="false"
+            >
+
 
             <input
                 type="text"
@@ -95,35 +136,56 @@
                 autocomplete="off"
                 autocorrect="off"
                 autocapitalize="none"
-                spellcheck="false">
+                spellcheck="false"
+            >
+
 
             <input
                 type="password"
                 id="GitToken"
                 name="github-token"
                 placeholder="GitHub-Token"
-                autocomplete="new-password">
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="none"
+                spellcheck="false"
+            >
 
-            <button id="BtnGitSpeichern">
-                Zugangsdaten speichern
+
+            <button
+                id="BtnGitSpeichern"
+                type="button"
+            >
+                GitHub-Zugangsdaten speichern
             </button>
 
         </section>
 
+
         <section id="ListenBereich">
         </section>
 
-        <section id="StatusBereich">
-        </section>
 
     </main>
 
 </div>
 
-<script src="js/Woerterbuch.js"></script>
-<script src="js/Notizen.js"></script>
-<script src="js/Synchronisation.js"></script>
-<script src="js/App.js"></script>
+
+<script
+    src="js/Notizen.js"
+    defer
+></script>
+
+<script
+    src="js/Woerterbuch.js"
+    defer
+></script>
+
+<script
+    src="js/Synchronisation.js"
+    defer
+></script>
+
 
 </body>
 
