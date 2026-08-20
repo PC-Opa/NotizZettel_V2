@@ -25,6 +25,7 @@
 
 </head>
 
+
 <body>
 
 <div id="App">
@@ -40,12 +41,17 @@
 
     <main id="Arbeitsbereich">
 
+
+        <!-- ==================================================
+             NEUE NOTIZ
+             ================================================== -->
+
         <section id="EingabeBereich">
 
             <input
                 type="text"
                 id="NeueNotiz"
-                name="notiz"
+                name="NeueNotiz"
                 placeholder="Neue Notiz eingeben..."
                 autocomplete="off"
                 autocorrect="off"
@@ -53,7 +59,11 @@
                 spellcheck="false"
             >
 
-            <select id="HaendlerAuswahl">
+            <select
+                id="HaendlerAuswahl"
+                name="HaendlerAuswahl"
+                autocomplete="off"
+            >
 
                 <option value="">
                     Händler
@@ -78,9 +88,17 @@
         </section>
 
 
+        <!-- ==================================================
+             VORSCHLÄGE
+             ================================================== -->
+
         <section id="VorschlagBereich">
         </section>
 
+
+        <!-- ==================================================
+             WERKZEUGE
+             ================================================== -->
 
         <section id="WerkzeugBereich">
 
@@ -95,6 +113,7 @@
             <button
                 id="BtnGitHub"
                 type="button"
+                autocomplete="off"
             >
                 ☁️ GitHub
             </button>
@@ -110,56 +129,21 @@
         </section>
 
 
+        <!-- ==================================================
+             GITHUB
+             Die Eingabefelder werden erst beim Öffnen erzeugt.
+             ================================================== -->
+
         <section
             id="GitHubBereich"
             style="display:none;"
         >
-
-            <input
-                type="text"
-                id="GitBenutzer"
-                name="github-benutzer"
-                placeholder="GitHub-Benutzer"
-                autocomplete="off"
-                autocorrect="off"
-                autocapitalize="none"
-                spellcheck="false"
-            >
-
-
-            <input
-                type="text"
-                id="GitRepository"
-                name="github-repository"
-                placeholder="Repository"
-                autocomplete="off"
-                autocorrect="off"
-                autocapitalize="none"
-                spellcheck="false"
-            >
-
-
-            <input
-                type="password"
-                id="GitToken"
-                name="github-token"
-                placeholder="GitHub-Token"
-                autocomplete="off"
-                autocorrect="off"
-                autocapitalize="none"
-                spellcheck="false"
-            >
-
-
-            <button
-                id="BtnGitSpeichern"
-                type="button"
-            >
-                GitHub-Zugangsdaten speichern
-            </button>
-
         </section>
 
+
+        <!-- ==================================================
+             NOTIZLISTE
+             ================================================== -->
 
         <section id="ListenBereich">
         </section>
@@ -170,20 +154,226 @@
 </div>
 
 
+<!-- ========================================================
+     JAVASCRIPT
+     ======================================================== -->
+
 <script
     src="js/Notizen.js"
     defer
 ></script>
+
 
 <script
     src="js/Woerterbuch.js"
     defer
 ></script>
 
+
 <script
     src="js/Synchronisation.js"
     defer
 ></script>
+
+
+<!-- ========================================================
+     GITHUB-EINGABEFELDER ERST BEIM ÖFFNEN ERZEUGEN
+     ======================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const btnGitHub =
+            document.getElementById(
+                "BtnGitHub"
+            );
+
+        const bereich =
+            document.getElementById(
+                "GitHubBereich"
+            );
+
+
+        if (
+            !btnGitHub ||
+            !bereich
+        ) {
+
+            return;
+        }
+
+
+        btnGitHub.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    document.getElementById(
+                        "GitBenutzer"
+                    )
+                ) {
+
+                    return;
+                }
+
+
+                bereich.innerHTML = `
+
+                    <div>
+
+                        <input
+                            type="text"
+                            id="GitBenutzer"
+                            name="github-user"
+                            placeholder="GitHub-Benutzer"
+                            autocomplete="username"
+                            autocorrect="off"
+                            autocapitalize="none"
+                            spellcheck="false"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <input
+                            type="text"
+                            id="GitRepository"
+                            name="github-repository"
+                            placeholder="Repository"
+                            autocomplete="off"
+                            autocorrect="off"
+                            autocapitalize="none"
+                            spellcheck="false"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <input
+                            type="password"
+                            id="GitToken"
+                            name="github-token"
+                            placeholder="GitHub-Token"
+                            autocomplete="new-password"
+                            autocorrect="off"
+                            autocapitalize="none"
+                            spellcheck="false"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <button
+                            id="BtnGitSpeichern"
+                            type="button"
+                        >
+                            GitHub-Zugangsdaten speichern
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                bereich.style.display =
+                    "block";
+
+
+                if (
+                    typeof githubDatenLaden ===
+                    "function"
+                ) {
+
+                    githubDatenLaden();
+
+
+                    const benutzer =
+                        document.getElementById(
+                            "GitBenutzer"
+                        );
+
+                    const repository =
+                        document.getElementById(
+                            "GitRepository"
+                        );
+
+                    const token =
+                        document.getElementById(
+                            "GitToken"
+                        );
+
+
+                    if (
+                        benutzer &&
+                        typeof github !==
+                            "undefined"
+                    ) {
+
+                        benutzer.value =
+                            github.benutzer;
+                    }
+
+
+                    if (
+                        repository &&
+                        typeof github !==
+                            "undefined"
+                    ) {
+
+                        repository.value =
+                            github.repository;
+                    }
+
+
+                    if (
+                        token &&
+                        typeof github !==
+                            "undefined"
+                    ) {
+
+                        token.value =
+                            github.token;
+                    }
+                }
+
+
+                const btnSpeichern =
+                    document.getElementById(
+                        "BtnGitSpeichern"
+                    );
+
+
+                if (
+                    btnSpeichern &&
+                    typeof githubDatenSpeichern ===
+                        "function"
+                ) {
+
+                    btnSpeichern.addEventListener(
+                        "click",
+                        githubDatenSpeichern
+                    );
+                }
+
+            },
+            {
+                once: true
+            }
+        );
+
+    }
+);
+
+</script>
 
 
 </body>
