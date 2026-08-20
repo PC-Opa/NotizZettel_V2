@@ -1,8 +1,3 @@
-// ============================================================
-// NotizZettel V2
-// NOTIZEN
-// ============================================================
-
 const SPEICHER_NOTIZEN =
     "NotizZettel_V2";
 
@@ -13,11 +8,6 @@ let notizen = [];
 
 let geloeschteNotizen = [];
 
-
-// ============================================================
-// NOTIZEN LADEN
-// ============================================================
-
 function laden() {
 
     const gespeichert =
@@ -26,9 +16,7 @@ function laden() {
         );
 
     if (!gespeichert) {
-
         notizen = [];
-
         return;
     }
 
@@ -39,27 +27,16 @@ function laden() {
                 gespeichert
             );
 
-        if (
+        notizen =
             Array.isArray(daten)
-        ) {
-
-            notizen = daten;
-
-        } else {
-
-            notizen = [];
-        }
+                ? daten
+                : [];
 
     } catch (fehler) {
 
         notizen = [];
     }
 }
-
-
-// ============================================================
-// GELÖSCHTE NOTIZEN LADEN
-// ============================================================
 
 function geloeschteNotizenLaden() {
 
@@ -82,28 +59,16 @@ function geloeschteNotizenLaden() {
                 gespeichert
             );
 
-        if (
+        geloeschteNotizen =
             Array.isArray(daten)
-        ) {
-
-            geloeschteNotizen =
-                daten;
-
-        } else {
-
-            geloeschteNotizen = [];
-        }
+                ? daten
+                : [];
 
     } catch (fehler) {
 
         geloeschteNotizen = [];
     }
 }
-
-
-// ============================================================
-// NOTIZEN SPEICHERN
-// ============================================================
 
 function speichern() {
 
@@ -115,11 +80,6 @@ function speichern() {
     );
 }
 
-
-// ============================================================
-// GELÖSCHTE NOTIZEN SPEICHERN
-// ============================================================
-
 function geloeschteNotizenSpeichern() {
 
     localStorage.setItem(
@@ -130,11 +90,6 @@ function geloeschteNotizenSpeichern() {
     );
 }
 
-
-// ============================================================
-// SCHLÜSSEL FÜR EINE GELÖSCHTE NOTIZ
-// ============================================================
-
 function notizSchluessel(
     eintrag
 ) {
@@ -144,7 +99,6 @@ function notizSchluessel(
         typeof eintrag.text !==
             "string"
     ) {
-
         return "";
     }
 
@@ -152,11 +106,6 @@ function notizSchluessel(
         .trim()
         .toLowerCase();
 }
-
-
-// ============================================================
-// NOTIZ HINZUFÜGEN
-// ============================================================
 
 function notizHinzufuegen() {
 
@@ -166,22 +115,18 @@ function notizHinzufuegen() {
         );
 
     if (!feld) {
-
         return;
     }
 
     const text =
         feld.value.trim();
 
-    if (
-        text === ""
-    ) {
+    if (text === "") {
 
         feld.focus();
 
         return;
     }
-
 
     const haendlerFeld =
         document.getElementById(
@@ -193,13 +138,8 @@ function notizHinzufuegen() {
             ? haendlerFeld.value
             : "";
 
-
     const schluessel =
         text.toLowerCase();
-
-
-    // Eine zuvor gelöschte Notiz
-    // darf wieder neu angelegt werden.
 
     geloeschteNotizen =
         geloeschteNotizen.filter(
@@ -211,7 +151,6 @@ function notizHinzufuegen() {
                 );
             }
         );
-
 
     notizen.push({
 
@@ -225,10 +164,6 @@ function notizHinzufuegen() {
             false
     });
 
-
-    // Neues Wort an das Wörterbuch übergeben,
-    // wenn diese Funktion vorhanden ist.
-
     if (
         typeof wortMerken ===
         "function"
@@ -239,36 +174,25 @@ function notizHinzufuegen() {
         );
     }
 
-
     speichern();
 
     geloeschteNotizenSpeichern();
 
     anzeigen();
 
-
     feld.value =
         "";
 
-
-    if (
-        haendlerFeld
-    ) {
+    if (haendlerFeld) {
 
         haendlerFeld.value =
             "";
     }
 
-
     vorschlaegeLoeschen();
 
     feld.focus();
 }
-
-
-// ============================================================
-// VORSCHLÄGE ANZEIGEN
-// ============================================================
 
 function vorschlaegeAnzeigen() {
 
@@ -286,33 +210,22 @@ function vorschlaegeAnzeigen() {
         !feld ||
         !bereich
     ) {
-
         return;
     }
-
 
     const eingabe =
         feld.value
             .trim()
             .toLowerCase();
 
-
     bereich.innerHTML =
         "";
 
-
-    if (
-        eingabe === ""
-    ) {
-
+    if (eingabe === "") {
         return;
     }
 
-
     let treffer = [];
-
-
-    // Vorhandenes Wörterbuch verwenden.
 
     if (
         typeof sucheWoerter ===
@@ -333,16 +246,12 @@ function vorschlaegeAnzeigen() {
         }
     }
 
-
     if (
         treffer.length === 0
     ) {
 
-        vorschlaegeLoeschen();
-
         return;
     }
-
 
     treffer.forEach(
         function (wort) {
@@ -351,24 +260,19 @@ function vorschlaegeAnzeigen() {
                 typeof wort !==
                 "string"
             ) {
-
                 return;
             }
-
 
             const vorschlag =
                 document.createElement(
                     "div"
                 );
 
-
             vorschlag.textContent =
                 wort;
 
-
             vorschlag.className =
                 "notiz-vorschlag";
-
 
             vorschlag.addEventListener(
                 "click",
@@ -383,18 +287,12 @@ function vorschlaegeAnzeigen() {
                 }
             );
 
-
             bereich.appendChild(
                 vorschlag
             );
         }
     );
 }
-
-
-// ============================================================
-// VORSCHLÄGE LÖSCHEN
-// ============================================================
 
 function vorschlaegeLoeschen() {
 
@@ -403,19 +301,12 @@ function vorschlaegeLoeschen() {
             "VorschlagBereich"
         );
 
-    if (
-        bereich
-    ) {
+    if (bereich) {
 
         bereich.innerHTML =
             "";
     }
 }
-
-
-// ============================================================
-// NOTIZEN ANZEIGEN
-// ============================================================
 
 function anzeigen() {
 
@@ -425,14 +316,11 @@ function anzeigen() {
         );
 
     if (!liste) {
-
         return;
     }
 
-
     liste.innerHTML =
         "";
-
 
     if (
         notizen.length === 0
@@ -443,7 +331,6 @@ function anzeigen() {
 
         return;
     }
-
 
     notizen.forEach(
         function (
@@ -456,25 +343,20 @@ function anzeigen() {
                     "div"
                 );
 
-
             zeile.className =
                 "notiz-zeile";
-
 
             const haken =
                 document.createElement(
                     "input"
                 );
 
-
             haken.type =
                 "checkbox";
-
 
             haken.checked =
                 eintrag.erledigt ===
                 true;
-
 
             haken.addEventListener(
                 "change",
@@ -489,20 +371,16 @@ function anzeigen() {
                 }
             );
 
-
             const text =
                 document.createElement(
                     "span"
                 );
 
-
             text.className =
                 "notiz-text";
 
-
             text.textContent =
                 eintrag.text;
-
 
             if (
                 eintrag.haendler
@@ -516,20 +394,16 @@ function anzeigen() {
                 trennzeichen.textContent =
                     " ··· ";
 
-
                 const kuerzel =
                     document.createElement(
                         "span"
                     );
 
-
                 kuerzel.textContent =
                     eintrag.haendler;
 
-
                 kuerzel.className =
                     "notiz-haendler";
-
 
                 text.appendChild(
                     trennzeichen
@@ -540,7 +414,6 @@ function anzeigen() {
                 );
             }
 
-
             if (
                 eintrag.erledigt
             ) {
@@ -550,24 +423,19 @@ function anzeigen() {
                 );
             }
 
-
             const loeschen =
                 document.createElement(
                     "button"
                 );
 
-
             loeschen.type =
                 "button";
-
 
             loeschen.textContent =
                 "Löschen";
 
-
             loeschen.className =
                 "notiz-loeschen";
-
 
             loeschen.addEventListener(
                 "click",
@@ -579,21 +447,17 @@ function anzeigen() {
                 }
             );
 
-
             zeile.appendChild(
                 haken
             );
-
 
             zeile.appendChild(
                 text
             );
 
-
             zeile.appendChild(
                 loeschen
             );
-
 
             liste.appendChild(
                 zeile
@@ -601,11 +465,6 @@ function anzeigen() {
         }
     );
 }
-
-
-// ============================================================
-// EINZELNE NOTIZ LÖSCHEN
-// ============================================================
 
 function notizLoeschen(
     index
@@ -615,20 +474,16 @@ function notizLoeschen(
         index < 0 ||
         index >= notizen.length
     ) {
-
         return;
     }
 
-
     const eintrag =
         notizen[index];
-
 
     const schluessel =
         notizSchluessel(
             eintrag
         );
-
 
     if (
         schluessel !== ""
@@ -638,7 +493,6 @@ function notizLoeschen(
             schluessel
         );
 
-
         geloeschteNotizen =
             [
                 ...new Set(
@@ -647,12 +501,10 @@ function notizLoeschen(
             ];
     }
 
-
     notizen.splice(
         index,
         1
     );
-
 
     speichern();
 
@@ -661,16 +513,10 @@ function notizLoeschen(
     anzeigen();
 }
 
-
-// ============================================================
-// MARKIERTE NOTIZEN LÖSCHEN
-// ============================================================
-
 function markierteLoeschen() {
 
     const behalten =
         [];
-
 
     notizen.forEach(
         function (eintrag) {
@@ -684,7 +530,6 @@ function markierteLoeschen() {
                     notizSchluessel(
                         eintrag
                     );
-
 
                 if (
                     schluessel !== ""
@@ -704,10 +549,8 @@ function markierteLoeschen() {
         }
     );
 
-
     notizen =
         behalten;
-
 
     geloeschteNotizen =
         [
@@ -716,18 +559,12 @@ function markierteLoeschen() {
             )
         ];
 
-
     speichern();
 
     geloeschteNotizenSpeichern();
 
     anzeigen();
 }
-
-
-// ============================================================
-// START DER NOTIZFUNKTION
-// ============================================================
 
 function notizenStarten() {
 
@@ -738,11 +575,6 @@ function notizenStarten() {
     anzeigen();
 }
 
-
-// ============================================================
-// TASTATUR UND SCHALTFLÄCHEN
-// ============================================================
-
 document.addEventListener(
     "DOMContentLoaded",
     function () {
@@ -752,18 +584,15 @@ document.addEventListener(
                 "NeueNotiz"
             );
 
-
         const btnHinzufuegen =
             document.getElementById(
                 "BtnHinzufuegen"
             );
 
-
         const btnMarkierteLoeschen =
             document.getElementById(
                 "BtnMarkierteLoeschen"
             );
-
 
         if (
             btnHinzufuegen
@@ -775,7 +604,6 @@ document.addEventListener(
             );
         }
 
-
         if (
             btnMarkierteLoeschen
         ) {
@@ -786,16 +614,12 @@ document.addEventListener(
             );
         }
 
-
-        if (
-            feld
-        ) {
+        if (feld) {
 
             feld.addEventListener(
                 "input",
                 vorschlaegeAnzeigen
             );
-
 
             feld.addEventListener(
                 "keydown",
@@ -811,7 +635,6 @@ document.addEventListener(
                         notizHinzufuegen();
                     }
 
-
                     if (
                         ereignis.key ===
                         "Escape"
@@ -822,7 +645,6 @@ document.addEventListener(
                 }
             );
         }
-
 
         notizenStarten();
     }
