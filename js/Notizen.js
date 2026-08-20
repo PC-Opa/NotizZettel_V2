@@ -1,5 +1,13 @@
-const SPEICHER_NOTIZEN = "NotizZettel_V2";
-const SPEICHER_GELOESCHT = "NotizZettel_Geloescht";
+// ============================================================
+// NotizZettel V2
+// NOTIZEN
+// ============================================================
+
+const SPEICHER_NOTIZEN =
+    "NotizZettel_V2";
+
+const SPEICHER_GELOESCHT =
+    "NotizZettel_Geloescht";
 
 let notizen = [];
 
@@ -7,65 +15,142 @@ let geloeschteNotizen = [];
 
 
 // ============================================================
-// START
+// NOTIZEN LADEN
 // ============================================================
 
-function starten() {
+function laden() {
 
-    laden();
-
-    geloeschteNotizenLaden();
-
-    woerterLaden();
-
-    const feld =
-        document.getElementById("NeueNotiz");
-
-
-    document
-        .getElementById("BtnHinzufuegen")
-        .addEventListener(
-            "click",
-            notizHinzufuegen
+    const gespeichert =
+        localStorage.getItem(
+            SPEICHER_NOTIZEN
         );
 
+    if (!gespeichert) {
 
-    document
-        .getElementById("BtnMarkierteLoeschen")
-        .addEventListener(
-            "click",
-            markierteLoeschen
+        notizen = [];
+
+        return;
+    }
+
+    try {
+
+        const daten =
+            JSON.parse(
+                gespeichert
+            );
+
+        if (
+            Array.isArray(daten)
+        ) {
+
+            notizen = daten;
+
+        } else {
+
+            notizen = [];
+        }
+
+    } catch (fehler) {
+
+        notizen = [];
+    }
+}
+
+
+// ============================================================
+// GELÖSCHTE NOTIZEN LADEN
+// ============================================================
+
+function geloeschteNotizenLaden() {
+
+    const gespeichert =
+        localStorage.getItem(
+            SPEICHER_GELOESCHT
         );
 
+    if (!gespeichert) {
 
-    feld.addEventListener(
-        "keydown",
-        function (e) {
+        geloeschteNotizen = [];
 
-            if (e.key === "Enter") {
+        return;
+    }
 
-                notizHinzufuegen();
+    try {
 
-            }
+        const daten =
+            JSON.parse(
+                gespeichert
+            );
 
+        if (
+            Array.isArray(daten)
+        ) {
+
+            geloeschteNotizen =
+                daten;
+
+        } else {
+
+            geloeschteNotizen = [];
         }
+
+    } catch (fehler) {
+
+        geloeschteNotizen = [];
+    }
+}
+
+
+// ============================================================
+// NOTIZEN SPEICHERN
+// ============================================================
+
+function speichern() {
+
+    localStorage.setItem(
+        SPEICHER_NOTIZEN,
+        JSON.stringify(
+            notizen
+        )
     );
+}
 
 
-    feld.addEventListener(
-        "input",
-        function () {
+// ============================================================
+// GELÖSCHTE NOTIZEN SPEICHERN
+// ============================================================
 
-            zeigeVorschlaege();
+function geloeschteNotizenSpeichern() {
 
-        }
+    localStorage.setItem(
+        SPEICHER_GELOESCHT,
+        JSON.stringify(
+            geloeschteNotizen
+        )
     );
+}
 
 
-    anzeigen();
+// ============================================================
+// SCHLÜSSEL FÜR EINE GELÖSCHTE NOTIZ
+// ============================================================
 
-    feld.focus();
+function notizSchluessel(
+    eintrag
+) {
 
+    if (
+        !eintrag ||
+        typeof eintrag.text !==
+            "string"
+    ) {
+
+        return "";
+    }
+
+    return eintrag.text
+        .trim()
+        .toLowerCase();
 }
 
 
@@ -76,161 +161,213 @@ function starten() {
 function notizHinzufuegen() {
 
     const feld =
-        document.getElementById("NeueNotiz");
+        document.getElementById(
+            "NeueNotiz"
+        );
 
-    const bereich =
-        document.getElementById("VorschlagBereich");
+    if (!feld) {
 
+        return;
+    }
 
     const text =
         feld.value.trim();
 
-
-    if (text === "") {
+    if (
+        text === ""
+    ) {
 
         feld.focus();
 
         return;
-
     }
+
+
+    const haendlerFeld =
+        document.getElementById(
+            "HaendlerAuswahl"
+        );
+
+    const haendler =
+        haendlerFeld
+            ? haendlerFeld.value
+            : "";
 
 
     const schluessel =
         text.toLowerCase();
 
 
-    // Alte Löschmarkierung entfernen,
-    // wenn die Notiz neu angelegt wird.
+    // Eine zuvor gelöschte Notiz
+    // darf wieder neu angelegt werden.
 
     geloeschteNotizen =
         geloeschteNotizen.filter(
             function (eintrag) {
 
-                return eintrag !== schluessel;
-
+                return (
+                    eintrag !==
+                    schluessel
+                );
             }
         );
 
 
-    geloeschteNotizenSpeichern();
-
-
     notizen.push({
 
-        text: text,
+        text:
+            text,
 
-        erledigt: false
+        haendler:
+            haendler,
 
+        erledigt:
+            false
     });
 
 
-    wortMerken(text);
+    // Neues Wort an das Wörterbuch übergeben,
+    // wenn diese Funktion vorhanden ist.
+
+    if (
+        typeof wortMerken ===
+        "function"
+    ) {
+
+        wortMerken(
+            text
+        );
+    }
+
 
     speichern();
+
+    geloeschteNotizenSpeichern();
 
     anzeigen();
 
 
-    bereich.innerHTML = "";
+    feld.value =
+        "";
 
-    feld.value = "";
+
+    if (
+        haendlerFeld
+    ) {
+
+        haendlerFeld.value =
+            "";
+    }
+
+
+    vorschlaegeLoeschen();
 
     feld.focus();
-
 }
 
 
 // ============================================================
-// VORSCHLÄGE
+// VORSCHLÄGE ANZEIGEN
 // ============================================================
 
-function zeigeVorschlaege() {
+function vorschlaegeAnzeigen() {
 
     const feld =
-        document.getElementById("NeueNotiz");
+        document.getElementById(
+            "NeueNotiz"
+        );
 
     const bereich =
-        document.getElementById("VorschlagBereich");
+        document.getElementById(
+            "VorschlagBereich"
+        );
 
-
-    bereich.innerHTML = "";
-
-
-    const text =
-        feld.value.trim();
-
-
-    if (text === "") {
+    if (
+        !feld ||
+        !bereich
+    ) {
 
         return;
-
     }
 
 
-    const treffer =
-        sucheWoerter(text);
+    const eingabe =
+        feld.value
+            .trim()
+            .toLowerCase();
 
 
-    if (treffer.length === 0) {
+    bereich.innerHTML =
+        "";
+
+
+    if (
+        eingabe === ""
+    ) {
 
         return;
+    }
 
+
+    let treffer = [];
+
+
+    // Vorhandenes Wörterbuch verwenden.
+
+    if (
+        typeof sucheWoerter ===
+        "function"
+    ) {
+
+        const ergebnis =
+            sucheWoerter(
+                eingabe
+            );
+
+        if (
+            Array.isArray(ergebnis)
+        ) {
+
+            treffer =
+                ergebnis;
+        }
+    }
+
+
+    if (
+        treffer.length === 0
+    ) {
+
+        vorschlaegeLoeschen();
+
+        return;
     }
 
 
     treffer.forEach(
         function (wort) {
 
+            if (
+                typeof wort !==
+                "string"
+            ) {
+
+                return;
+            }
+
+
             const vorschlag =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
 
             vorschlag.textContent =
                 wort;
 
 
-            vorschlag.style.padding =
-                "8px";
-
-            vorschlag.style.margin =
-                "2px 0";
-
-            vorschlag.style.background =
-                "#f3f3f3";
-
-            vorschlag.style.border =
-                "1px solid #dddddd";
-
-            vorschlag.style.borderRadius =
-                "6px";
-
-            vorschlag.style.color =
-                "#666666";
-
-            vorschlag.style.cursor =
-                "pointer";
-
-
-            vorschlag.addEventListener(
-                "mouseenter",
-                function () {
-
-                    vorschlag.style.background =
-                        "#dbeafe";
-
-                }
-            );
-
-
-            vorschlag.addEventListener(
-                "mouseleave",
-                function () {
-
-                    vorschlag.style.background =
-                        "#f3f3f3";
-
-                }
-            );
+            vorschlag.className =
+                "notiz-vorschlag";
 
 
             vorschlag.addEventListener(
@@ -240,11 +377,9 @@ function zeigeVorschlaege() {
                     feld.value =
                         wort;
 
-                    bereich.innerHTML =
-                        "";
+                    vorschlaegeLoeschen();
 
                     feld.focus();
-
                 }
             );
 
@@ -252,10 +387,29 @@ function zeigeVorschlaege() {
             bereich.appendChild(
                 vorschlag
             );
-
         }
     );
+}
 
+
+// ============================================================
+// VORSCHLÄGE LÖSCHEN
+// ============================================================
+
+function vorschlaegeLoeschen() {
+
+    const bereich =
+        document.getElementById(
+            "VorschlagBereich"
+        );
+
+    if (
+        bereich
+    ) {
+
+        bereich.innerHTML =
+            "";
+    }
 }
 
 
@@ -270,41 +424,41 @@ function anzeigen() {
             "ListenBereich"
         );
 
+    if (!liste) {
 
-    liste.innerHTML = "";
+        return;
+    }
 
 
-    if (notizen.length === 0) {
+    liste.innerHTML =
+        "";
+
+
+    if (
+        notizen.length === 0
+    ) {
 
         liste.innerHTML =
             "<p>Noch keine Notizen vorhanden.</p>";
 
         return;
-
     }
 
 
     notizen.forEach(
-        function (eintrag, index) {
+        function (
+            eintrag,
+            index
+        ) {
 
             const zeile =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
 
-            zeile.style.display =
-                "flex";
-
-            zeile.style.alignItems =
-                "center";
-
-            zeile.style.gap =
-                "12px";
-
-            zeile.style.padding =
-                "10px";
-
-            zeile.style.borderBottom =
-                "1px solid #dddddd";
+            zeile.className =
+                "notiz-zeile";
 
 
             const haken =
@@ -318,7 +472,8 @@ function anzeigen() {
 
 
             haken.checked =
-                eintrag.erledigt;
+                eintrag.erledigt ===
+                true;
 
 
             haken.addEventListener(
@@ -328,11 +483,9 @@ function anzeigen() {
                     notizen[index].erledigt =
                         haken.checked;
 
-
                     speichern();
 
                     anzeigen();
-
                 }
             );
 
@@ -343,25 +496,58 @@ function anzeigen() {
                 );
 
 
+            text.className =
+                "notiz-text";
+
+
             text.textContent =
                 eintrag.text;
 
 
-            text.style.flex =
-                "1";
+            if (
+                eintrag.haendler
+            ) {
 
-            text.style.fontSize =
-                "22px";
+                const trennzeichen =
+                    document.createElement(
+                        "span"
+                    );
+
+                trennzeichen.textContent =
+                    " ··· ";
 
 
-            if (eintrag.erledigt) {
+                const kuerzel =
+                    document.createElement(
+                        "span"
+                    );
 
-                text.style.textDecoration =
-                    "line-through";
 
-                text.style.color =
-                    "#888888";
+                kuerzel.textContent =
+                    eintrag.haendler;
 
+
+                kuerzel.className =
+                    "notiz-haendler";
+
+
+                text.appendChild(
+                    trennzeichen
+                );
+
+                text.appendChild(
+                    kuerzel
+                );
+            }
+
+
+            if (
+                eintrag.erledigt
+            ) {
+
+                text.classList.add(
+                    "erledigt"
+                );
             }
 
 
@@ -371,27 +557,16 @@ function anzeigen() {
                 );
 
 
+            loeschen.type =
+                "button";
+
+
             loeschen.textContent =
                 "Löschen";
 
 
-            loeschen.style.background =
-                "#dc2626";
-
-            loeschen.style.color =
-                "#ffffff";
-
-            loeschen.style.border =
-                "none";
-
-            loeschen.style.padding =
-                "8px 14px";
-
-            loeschen.style.borderRadius =
-                "6px";
-
-            loeschen.style.cursor =
-                "pointer";
+            loeschen.className =
+                "notiz-loeschen";
 
 
             loeschen.addEventListener(
@@ -401,7 +576,6 @@ function anzeigen() {
                     notizLoeschen(
                         index
                     );
-
                 }
             );
 
@@ -410,9 +584,11 @@ function anzeigen() {
                 haken
             );
 
+
             zeile.appendChild(
                 text
             );
+
 
             zeile.appendChild(
                 loeschen
@@ -422,10 +598,8 @@ function anzeigen() {
             liste.appendChild(
                 zeile
             );
-
         }
     );
-
 }
 
 
@@ -433,7 +607,9 @@ function anzeigen() {
 // EINZELNE NOTIZ LÖSCHEN
 // ============================================================
 
-function notizLoeschen(index) {
+function notizLoeschen(
+    index
+) {
 
     if (
         index < 0 ||
@@ -441,27 +617,34 @@ function notizLoeschen(index) {
     ) {
 
         return;
-
     }
 
 
+    const eintrag =
+        notizen[index];
+
+
     const schluessel =
-        notizSchluesselFuerLoeschung(
-            notizen[index]
+        notizSchluessel(
+            eintrag
         );
 
 
-    if (schluessel !== "") {
+    if (
+        schluessel !== ""
+    ) {
 
         geloeschteNotizen.push(
             schluessel
         );
 
-        geloeschteNotizen =
-            [...new Set(
-                geloeschteNotizen
-            )];
 
+        geloeschteNotizen =
+            [
+                ...new Set(
+                    geloeschteNotizen
+                )
+            ];
     }
 
 
@@ -471,12 +654,11 @@ function notizLoeschen(index) {
     );
 
 
-    geloeschteNotizenSpeichern();
-
     speichern();
 
-    anzeigen();
+    geloeschteNotizenSpeichern();
 
+    anzeigen();
 }
 
 
@@ -486,18 +668,20 @@ function notizLoeschen(index) {
 
 function markierteLoeschen() {
 
-    const neueNotizen = [];
+    const behalten =
+        [];
 
 
     notizen.forEach(
         function (eintrag) {
 
             if (
-                eintrag.erledigt
+                eintrag.erledigt ===
+                true
             ) {
 
                 const schluessel =
-                    notizSchluesselFuerLoeschung(
+                    notizSchluessel(
                         eintrag
                     );
 
@@ -509,23 +693,20 @@ function markierteLoeschen() {
                     geloeschteNotizen.push(
                         schluessel
                     );
-
                 }
 
             } else {
 
-                neueNotizen.push(
+                behalten.push(
                     eintrag
                 );
-
             }
-
         }
     );
 
 
     notizen =
-        neueNotizen;
+        behalten;
 
 
     geloeschteNotizen =
@@ -536,170 +717,113 @@ function markierteLoeschen() {
         ];
 
 
-    geloeschteNotizenSpeichern();
-
     speichern();
 
+    geloeschteNotizenSpeichern();
+
     anzeigen();
-
 }
 
 
 // ============================================================
-// SCHLÜSSEL FÜR GELÖSCHTE NOTIZ
+// START DER NOTIZFUNKTION
 // ============================================================
 
-function notizSchluesselFuerLoeschung(
-    eintrag
-) {
+function notizenStarten() {
 
-    if (
-        !eintrag ||
-        typeof eintrag.text !== "string"
-    ) {
+    laden();
 
-        return "";
+    geloeschteNotizenLaden();
 
-    }
-
-
-    return eintrag.text
-        .trim()
-        .toLowerCase();
-
+    anzeigen();
 }
 
 
 // ============================================================
-// NOTIZEN SPEICHERN
+// TASTATUR UND SCHALTFLÄCHEN
 // ============================================================
 
-function speichern() {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    localStorage.setItem(
-
-        SPEICHER_NOTIZEN,
-
-        JSON.stringify(
-            notizen
-        )
-
-    );
-
-}
+        const feld =
+            document.getElementById(
+                "NeueNotiz"
+            );
 
 
-// ============================================================
-// NOTIZEN LADEN
-// ============================================================
-
-function laden() {
-
-    const daten =
-        localStorage.getItem(
-            SPEICHER_NOTIZEN
-        );
+        const btnHinzufuegen =
+            document.getElementById(
+                "BtnHinzufuegen"
+            );
 
 
-    if (daten) {
-
-        try {
-
-            const geladen =
-                JSON.parse(daten);
-
-
-            if (
-                Array.isArray(
-                    geladen
-                )
-            ) {
-
-                notizen =
-                    geladen;
-
-            } else {
-
-                notizen = [];
-
-            }
-
-        } catch (fehler) {
-
-            notizen = [];
-
-        }
-
-    }
-
-}
-
-
-// ============================================================
-// GELÖSCHTE NOTIZEN LADEN
-// ============================================================
-
-function geloeschteNotizenLaden() {
-
-    const daten =
-        localStorage.getItem(
-            SPEICHER_GELOESCHT
-        );
-
-
-    if (!daten) {
-
-        geloeschteNotizen = [];
-
-        return;
-
-    }
-
-
-    try {
-
-        const geladen =
-            JSON.parse(daten);
+        const btnMarkierteLoeschen =
+            document.getElementById(
+                "BtnMarkierteLoeschen"
+            );
 
 
         if (
-            Array.isArray(
-                geladen
-            )
+            btnHinzufuegen
         ) {
 
-            geloeschteNotizen =
-                geladen;
-
-        } else {
-
-            geloeschteNotizen = [];
-
+            btnHinzufuegen.addEventListener(
+                "click",
+                notizHinzufuegen
+            );
         }
 
-    } catch (fehler) {
 
-        geloeschteNotizen = [];
+        if (
+            btnMarkierteLoeschen
+        ) {
 
+            btnMarkierteLoeschen.addEventListener(
+                "click",
+                markierteLoeschen
+            );
+        }
+
+
+        if (
+            feld
+        ) {
+
+            feld.addEventListener(
+                "input",
+                vorschlaegeAnzeigen
+            );
+
+
+            feld.addEventListener(
+                "keydown",
+                function (ereignis) {
+
+                    if (
+                        ereignis.key ===
+                        "Enter"
+                    ) {
+
+                        ereignis.preventDefault();
+
+                        notizHinzufuegen();
+                    }
+
+
+                    if (
+                        ereignis.key ===
+                        "Escape"
+                    ) {
+
+                        vorschlaegeLoeschen();
+                    }
+                }
+            );
+        }
+
+
+        notizenStarten();
     }
-
-}
-
-
-// ============================================================
-// GELÖSCHTE NOTIZEN SPEICHERN
-// ============================================================
-
-function geloeschteNotizenSpeichern() {
-
-    localStorage.setItem(
-
-        SPEICHER_GELOESCHT,
-
-        JSON.stringify(
-            geloeschteNotizen
-        )
-
-    );
-
-}
+);
