@@ -19,21 +19,6 @@
       "text": "Balsamico",
       "haendler": "",
       "erledigt": false
-    },
-    {
-      "text": "Butter",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Käse",
-      "haendler": "E",
-      "erledigt": false
-    },
-    {
-      "text": "Kekse",
-      "haendler": "N",
-      "erledigt": false
     }
   ],
   "woerter": [
@@ -136,6 +121,9 @@
     "beckensteine",
     "schw.rücken",
     "lavazza",
-    "pc-opa"
+    "pc-opa",
+    "kekse",
+    "käse",
+    "butter"
   ]
 }
