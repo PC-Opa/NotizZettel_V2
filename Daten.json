@@ -19,11 +19,14 @@
       "text": "Balsamico",
       "haendler": "",
       "erledigt": false
+    },
+    {
+      "text": "Milch",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
-    "Butter",
-    "Kekse",
     "Almighurt",
     "Apfel-Breaburn",
     "Apotheke",
@@ -32,6 +35,7 @@
     "Birne",
     "Bockwurst",
     "Brot",
+    "Butter",
     "Buttermilch",
     "DivKonserven",
     "f",
@@ -42,6 +46,7 @@
     "Heinke",
     "Kartoffeln",
     "Käse",
+    "Kekse",
     "Knabberkram",
     "Laptop",
     "LAPTOP-TEST-123",
@@ -76,7 +81,7 @@
     "Wein",
     "Zwiebeln"
   ],
-  "geloeschteNotizen": [
+  "geloescht": [
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
@@ -87,7 +92,6 @@
     "laptop-test-123",
     "gurken",
     "waschmittel",
-    "milch",
     "nutella",
     "limetten",
     "buttermilch",
