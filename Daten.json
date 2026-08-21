@@ -3,7 +3,7 @@
     {
       "text": "Reis",
       "haendler": "",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Steak",
@@ -13,42 +13,42 @@
     {
       "text": "Butter",
       "haendler": "L",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Beckensteine",
       "haendler": "L",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Lemon",
       "haendler": "L",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Obst",
       "haendler": "",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Brot",
       "haendler": "",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Fleischwurst",
       "haendler": "",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Kaffeesahne",
       "haendler": "",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Nudelsalat",
       "haendler": "",
-      "erledigt": false
+      "erledigt": true
     }
   ],
   "woerter": [
