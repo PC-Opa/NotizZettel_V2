@@ -37,6 +37,7 @@
     }
   ],
   "woerter": [
+    "Butter",
     "Almighurt",
     "Apfel-Breaburn",
     "Apotheke",
@@ -45,7 +46,6 @@
     "Birne",
     "Bockwurst",
     "Brot",
-    "Butter",
     "Buttermilch",
     "DivKonserven",
     "f",
@@ -101,7 +101,6 @@
     "test test",
     "laptop-test-123",
     "gurken",
-    "pc-opa",
     "waschmittel",
     "milch",
     "nutella",
@@ -136,6 +135,7 @@
     "zwiebeln",
     "beckensteine",
     "schw.rücken",
-    "lavazza"
+    "lavazza",
+    "pc-opa"
   ]
 }
