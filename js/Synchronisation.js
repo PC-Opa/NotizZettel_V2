@@ -10,43 +10,50 @@ let github = {
 
 
 // ============================================================
-// GITHUB-ZUGANGSDATEN
+// LOKALEN SPEICHER SICHER PRÜFEN
+// ============================================================
+
+function lokalerSpeicherVerfuegbar() {
+
+    try {
+
+        const testSchluessel =
+            "NotizZettel_Speichertest";
+
+        localStorage.setItem(
+            testSchluessel,
+            "ok"
+        );
+
+        localStorage.removeItem(
+            testSchluessel
+        );
+
+        return true;
+
+    } catch (fehler) {
+
+        return false;
+
+    }
+
+}
+
+
+// ============================================================
+// GITHUB-ZUGANGSDATEN LADEN
 // ============================================================
 
 function githubLaden() {
 
-    const daten =
-        localStorage.getItem(
-            SPEICHER_GITHUB
-        );
+    try {
 
-    if (daten) {
+        const daten =
+            localStorage.getItem(
+                SPEICHER_GITHUB
+            );
 
-        try {
-
-            const geladen =
-                JSON.parse(daten);
-
-            github = {
-
-                benutzer:
-                    typeof geladen.benutzer === "string"
-                        ? geladen.benutzer
-                        : "",
-
-                repository:
-                    typeof geladen.repository === "string"
-                        ? geladen.repository
-                        : "",
-
-                token:
-                    typeof geladen.token === "string"
-                        ? geladen.token
-                        : ""
-
-            };
-
-        } catch (fehler) {
+        if (!daten) {
 
             github = {
                 benutzer: "",
@@ -54,7 +61,39 @@ function githubLaden() {
                 token: ""
             };
 
+            return;
+
         }
+
+        const geladen =
+            JSON.parse(daten);
+
+        github = {
+
+            benutzer:
+                typeof geladen.benutzer === "string"
+                    ? geladen.benutzer
+                    : "",
+
+            repository:
+                typeof geladen.repository === "string"
+                    ? geladen.repository
+                    : "",
+
+            token:
+                typeof geladen.token === "string"
+                    ? geladen.token
+                    : ""
+
+        };
+
+    } catch (fehler) {
+
+        github = {
+            benutzer: "",
+            repository: "",
+            token: ""
+        };
 
     }
 
@@ -71,25 +110,169 @@ function githubSpeichern(
     token
 ) {
 
-    github.benutzer =
-        typeof benutzer === "string"
-            ? benutzer.trim()
-            : "";
+    const neueDaten = {
 
-    github.repository =
-        typeof repository === "string"
-            ? repository.trim()
-            : "";
+        benutzer:
+            typeof benutzer === "string"
+                ? benutzer.trim()
+                : "",
 
-    github.token =
-        typeof token === "string"
-            ? token.trim()
-            : "";
+        repository:
+            typeof repository === "string"
+                ? repository.trim()
+                : "",
+
+        token:
+            typeof token === "string"
+                ? token.trim()
+                : ""
+
+    };
 
 
-    localStorage.setItem(
-        SPEICHER_GITHUB,
-        JSON.stringify(github)
+    if (
+        neueDaten.benutzer === "" ||
+        neueDaten.repository === "" ||
+        neueDaten.token === ""
+    ) {
+
+        alert(
+            "Bitte GitHub-Benutzer, Repository und Token vollständig eingeben."
+        );
+
+        return false;
+
+    }
+
+
+    if (!lokalerSpeicherVerfuegbar()) {
+
+        alert(
+            "Die GitHub-Zugangsdaten können auf diesem Gerät nicht lokal gespeichert werden."
+        );
+
+        return false;
+
+    }
+
+
+    try {
+
+        localStorage.setItem(
+            SPEICHER_GITHUB,
+            JSON.stringify(neueDaten)
+        );
+
+
+        const kontrolle =
+            localStorage.getItem(
+                SPEICHER_GITHUB
+            );
+
+
+        if (!kontrolle) {
+
+            alert(
+                "Die GitHub-Zugangsdaten konnten nicht gespeichert werden."
+            );
+
+            return false;
+
+        }
+
+
+        const gespeichert =
+            JSON.parse(kontrolle);
+
+
+        if (
+            gespeichert.benutzer !==
+                neueDaten.benutzer ||
+            gespeichert.repository !==
+                neueDaten.repository ||
+            gespeichert.token !==
+                neueDaten.token
+        ) {
+
+            alert(
+                "Die GitHub-Zugangsdaten konnten nicht korrekt gespeichert werden."
+            );
+
+            return false;
+
+        }
+
+
+        github = neueDaten;
+
+        alert(
+            "GitHub-Zugangsdaten gespeichert."
+        );
+
+        return true;
+
+    } catch (fehler) {
+
+        alert(
+            "Fehler beim Speichern der GitHub-Zugangsdaten:\n\n" +
+            fehler.message
+        );
+
+        return false;
+
+    }
+
+}
+
+
+// ============================================================
+// ALTE FUNKTIONSNAMEN KOMPATIBEL HALTEN
+// ============================================================
+
+function githubDatenLaden() {
+
+    githubLaden();
+
+}
+
+
+function githubDatenSpeichern() {
+
+    const benutzer =
+        document.getElementById(
+            "GitBenutzer"
+        );
+
+    const repository =
+        document.getElementById(
+            "GitRepository"
+        );
+
+    const token =
+        document.getElementById(
+            "GitToken"
+        );
+
+
+    if (
+        !benutzer ||
+        !repository ||
+        !token
+    ) {
+
+        alert(
+            "Die GitHub-Eingabefelder wurden nicht gefunden."
+        );
+
+        return false;
+
+    }
+
+
+    return githubSpeichern(
+        benutzer.value,
+        repository.value,
+        token.value
     );
 
 }
@@ -1622,3 +1805,37 @@ async function synchronisieren() {
     return true;
 
 }
+
+
+// ============================================================
+// GITHUB UND SYNCHRONISATION INITIALISIEREN
+// ============================================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        githubLaden();
+
+
+        const btnSync =
+            document.getElementById(
+                "BtnSync"
+            );
+
+
+        if (
+            btnSync &&
+            typeof synchronisieren ===
+                "function"
+        ) {
+
+            btnSync.addEventListener(
+                "click",
+                synchronisieren
+            );
+
+        }
+
+    }
+);
