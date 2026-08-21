@@ -16,11 +16,6 @@
       "erledigt": false
     },
     {
-      "text": "Balsamico",
-      "haendler": "",
-      "erledigt": false
-    },
-    {
       "text": "Milch",
       "haendler": "L",
       "erledigt": false
@@ -85,15 +80,17 @@
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
+    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
     "test test",
     "laptop-test-123",
     "gurken",
+    "pc-opa",
     "waschmittel",
-    "nutella",
     "limetten",
+    "käse",
     "buttermilch",
     "mehl",
     "pudding",
@@ -109,10 +106,10 @@
     "almighurt ?",
     "selter",
     "leinenöl",
+    "pilze",
     "riha",
     "old spice-aftershafe",
     "rotwein",
-    "pilze",
     "putenbrust",
     "magnesium",
     "magentropfen",
@@ -123,11 +120,11 @@
     "birne",
     "zwiebeln",
     "beckensteine",
-    "schw.rücken",
-    "lavazza",
-    "pc-opa",
+    "balsamico",
+    "butter",
     "kekse",
-    "käse",
-    "butter"
+    "schnitzel",
+    "schw.rücken",
+    "lavazza"
   ]
 }
