@@ -6,23 +6,38 @@
       "erledigt": false
     },
     {
-      "text": "Sahne",
-      "haendler": "",
-      "erledigt": false
-    },
-    {
       "text": "Steak",
       "haendler": "",
-      "erledigt": false
-    },
-    {
-      "text": "Milch",
-      "haendler": "L",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Butter",
       "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Beckensteine",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Lemon",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Obst",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "Brot",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "Fleischwurst",
+      "haendler": "",
       "erledigt": false
     }
   ],
@@ -39,6 +54,7 @@
     "Buttermilch",
     "DivKonserven",
     "f",
+    "Fleischwurst",
     "Fruchtzucker",
     "Gurken",
     "Handy",
@@ -52,6 +68,7 @@
     "LAPTOP-TEST-123",
     "Lavazza",
     "Leinenöl",
+    "Lemon",
     "Limetten",
     "Magentropfen",
     "Magnesium",
@@ -61,6 +78,7 @@
     "NeuerTest",
     "Nudeln",
     "Nutella",
+    "Obst",
     "Old",
     "pc-opa",
     "Petersilie",
@@ -85,22 +103,19 @@
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
-    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
     "test test",
     "laptop-test-123",
     "gurken",
-    "pc-opa",
     "waschmittel",
+    "nutella",
     "limetten",
-    "käse",
     "buttermilch",
     "mehl",
     "pudding",
     "knabberkram",
-    "brot",
     "selter f heinke",
     "old",
     "apotheke",
@@ -111,10 +126,10 @@
     "almighurt ?",
     "selter",
     "leinenöl",
-    "pilze",
     "riha",
     "old spice-aftershafe",
     "rotwein",
+    "pilze",
     "putenbrust",
     "magnesium",
     "magentropfen",
@@ -124,11 +139,14 @@
     "apfel-breaburn",
     "birne",
     "zwiebeln",
-    "beckensteine",
-    "balsamico",
-    "kekse",
-    "schnitzel",
     "schw.rücken",
-    "lavazza"
+    "lavazza",
+    "pc-opa",
+    "kekse",
+    "käse",
+    "balsamico",
+    "schnitzel",
+    "sahne",
+    "milch"
   ]
 }
