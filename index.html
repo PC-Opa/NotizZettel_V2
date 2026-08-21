@@ -41,11 +41,6 @@
 
     <main id="Arbeitsbereich">
 
-
-        <!-- ==================================================
-             NEUE NOTIZ
-             ================================================== -->
-
         <section id="EingabeBereich">
 
             <input
@@ -88,17 +83,9 @@
         </section>
 
 
-        <!-- ==================================================
-             VORSCHLÄGE
-             ================================================== -->
-
         <section id="VorschlagBereich">
         </section>
 
-
-        <!-- ==================================================
-             WERKZEUGE
-             ================================================== -->
 
         <section id="WerkzeugBereich">
 
@@ -129,20 +116,12 @@
         </section>
 
 
-        <!-- ==================================================
-             GITHUB
-             ================================================== -->
-
         <section
             id="GitHubBereich"
             style="display:none;"
         >
         </section>
 
-
-        <!-- ==================================================
-             NOTIZLISTE
-             ================================================== -->
 
         <section id="ListenBereich">
         </section>
@@ -152,10 +131,6 @@
 
 </div>
 
-
-<!-- ========================================================
-     JAVASCRIPT
-     ======================================================== -->
 
 <script
     src="js/Notizen.js"
@@ -174,10 +149,6 @@
     defer
 ></script>
 
-
-<!-- ========================================================
-     GITHUB-EINGABEFELDER
-     ======================================================== -->
 
 <script>
 
@@ -202,6 +173,7 @@ document.addEventListener(
         ) {
 
             return;
+
         }
 
 
@@ -219,6 +191,7 @@ document.addEventListener(
                         "block";
 
                     return;
+
                 }
 
 
@@ -229,9 +202,9 @@ document.addEventListener(
                         <input
                             type="text"
                             id="GitBenutzer"
-                            name="github-user"
+                            name="git-benutzer"
                             placeholder="GitHub-Benutzer"
-                            autocomplete="username"
+                            autocomplete="off"
                             autocorrect="off"
                             autocapitalize="none"
                             spellcheck="false"
@@ -245,7 +218,7 @@ document.addEventListener(
                         <input
                             type="text"
                             id="GitRepository"
-                            name="github-repository"
+                            name="git-repository"
                             placeholder="Repository"
                             autocomplete="off"
                             autocorrect="off"
@@ -261,12 +234,15 @@ document.addEventListener(
                         <input
                             type="password"
                             id="GitToken"
-                            name="github-token"
+                            name="git-token"
                             placeholder="GitHub-Token"
-                            autocomplete="new-password"
+                            autocomplete="off"
                             autocorrect="off"
                             autocapitalize="none"
                             spellcheck="false"
+                            data-lpignore="true"
+                            data-1p-ignore="true"
+                            data-bwignore="true"
                         >
 
                     </div>
@@ -290,10 +266,6 @@ document.addEventListener(
                     "block";
 
 
-                /*
-                 * GESPEICHERTE GITHUB-DATEN LADEN
-                 */
-
                 if (
                     typeof githubLaden ===
                     "function"
@@ -303,10 +275,6 @@ document.addEventListener(
 
                 }
 
-
-                /*
-                 * GESPEICHERTE WERTE IN DIE FELDER EINTRAGEN
-                 */
 
                 const benutzer =
                     document.getElementById(
@@ -360,70 +328,93 @@ document.addEventListener(
                 }
 
 
-                /*
-                 * SPEICHERN
-                 */
-
                 const btnSpeichern =
                     document.getElementById(
                         "BtnGitSpeichern"
                     );
 
 
-                if (
-                    btnSpeichern
-                ) {
+                if (!btnSpeichern) {
 
-                    btnSpeichern.addEventListener(
-                        "click",
-                        function () {
-
-                            const benutzerWert =
-                                document.getElementById(
-                                    "GitBenutzer"
-                                ).value;
-
-                            const repositoryWert =
-                                document.getElementById(
-                                    "GitRepository"
-                                ).value;
-
-                            const tokenWert =
-                                document.getElementById(
-                                    "GitToken"
-                                ).value;
-
-
-                            if (
-                                typeof githubSpeichern ===
-                                "function"
-                            ) {
-
-                                githubSpeichern(
-                                    benutzerWert,
-                                    repositoryWert,
-                                    tokenWert
-                                );
-
-                            } else {
-
-                                alert(
-                                    "Fehler: Die GitHub-Speicherfunktion wurde nicht gefunden."
-                                );
-
-                            }
-
-                        }
-                    );
+                    return;
 
                 }
 
-            }
 
+                btnSpeichern.addEventListener(
+                    "click",
+                    function () {
+
+                        const benutzerFeld =
+                            document.getElementById(
+                                "GitBenutzer"
+                            );
+
+                        const repositoryFeld =
+                            document.getElementById(
+                                "GitRepository"
+                            );
+
+                        const tokenFeld =
+                            document.getElementById(
+                                "GitToken"
+                            );
+
+
+                        if (
+                            !benutzerFeld ||
+                            !repositoryFeld ||
+                            !tokenFeld
+                        ) {
+
+                            alert(
+                                "GitHub-Eingabefelder nicht gefunden."
+                            );
+
+                            return;
+
+                        }
+
+
+                        if (
+                            typeof githubSpeichern ===
+                            "function"
+                        ) {
+
+                            githubSpeichern(
+                                benutzerFeld.value,
+                                repositoryFeld.value,
+                                tokenFeld.value
+                            );
+
+                            return;
+
+                        }
+
+
+                        if (
+                            typeof githubDatenSpeichern ===
+                            "function"
+                        ) {
+
+                            githubDatenSpeichern();
+
+                            return;
+
+                        }
+
+
+                        alert(
+                            "Fehler: Die GitHub-Speicherfunktion wurde nicht gefunden."
+                        );
+
+                    }
+                );
+
+            }
         );
 
     }
-
 );
 
 </script>
