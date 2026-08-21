@@ -39,6 +39,16 @@
       "text": "Fleischwurst",
       "haendler": "",
       "erledigt": false
+    },
+    {
+      "text": "Kaffeesahne",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "Nudelsalat",
+      "haendler": "",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -60,6 +70,7 @@
     "Handy",
     "Handy-Test-2026",
     "Heinke",
+    "Kaffeesahne",
     "Kartoffeln",
     "Käse",
     "Kekse",
@@ -77,6 +88,7 @@
     "Milchreis",
     "NeuerTest",
     "Nudeln",
+    "Nudelsalat",
     "Nutella",
     "Obst",
     "Old",
