@@ -131,7 +131,6 @@
 
         <!-- ==================================================
              GITHUB
-             Die Eingabefelder werden erst beim Öffnen erzeugt.
              ================================================== -->
 
         <section
@@ -177,7 +176,7 @@
 
 
 <!-- ========================================================
-     GITHUB-EINGABEFELDER ERST BEIM ÖFFNEN ERZEUGEN
+     GITHUB-EINGABEFELDER
      ======================================================== -->
 
 <script>
@@ -215,6 +214,9 @@ document.addEventListener(
                         "GitBenutzer"
                     )
                 ) {
+
+                    bereich.style.display =
+                        "block";
 
                     return;
                 }
@@ -288,63 +290,79 @@ document.addEventListener(
                     "block";
 
 
+                /*
+                 * GESPEICHERTE GITHUB-DATEN LADEN
+                 */
+
                 if (
-                    typeof githubDatenLaden ===
+                    typeof githubLaden ===
                     "function"
                 ) {
 
-                    githubDatenLaden();
+                    githubLaden();
 
-
-                    const benutzer =
-                        document.getElementById(
-                            "GitBenutzer"
-                        );
-
-                    const repository =
-                        document.getElementById(
-                            "GitRepository"
-                        );
-
-                    const token =
-                        document.getElementById(
-                            "GitToken"
-                        );
-
-
-                    if (
-                        benutzer &&
-                        typeof github !==
-                            "undefined"
-                    ) {
-
-                        benutzer.value =
-                            github.benutzer;
-                    }
-
-
-                    if (
-                        repository &&
-                        typeof github !==
-                            "undefined"
-                    ) {
-
-                        repository.value =
-                            github.repository;
-                    }
-
-
-                    if (
-                        token &&
-                        typeof github !==
-                            "undefined"
-                    ) {
-
-                        token.value =
-                            github.token;
-                    }
                 }
 
+
+                /*
+                 * GESPEICHERTE WERTE IN DIE FELDER EINTRAGEN
+                 */
+
+                const benutzer =
+                    document.getElementById(
+                        "GitBenutzer"
+                    );
+
+                const repository =
+                    document.getElementById(
+                        "GitRepository"
+                    );
+
+                const token =
+                    document.getElementById(
+                        "GitToken"
+                    );
+
+
+                if (
+                    benutzer &&
+                    typeof github !==
+                        "undefined"
+                ) {
+
+                    benutzer.value =
+                        github.benutzer;
+
+                }
+
+
+                if (
+                    repository &&
+                    typeof github !==
+                        "undefined"
+                ) {
+
+                    repository.value =
+                        github.repository;
+
+                }
+
+
+                if (
+                    token &&
+                    typeof github !==
+                        "undefined"
+                ) {
+
+                    token.value =
+                        github.token;
+
+                }
+
+
+                /*
+                 * SPEICHERN
+                 */
 
                 const btnSpeichern =
                     document.getElementById(
@@ -353,24 +371,59 @@ document.addEventListener(
 
 
                 if (
-                    btnSpeichern &&
-                    typeof githubDatenSpeichern ===
-                        "function"
+                    btnSpeichern
                 ) {
 
                     btnSpeichern.addEventListener(
                         "click",
-                        githubDatenSpeichern
+                        function () {
+
+                            const benutzerWert =
+                                document.getElementById(
+                                    "GitBenutzer"
+                                ).value;
+
+                            const repositoryWert =
+                                document.getElementById(
+                                    "GitRepository"
+                                ).value;
+
+                            const tokenWert =
+                                document.getElementById(
+                                    "GitToken"
+                                ).value;
+
+
+                            if (
+                                typeof githubSpeichern ===
+                                "function"
+                            ) {
+
+                                githubSpeichern(
+                                    benutzerWert,
+                                    repositoryWert,
+                                    tokenWert
+                                );
+
+                            } else {
+
+                                alert(
+                                    "Fehler: Die GitHub-Speicherfunktion wurde nicht gefunden."
+                                );
+
+                            }
+
+                        }
                     );
+
                 }
 
-            },
-            {
-                once: true
             }
+
         );
 
     }
+
 );
 
 </script>
