@@ -19,6 +19,11 @@
       "text": "Milch",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "Butter",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -123,7 +128,6 @@
     "pc-opa",
     "kekse",
     "käse",
-    "butter",
     "balsamico",
     "schnitzel"
   ]
