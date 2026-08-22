@@ -58,10 +58,6 @@ header p {
 #NeueNotiz:focus {
     border-color: #2563eb;
 }
-#VorschlagBereich {
-    min-height: 45px;
-    border: 1px dashed #d8d8d8;
-    border-radius: 8px;
 
 #HaendlerAuswahl {
     width: 110px;
@@ -99,6 +95,19 @@ header p {
     min-height: 45px;
     border: 1px dashed #d8d8d8;
     border-radius: 8px;
+    padding: 8px 12px;
+}
+
+.notiz-vorschlag {
+    display: block;
+    color: #999;
+    font-size: 18px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.notiz-vorschlag:hover {
+    color: #666;
 }
 
 #WerkzeugBereich {
