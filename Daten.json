@@ -9,16 +9,6 @@
       "text": "Buttermilch",
       "haendler": "",
       "erledigt": false
-    },
-    {
-      "text": "Käse",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Toast",
-      "haendler": "L",
-      "erledigt": false
     }
   ],
   "woerter": [
@@ -137,6 +127,8 @@
     "lemon",
     "obst",
     "fleischwurst",
-    "kaffeesahne"
+    "kaffeesahne",
+    "käse",
+    "toast"
   ]
 }
