@@ -1,26 +1,6 @@
 {
   "notizen": [
     {
-      "text": "Reis",
-      "haendler": "",
-      "erledigt": true
-    },
-    {
-      "text": "Steak",
-      "haendler": "",
-      "erledigt": true
-    },
-    {
-      "text": "Butter",
-      "haendler": "L",
-      "erledigt": true
-    },
-    {
-      "text": "Beckensteine",
-      "haendler": "L",
-      "erledigt": true
-    },
-    {
       "text": "Lemon",
       "haendler": "L",
       "erledigt": true
@@ -31,22 +11,12 @@
       "erledigt": true
     },
     {
-      "text": "Brot",
-      "haendler": "",
-      "erledigt": true
-    },
-    {
       "text": "Fleischwurst",
       "haendler": "",
       "erledigt": true
     },
     {
       "text": "Kaffeesahne",
-      "haendler": "",
-      "erledigt": true
-    },
-    {
-      "text": "Nudelsalat",
       "haendler": "",
       "erledigt": true
     }
@@ -159,6 +129,12 @@
     "balsamico",
     "schnitzel",
     "sahne",
-    "milch"
+    "milch",
+    "beckensteine",
+    "butter",
+    "nudelsalat",
+    "brot",
+    "steak",
+    "reis"
   ]
 }
