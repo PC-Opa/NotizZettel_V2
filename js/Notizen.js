@@ -572,8 +572,13 @@ function notizenStarten() {
 
     geloeschteNotizenLaden();
 
+    woerterLaden();
+
     anzeigen();
+
 }
+
+
 
 document.addEventListener(
     "DOMContentLoaded",
