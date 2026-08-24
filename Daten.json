@@ -11,17 +11,17 @@
       "erledigt": false
     },
     {
-      "text": "Vakuum 40x60",
-      "haendler": "A",
-      "erledigt": false
-    },
-    {
-      "text": "Latschen",
+      "text": "Brathering",
       "haendler": "L",
       "erledigt": false
     },
     {
-      "text": "Brathering",
+      "text": "Vakuum 40x60",
+      "haendler": "Ac",
+      "erledigt": false
+    },
+    {
+      "text": "Latschen",
       "haendler": "L",
       "erledigt": false
     }
