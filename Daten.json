@@ -1,14 +1,44 @@
 {
   "notizen": [
     {
-      "text": "Butter",
-      "haendler": "",
+      "text": "Balsamico",
+      "haendler": "L",
       "erledigt": false
     },
     {
-      "text": "Buttermilch",
+      "text": "Gewürzgurken",
       "haendler": "",
+      "erledigt": true
+    },
+    {
+      "text": "Obst",
+      "haendler": "L",
+      "erledigt": true
+    },
+    {
+      "text": "Eis",
+      "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "Vakuum 40x60",
+      "haendler": "A",
+      "erledigt": false
+    },
+    {
+      "text": "Latschen",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Brathering",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Bilderrahmen 16x20",
+      "haendler": "A",
+      "erledigt": true
     },
     {
       "text": "Butterschmalz",
@@ -27,21 +57,27 @@
     }
   ],
   "woerter": [
+    "16x20",
+    "40x60",
     "Almighurt",
     "Apfel-Breaburn",
     "Apotheke",
     "Balsamico",
     "Beckensteine",
+    "Bilderrahmen",
     "Birne",
     "Bockwurst",
+    "Brathering",
     "Brot",
     "Butter",
     "Buttermilch",
     "Butterschmalz",
     "DivKonserven",
+    "Eis",
     "f",
     "Fleischwurst",
     "Fruchtzucker",
+    "Gewürzgurken",
     "Gurken",
     "Handy",
     "Handy-Test-2026",
@@ -49,10 +85,12 @@
     "Kaffeesahne",
     "Kartoffeln",
     "Käse",
+    "Katoffeln",
     "Kekse",
     "Knabberkram",
     "Laptop",
     "LAPTOP-TEST-123",
+    "Latschen",
     "Lavazza",
     "Leinenöl",
     "Lemon",
@@ -85,6 +123,7 @@
     "Steak",
     "Test",
     "Toast",
+    "Vakuum",
     "Waschmittel",
     "Wein",
     "Zwiebeln"
@@ -93,14 +132,15 @@
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
+    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
     "test test",
     "laptop-test-123",
     "gurken",
+    "pc-opa",
     "waschmittel",
-    "nutella",
     "limetten",
     "mehl",
     "pudding",
@@ -115,10 +155,10 @@
     "almighurt ?",
     "selter",
     "leinenöl",
+    "pilze",
     "riha",
     "old spice-aftershafe",
     "rotwein",
-    "pilze",
     "putenbrust",
     "magnesium",
     "magentropfen",
@@ -128,12 +168,10 @@
     "apfel-breaburn",
     "birne",
     "zwiebeln",
+    "kekse",
+    "schnitzel",
     "schw.rücken",
     "lavazza",
-    "pc-opa",
-    "kekse",
-    "balsamico",
-    "schnitzel",
     "sahne",
     "beckensteine",
     "nudelsalat",
@@ -141,10 +179,12 @@
     "steak",
     "reis",
     "lemon",
-    "obst",
     "fleischwurst",
     "kaffeesahne",
     "käse",
-    "toast"
+    "toast",
+    "buttermilch",
+    "butter",
+    "katoffeln"
   ]
 }
