@@ -6,16 +6,6 @@
       "erledigt": false
     },
     {
-      "text": "Gewürzgurken",
-      "haendler": "",
-      "erledigt": true
-    },
-    {
-      "text": "Obst",
-      "haendler": "L",
-      "erledigt": true
-    },
-    {
       "text": "Eis",
       "haendler": "L",
       "erledigt": false
@@ -33,26 +23,6 @@
     {
       "text": "Brathering",
       "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Bilderrahmen 16x20",
-      "haendler": "A",
-      "erledigt": true
-    },
-    {
-      "text": "Butterschmalz",
-      "haendler": "",
-      "erledigt": false
-    },
-    {
-      "text": "Milch",
-      "haendler": "",
-      "erledigt": false
-    },
-    {
-      "text": "Marmelade",
-      "haendler": "N",
       "erledigt": false
     }
   ],
@@ -173,6 +143,7 @@
     "schw.rücken",
     "lavazza",
     "sahne",
+    "milch",
     "beckensteine",
     "nudelsalat",
     "brot",
@@ -185,6 +156,11 @@
     "toast",
     "buttermilch",
     "butter",
-    "katoffeln"
+    "katoffeln",
+    "marmelade",
+    "butterschmalz",
+    "bilderrahmen 16x20",
+    "obst",
+    "gewürzgurken"
   ]
 }
