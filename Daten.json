@@ -39,6 +39,11 @@
       "text": "Obst",
       "haendler": "",
       "erledigt": false
+    },
+    {
+      "text": "Nudeln",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -137,7 +142,6 @@
     "spätzle",
     "div.konserven",
     "wein",
-    "nudeln",
     "almighurt ?",
     "selter",
     "leinenöl",
