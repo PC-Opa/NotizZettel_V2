@@ -11,6 +11,11 @@
       "erledigt": false
     },
     {
+      "text": "Brathering",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
       "text": "Vakuum 40x60",
       "haendler": "Ac",
       "erledigt": false
@@ -21,7 +26,7 @@
       "erledigt": false
     },
     {
-      "text": "Brathering",
+      "text": "Kreuterbutter",
       "haendler": "L",
       "erledigt": false
     },
@@ -33,11 +38,6 @@
     {
       "text": "Obst",
       "haendler": "",
-      "erledigt": false
-    },
-    {
-      "text": "Kreuterbutter",
-      "haendler": "L",
       "erledigt": false
     }
   ],
@@ -119,15 +119,14 @@
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
-    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
     "test test",
     "laptop-test-123",
     "gurken",
-    "pc-opa",
     "waschmittel",
+    "nutella",
     "limetten",
     "mehl",
     "pudding",
@@ -142,10 +141,10 @@
     "almighurt ?",
     "selter",
     "leinenöl",
-    "pilze",
     "riha",
     "old spice-aftershafe",
     "rotwein",
+    "pilze",
     "putenbrust",
     "magnesium",
     "magentropfen",
@@ -155,12 +154,12 @@
     "apfel-breaburn",
     "birne",
     "zwiebeln",
-    "kekse",
-    "schnitzel",
     "schw.rücken",
     "lavazza",
+    "pc-opa",
+    "kekse",
+    "schnitzel",
     "sahne",
-    "milch",
     "beckensteine",
     "nudelsalat",
     "brot",
@@ -171,6 +170,7 @@
     "kaffeesahne",
     "käse",
     "toast",
+    "milch",
     "buttermilch",
     "butter",
     "katoffeln",
