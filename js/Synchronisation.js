@@ -202,7 +202,7 @@ function githubSpeichern(
 
 
 // ============================================================
-// KOMPATIBILITÄT MIT INDEX.HTML
+// KOMPATIBILITÄT MIT INDEX2.HTML
 // ============================================================
 
 function githubDatenLaden() {
