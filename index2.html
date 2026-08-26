@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotizZettel V2.0</title>
+    <link rel="stylesheet" href="CSS/NotizZettel2.css">
+</head>
+<body>
+    <div class="main" id="App">
+        <h1>NotizZettel</h1>
+        <div class="info">Version 2.0 • <span id="datum"></span></div>
+
+        <div class="row" id="EingabeBereich">
+            <input id="neu" autocomplete="off" placeholder="Neue Notiz eingeben...">
+            <select id="HaendlerAuswahl">
+                <option value="">Händler...</option>
+                <option value="A">A</option>
+                <option value="Ac">Ac</option>
+                <option value="N">N</option>
+                <option value="L">L</option>
+                <option value="E">E</option>
+                <option value="R">R</option>
+            </select>
+            <button id="add">Hinzufügen</button>
+        </div>
+        <div id="vorschlaege"></div>
+        
+        <div id="WerkzeugBereich" style="margin-top: 15px; display: flex; gap: 10px;">
+            <button id="BtnMarkierteLoeschen" class="del">Markierte löschen</button>
+            <button id="BtnSync">Sync</button>
+            <button id="BtnGitHub">GitHub</button>
+        </div>
+
+        <div id="ListenBereich">
+            <ul id="liste"></ul>
+        </div>
+    </div>
+
+    <script>
+    const KEY_NOTIZEN="NZ_Notizen";
+    const KEY_WOERTER="NZ_Woerterbuch";
+
+    let notizen=JSON.parse(localStorage.getItem(KEY_NOTIZEN)||"[]");
+    let woerter=JSON.parse(localStorage.getItem(KEY_WOERTER)||"[]");
+
+    const input=document.getElementById("neu");
+    const liste=document.getElementById("liste");
+    const box=document.getElementById("vorschlaege");
+    const haendlerSelect=document.getElementById("HaendlerAuswahl");
+
+    if(document.getElementById("datum")) {
+        document.getElementById("datum").textContent=
+        new Date().toLocaleDateString("de-DE",{weekday:"long",day:"2-digit",month:"long",year:"numeric"});
+    }
+
+    function speichernNotizen(){localStorage.setItem(KEY_NOTIZEN,JSON.stringify(notizen));}
+    function speichernWoerter(){localStorage.setItem(KEY_WOERTER,JSON.stringify(woerter));}
+
+    function wortMerken(text){
+     const eintrag=text.trim();
+     if(!eintrag) return;
+     if(!woerter.some(w=>w.toLowerCase()===eintrag.toLowerCase())){
+       woerter.push(eintrag);
+       woerter.sort((a,b)=>a.localeCompare(b,"de"));
+       speichernWoerter();
+     }
+    }
+
+    function render(){
+     liste.innerHTML="";
+     notizen.forEach((n,i)=>{
+       const li=document.createElement("li");
+       const cb=document.createElement("input");
+       cb.type="checkbox";
+       cb.checked=n.ok;
+       cb.onchange=()=>{notizen[i].ok=cb.checked;speichernNotizen();render();}
+       const sp=document.createElement("span");
+       sp.className="txt"+(n.ok?" erledigt":"");
+       sp.textContent=n.text;
+       const del=document.createElement("button");
+       del.className="del";
+       del.textContent="Löschen";
+       del.onclick=()=>{notizen.splice(i,1);speichernNotizen();render();}
+       li.append(cb,sp,del);
+       liste.append(li);
+     });
+    }
+
+    // Hier wurde das Kürzel nach HINTEN verschoben!
+    function add(){
+     let t=input.value.trim();
+     if(!t){input.focus();return;}
+     
+     // Erst das reine Wort für dein Wörterbuch merken (damit es ohne Kürzel sortiert wird)
+     wortMerken(t);
+     
+     // Jetzt das Kürzel holen
+     const kuerzel=haendlerSelect.value;
+     
+     // Wenn ein Kürzel gewählt wurde, hängen wir es in Klammern HINTEN an
+     if(kuerzel){
+         t=t + " (" + kuerzel + ")";
+     }
+     
+     notizen.push({text:t,ok:false});
+     speichernNotizen();
+     render();
+     input.value="";
+     haendlerSelect.value=""; 
+     box.style.display="none";
+     input.focus();
+    }
+
+    document.getElementById("BtnMarkierteLoeschen").onclick = function() {
+        notizen = notizen.filter(n => !n.ok);
+        speichernNotizen();
+        render();
+    };
+
+    document.getElementById("BtnGitHub").onclick = function() {
+        let githubUser = localStorage.getItem("GH_User");
+        let githubRepo = localStorage.getItem("GH_Repo");
+        let githubPass = localStorage.getItem("GH_Pass");
+
+        if (githubUser && githubRepo && githubPass) {
+            alert("GitHub-Verbindung steht bereits für Nutzer: " + githubUser);
+            return;
+        }
+
+        let user = prompt("Bitte GitHub-Benutzernamen eingeben:");
+        if (!user) return;
+        
+        let repo = prompt("Bitte GitHub-Projektnamen (Repository) eingeben:");
+        if (!repo) return;
+        
+        let pass = prompt("Bitte GitHub-Passwort / Token eingeben:");
+        if (!pass) return;
+
+        localStorage.setItem("GH_User", user);
+        localStorage.setItem("GH_Repo", repo);
+        localStorage.setItem("GH_Pass", pass);
+
+        alert("GitHub-Zugangsdaten erfolgreich als Starteingabe gespeichert!");
+    };
+
+    document.getElementById("BtnSync").onclick = function() {
+        let githubUser = localStorage.getItem("GH_User");
+        let githubRepo = localStorage.getItem("GH_Repo");
+        
+        if (!githubUser || !githubRepo) {
+            alert("Bitte zuerst den GitHub-Button drücken, um die Starteingabe zu machen!");
+            return;
+        }
+        
+        alert("Synchronisiere Liste jetzt mit dem Projekt '" + githubRepo + "' von " + githubUser + "...");
+    };
+
+    function zeigeVorschlaege(){
+     const s=input.value.trim().toLowerCase();
+     box.innerHTML="";
+     if(!s){box.style.display="none";return;}
+     const treffer=woerter.filter(w=>w.toLowerCase().startsWith(s) && w.toLowerCase()!=s);
+     if(treffer.length===0){box.style.display="none";return;}
+     treffer.forEach(w=>{
+       const d=document.createElement("div");
+       d.className="v";
+       d.textContent=w;
+       d.onclick=()=>{input.value=w;box.style.display="none";input.focus();}
+       box.appendChild(d);
+     });
+     box.style.display="block";
+    }
+
+    input.addEventListener("input",zeigeVorschlaege);
+    input.addEventListener("keydown",e=>{if(e.key==="Enter")add();});
+    document.getElementById("add").onclick=add;
+    render();
+    input.focus();
+    </script>
+</body>
+</html>
