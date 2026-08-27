@@ -4,48 +4,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     notizenStarten();
 
-    document
-        .getElementById("BtnGitHub")
-        .addEventListener("click", githubBereichUmschalten);
+    const btnGitHub = document.getElementById("BtnGitHub");
 
-    document
-        .getElementById("BtnGitSpeichern")
-        .addEventListener("click", function () {
+    if (btnGitHub) {
 
-            githubSpeichern(
+        btnGitHub.addEventListener(
+            "click",
+            githubBereichUmschalten
+        );
 
-                document.getElementById("GitBenutzer").value,
-                document.getElementById("GitRepository").value,
-                document.getElementById("GitToken").value
+        btnGitHub.addEventListener(
+            "dblclick",
+            async function () {
 
-            );
+                const daten = await githubDateiLesen();
 
-            alert("GitHub-Zugangsdaten gespeichert.");
+                if (daten) {
 
-        });
+                    console.log(daten);
 
-    document
-        .getElementById("BtnGitHub")
-        .addEventListener("dblclick", async function () {
+                    alert("Verbindung zu GitHub erfolgreich.");
 
-            const daten = await githubDateiLesen();
-
-            if (daten) {
-
-                console.log(daten);
-
-                alert("Verbindung zu GitHub erfolgreich.");
+                }
 
             }
+        );
 
-        });
+    }
 
-    document
-        .getElementById("BtnSync")
-        .addEventListener("click", async function () {
 
-            await synchronisieren();
+    const btnSync = document.getElementById("BtnSync");
 
-        });
+    if (btnSync) {
+
+        btnSync.addEventListener(
+            "click",
+            async function () {
+
+                await synchronisieren();
+
+            }
+        );
+
+    }
 
 });
