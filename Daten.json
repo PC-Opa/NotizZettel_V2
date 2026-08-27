@@ -26,22 +26,7 @@
       "erledigt": false
     },
     {
-      "text": "Kreuterbutter",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Suppengrün",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Obst",
-      "haendler": "",
-      "erledigt": false
-    },
-    {
-      "text": "Nudeln",
+      "text": "Milch",
       "haendler": "L",
       "erledigt": false
     }
@@ -174,13 +159,16 @@
     "kaffeesahne",
     "käse",
     "toast",
-    "milch",
     "buttermilch",
     "butter",
     "katoffeln",
     "marmelade",
     "butterschmalz",
     "bilderrahmen 16x20",
-    "gewürzgurken"
+    "gewürzgurken",
+    "nudeln",
+    "kreuterbutter",
+    "suppengrün",
+    "obst"
   ]
 }
