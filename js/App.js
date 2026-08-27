@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     githubLaden();
 
-    starten();
+    notizenStarten();
 
     document
         .getElementById("BtnGitHub")
