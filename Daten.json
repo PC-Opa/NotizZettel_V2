@@ -24,16 +24,6 @@
       "text": "Brathering",
       "haendler": "L",
       "erledigt": false
-    },
-    {
-      "text": "Milch",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "B",
-      "haendler": "",
-      "erledigt": false
     }
   ],
   "woerter": [
@@ -156,6 +146,7 @@
     "schw.rücken",
     "lavazza",
     "sahne",
+    "milch",
     "beckensteine",
     "nudelsalat",
     "brot",
@@ -173,6 +164,7 @@
     "butterschmalz",
     "bilderrahmen 16x20",
     "gewürzgurken",
+    "b",
     "kreuterbutter",
     "suppengrün",
     "obst"
