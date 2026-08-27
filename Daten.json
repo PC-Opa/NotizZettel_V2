@@ -29,6 +29,11 @@
       "text": "Milch",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "B",
+      "haendler": "",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -37,6 +42,7 @@
     "Almighurt",
     "Apfel-Breaburn",
     "Apotheke",
+    "B",
     "Balsamico",
     "Beckensteine",
     "Bilderrahmen",
