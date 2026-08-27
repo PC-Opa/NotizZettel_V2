@@ -7,38 +7,44 @@
     <link rel="stylesheet" href="CSS/NotizZettel2.css">
 </head>
 <body>
+    <!-- Die Klasse "main" sichert dein Design vom 06.08. -->
     <div class="main" id="App">
-        <h1>NotizZettel</h1>
-        <div class="info">Version 2.0 • <span id="datum"></span></div>
+        <header>
+            <h1>NotizZettel</h1>
+            <p>Version 2.0 • <span id="datum"></span></p>
+        </header>
 
-        <div class="row" id="EingabeBereich">
-            <input id="neu" autocomplete="off" placeholder="Neue Notiz eingeben...">
-            <select id="HaendlerAuswahl">
-                <option value="">Händler...</option>
-                <option value="A">A</option>
-                <option value="Ac">Ac</option>
-                <option value="N">N</option>
-                <option value="L">L</option>
-                <option value="E">E</option>
-                <option value="R">R</option>
-            </select>
-            <button id="add">Hinzufügen</button>
-        </div>
-        <div id="vorschlaege"></div>
-        
-        <div id="WerkzeugBereich" style="margin-top: 15px; display: flex; gap: 10px;">
-            <button id="BtnMarkierteLoeschen" class="del">Markierte löschen</button>
-            <button id="BtnSync">Sync</button>
-            <button id="BtnGitHub">GitHub</button>
-        </div>
+        <div id="Arbeitsbereich">
+            <div id="EingabeBereich" class="row">
+                <!-- Die IDs 'NeueNotiz' und 'HaendlerAuswahl' sind für dein großes Skript überlebenswichtig -->
+                <input id="NeueNotiz" autocomplete="off" placeholder="Neue Notiz eingeben...">
+                <select id="HaendlerAuswahl">
+                    <option value="">Händler...</option>
+                    <option value="A">A</option>
+                    <option value="Ac">Ac</option>
+                    <option value="N">N</option>
+                    <option value="L">L</option>
+                    <option value="E">E</option>
+                    <option value="R">R</option>
+                </select>
+                <button id="BtnHinzufuegen">Hinzufügen</button>
+            </div>
+            <div id="VorschlagBereich"></div>
+            
+            <div id="WerkzeugBereich">
+                <button id="BtnMarkierteLoeschen" class="del">Markierte löschen</button>
+                <button id="BtnSync">Sync</button>
+                <button id="BtnGitHub">GitHub</button>
+            </div>
 
-        <div id="ListenBereich">
-            <ul id="liste"></ul>
+            <div id="ListenBereich">
+                <ul id="liste"></ul>
+            </div>
         </div>
     </div>
 
-    <!-- HIER WIRD JETZT DEIN ECHTES, GROSSES SYNC-SKRIPT GELADEN -->
-    <!-- Falls deine Datei im Ordner "js" liegt, ändere es in href="js/App.js" um -->
-    <script src="js/App.js" defer></script>
+    <!-- Lädt deine originale 1812-Zeilen-Logik aus dem Ordner "js" -->
+    <script src="js/Notizen.js" defer></script>
+    <script src="js/Woerterbuch.js" defer></script>
 </body>
 </html>
