@@ -21,11 +21,6 @@
       "erledigt": false
     },
     {
-      "text": "Obst",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
       "text": "Gefl.Fleischwurst",
       "haendler": "",
       "erledigt": false
@@ -42,6 +37,11 @@
     },
     {
       "text": "TeewurstGrün",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Kaffeesahne/milch",
       "haendler": "L",
       "erledigt": false
     }
@@ -76,6 +76,7 @@
     "Handy-Test-2026",
     "Heinke",
     "Kaffeesahne",
+    "Kaffeesahne/milch",
     "Kartoffeln",
     "Käse",
     "Katoffeln",
@@ -189,6 +190,7 @@
     "nudeln",
     "kreuterbutter",
     "suppengrün",
+    "obst",
     "milch",
     "b",
     "eis"
