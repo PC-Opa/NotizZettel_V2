@@ -6,17 +6,17 @@
       "erledigt": false
     },
     {
+      "text": "Brathering",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
       "text": "Vakuum 40x60",
       "haendler": "Ac",
       "erledigt": false
     },
     {
       "text": "Latschen",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Brathering",
       "haendler": "L",
       "erledigt": false
     },
@@ -129,15 +129,14 @@
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
-    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
     "test test",
     "laptop-test-123",
     "gurken",
-    "pc-opa",
     "waschmittel",
+    "nutella",
     "limetten",
     "mehl",
     "pudding",
@@ -148,14 +147,13 @@
     "spätzle",
     "div.konserven",
     "wein",
-    "nudeln",
     "almighurt ?",
     "selter",
     "leinenöl",
-    "pilze",
     "riha",
     "old spice-aftershafe",
     "rotwein",
+    "pilze",
     "putenbrust",
     "magnesium",
     "magentropfen",
@@ -165,12 +163,12 @@
     "apfel-breaburn",
     "birne",
     "zwiebeln",
-    "kekse",
-    "schnitzel",
     "schw.rücken",
     "lavazza",
+    "pc-opa",
+    "kekse",
+    "schnitzel",
     "sahne",
-    "milch",
     "beckensteine",
     "nudelsalat",
     "brot",
@@ -180,6 +178,7 @@
     "fleischwurst",
     "kaffeesahne",
     "käse",
+    "toast",
     "buttermilch",
     "butter",
     "katoffeln",
@@ -187,10 +186,11 @@
     "butterschmalz",
     "bilderrahmen 16x20",
     "gewürzgurken",
-    "b",
-    "eis",
-    "toast",
+    "nudeln",
     "kreuterbutter",
-    "suppengrün"
+    "suppengrün",
+    "milch",
+    "b",
+    "eis"
   ]
 }
