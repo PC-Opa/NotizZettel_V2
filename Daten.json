@@ -6,7 +6,12 @@
       "erledigt": false
     },
     {
-      "text": "Eis",
+      "text": "Vakuum 40x60",
+      "haendler": "Ac",
+      "erledigt": false
+    },
+    {
+      "text": "Latschen",
       "haendler": "L",
       "erledigt": false
     },
@@ -16,12 +21,27 @@
       "erledigt": false
     },
     {
-      "text": "Vakuum 40x60",
-      "haendler": "Ac",
+      "text": "Obst",
+      "haendler": "L",
       "erledigt": false
     },
     {
-      "text": "Latschen",
+      "text": "Gefl.Fleischwurst",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "Gefl.Jagdwurst",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Salami",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "TeewurstGrün",
       "haendler": "L",
       "erledigt": false
     }
@@ -48,6 +68,8 @@
     "f",
     "Fleischwurst",
     "Fruchtzucker",
+    "GeflFleischwurst",
+    "GeflJagdwurst",
     "Gewürzgurken",
     "Gurken",
     "Handy",
@@ -88,12 +110,14 @@
     "RiHa",
     "Rotwein",
     "Sahne",
+    "Salami",
     "SchwRücken",
     "Selter",
     "Spätzle",
     "Spice-Aftershafe",
     "Steak",
     "Suppengrün",
+    "TeewurstGrün",
     "Test",
     "Toast",
     "Vakuum",
@@ -105,14 +129,15 @@
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
+    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
     "test test",
     "laptop-test-123",
     "gurken",
+    "pc-opa",
     "waschmittel",
-    "nutella",
     "limetten",
     "mehl",
     "pudding",
@@ -123,13 +148,14 @@
     "spätzle",
     "div.konserven",
     "wein",
+    "nudeln",
     "almighurt ?",
     "selter",
     "leinenöl",
+    "pilze",
     "riha",
     "old spice-aftershafe",
     "rotwein",
-    "pilze",
     "putenbrust",
     "magnesium",
     "magentropfen",
@@ -139,12 +165,12 @@
     "apfel-breaburn",
     "birne",
     "zwiebeln",
-    "schw.rücken",
-    "lavazza",
-    "pc-opa",
     "kekse",
     "schnitzel",
+    "schw.rücken",
+    "lavazza",
     "sahne",
+    "milch",
     "beckensteine",
     "nudelsalat",
     "brot",
@@ -154,7 +180,6 @@
     "fleischwurst",
     "kaffeesahne",
     "käse",
-    "toast",
     "buttermilch",
     "butter",
     "katoffeln",
@@ -162,11 +187,10 @@
     "butterschmalz",
     "bilderrahmen 16x20",
     "gewürzgurken",
-    "nudeln",
+    "b",
+    "eis",
+    "toast",
     "kreuterbutter",
-    "suppengrün",
-    "obst",
-    "milch",
-    "b"
+    "suppengrün"
   ]
 }
