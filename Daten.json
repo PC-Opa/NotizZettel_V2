@@ -44,6 +44,11 @@
       "text": "Kaffeesahne/milch",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "Frikassee",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -67,6 +72,7 @@
     "Eis",
     "f",
     "Fleischwurst",
+    "Frikassee",
     "Fruchtzucker",
     "GeflFleischwurst",
     "GeflJagdwurst",
