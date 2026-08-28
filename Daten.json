@@ -26,22 +26,7 @@
       "erledigt": false
     },
     {
-      "text": "Gefl.Jagdwurst",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
       "text": "Salami",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "TeewurstGrün",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Kaffeesahne/milch",
       "haendler": "L",
       "erledigt": false
     },
@@ -69,6 +54,7 @@
     "Buttermilch",
     "Butterschmalz",
     "DivKonserven",
+    "Eier",
     "Eis",
     "f",
     "Fleischwurst",
@@ -199,6 +185,10 @@
     "toast",
     "kreuterbutter",
     "suppengrün",
+    "gefl.jagdwurst",
+    "teewurstgrün",
+    "kaffeesahne/milch",
+    "eier",
     "obst"
   ]
 }
