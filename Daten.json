@@ -1,11 +1,6 @@
 {
   "notizen": [
     {
-      "text": "Balsamico",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
       "text": "Brathering",
       "haendler": "L",
       "erledigt": false
@@ -186,6 +181,7 @@
     "milch",
     "b",
     "eis",
+    "balsamico",
     "gefl.jagdwurst",
     "teewurstgrün",
     "kaffeesahne/milch",
