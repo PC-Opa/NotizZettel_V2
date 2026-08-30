@@ -29,6 +29,11 @@
       "text": "Frikassee",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "FeuchtePap",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -52,6 +57,7 @@
     "Eier",
     "Eis",
     "f",
+    "FeuchtePap",
     "Fleischwurst",
     "Frikassee",
     "Fruchtzucker",
