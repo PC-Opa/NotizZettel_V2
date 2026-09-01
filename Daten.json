@@ -1,17 +1,17 @@
 {
   "notizen": [
     {
-      "text": "Brathering",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
       "text": "Vakuum 40x60",
       "haendler": "Ac",
       "erledigt": false
     },
     {
       "text": "Latschen",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Brathering",
       "haendler": "L",
       "erledigt": false
     },
@@ -33,6 +33,16 @@
     {
       "text": "FeuchtePap",
       "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "SchwRücken",
+      "haendler": "N",
+      "erledigt": false
+    },
+    {
+      "text": "Handyhalter",
+      "haendler": "Ac",
       "erledigt": false
     },
     {
@@ -84,6 +94,7 @@
     "Hack",
     "Handy",
     "Handy-Test-2026",
+    "Handyhalter",
     "Heinke",
     "Kaffeesahne",
     "Kaffeesahne/milch",
@@ -141,14 +152,15 @@
     "milchreis",
     "fruchtzucker",
     "handy-test-2026",
+    "nutella",
     "test laptop",
     "handy test",
     "neuertest",
     "test test",
     "laptop-test-123",
     "gurken",
+    "pc-opa",
     "waschmittel",
-    "nutella",
     "limetten",
     "mehl",
     "pudding",
@@ -159,13 +171,14 @@
     "spätzle",
     "div.konserven",
     "wein",
+    "nudeln",
     "almighurt ?",
     "selter",
     "leinenöl",
+    "pilze",
     "riha",
     "old spice-aftershafe",
     "rotwein",
-    "pilze",
     "putenbrust",
     "magnesium",
     "magentropfen",
@@ -174,12 +187,12 @@
     "apfel-breaburn",
     "birne",
     "zwiebeln",
-    "schw.rücken",
-    "lavazza",
-    "pc-opa",
     "kekse",
     "schnitzel",
+    "schw.rücken",
+    "lavazza",
     "sahne",
+    "milch",
     "beckensteine",
     "nudelsalat",
     "brot",
@@ -189,7 +202,6 @@
     "fleischwurst",
     "kaffeesahne",
     "käse",
-    "toast",
     "buttermilch",
     "butter",
     "katoffeln",
@@ -197,17 +209,16 @@
     "butterschmalz",
     "bilderrahmen 16x20",
     "gewürzgurken",
-    "nudeln",
-    "kreuterbutter",
-    "suppengrün",
-    "obst",
-    "milch",
     "b",
     "eis",
-    "balsamico",
+    "toast",
+    "kreuterbutter",
+    "suppengrün",
     "gefl.jagdwurst",
     "teewurstgrün",
     "kaffeesahne/milch",
-    "eier"
+    "eier",
+    "obst",
+    "balsamico"
   ]
 }
