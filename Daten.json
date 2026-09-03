@@ -1,33 +1,8 @@
 {
   "notizen": [
     {
-      "text": "Brathering",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Vakuum 40x60",
-      "haendler": "Ac",
-      "erledigt": false
-    },
-    {
-      "text": "Latschen",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
       "text": "Gefl.Fleischwurst",
       "haendler": "",
-      "erledigt": false
-    },
-    {
-      "text": "Salami",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Frikassee",
-      "haendler": "L",
       "erledigt": false
     },
     {
@@ -51,23 +26,18 @@
       "erledigt": false
     },
     {
-      "text": "Zimtstange",
+      "text": "Hähnchen/Putenbrust",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Hohmann Kartoffelsalat",
       "haendler": "",
-      "erledigt": true
+      "erledigt": false
     },
     {
-      "text": "Muskatnuss",
+      "text": "Griller Heinke",
       "haendler": "",
-      "erledigt": true
-    },
-    {
-      "text": "SchwRücken",
-      "haendler": "N",
-      "erledigt": true
-    },
-    {
-      "text": "Handyhalter",
-      "haendler": "Ac",
       "erledigt": false
     }
   ],
@@ -100,15 +70,19 @@
     "GeflJagdwurst",
     "Gem",
     "Gewürzgurken",
+    "Griller",
     "Gurken",
     "Hack",
+    "Hähnchen/Putenbrust",
     "Handy",
     "Handy-Test-2026",
     "Handyhalter",
     "Heinke",
+    "Hohmann",
     "Kaffeesahne",
     "Kaffeesahne/milch",
     "Kartoffeln",
+    "Kartoffelsalat",
     "Käse",
     "Katoffeln",
     "Kekse",
@@ -231,6 +205,15 @@
     "gefl.jagdwurst",
     "teewurstgrün",
     "kaffeesahne/milch",
-    "eier"
+    "eier",
+    "zimtstange",
+    "muskatnuss",
+    "schwrücken",
+    "handyhalter",
+    "frikassee",
+    "salami",
+    "latschen",
+    "vakuum 40x60",
+    "brathering"
   ]
 }
