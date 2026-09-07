@@ -14,6 +14,21 @@
       "text": "DesinfektNachfüll",
       "haendler": "R",
       "erledigt": false
+    },
+    {
+      "text": "Bohnensalat",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Kartoffeln",
+      "haendler": "E",
+      "erledigt": false
+    },
+    {
+      "text": "GetränkeKinder",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -28,6 +43,7 @@
     "Bilderrahmen",
     "Birne",
     "Bockwurst",
+    "Bohnensalat",
     "Brathering",
     "Brot",
     "Butter",
@@ -45,6 +61,7 @@
     "GeflFleischwurst",
     "GeflJagdwurst",
     "Gem",
+    "GetränkeKinder",
     "Gewürzgurken",
     "Griller",
     "Gurken",
@@ -195,7 +212,6 @@
     "hohmann kartoffelsalat",
     "hähnchen/putenbrust",
     "feuchtepap",
-    "kartoffeln",
     "gefl.fleischwurst"
   ]
 }
