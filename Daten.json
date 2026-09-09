@@ -1,11 +1,6 @@
 {
   "notizen": [
     {
-      "text": "Weiskohl",
-      "haendler": "",
-      "erledigt": false
-    },
-    {
       "text": "Gem. Hack",
       "haendler": "L",
       "erledigt": false
@@ -16,18 +11,13 @@
       "erledigt": false
     },
     {
-      "text": "Bohnensalat",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Kartoffeln",
+      "text": "Weise Bohnen",
       "haendler": "E",
       "erledigt": false
     },
     {
-      "text": "GetränkeKinder",
-      "haendler": "L",
+      "text": "Eier.18",
+      "haendler": "N",
       "erledigt": false
     }
   ],
@@ -43,6 +33,7 @@
     "Bilderrahmen",
     "Birne",
     "Bockwurst",
+    "Bohnen",
     "Bohnensalat",
     "Brathering",
     "Brot",
@@ -52,6 +43,7 @@
     "DesinfektNachfüll",
     "DivKonserven",
     "Eier",
+    "Eier18",
     "Eis",
     "f",
     "FeuchtePap",
@@ -123,6 +115,7 @@
     "Vakuum",
     "Waschmittel",
     "Wein",
+    "Weise",
     "Weiskohl",
     "Zimtstange",
     "Zwiebeln"
@@ -212,6 +205,10 @@
     "hohmann kartoffelsalat",
     "hähnchen/putenbrust",
     "feuchtepap",
-    "gefl.fleischwurst"
+    "gefl.fleischwurst",
+    "bohnensalat",
+    "kartoffeln",
+    "getränkekinder",
+    "weiskohl"
   ]
 }
