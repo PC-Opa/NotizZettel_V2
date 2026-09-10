@@ -3,7 +3,7 @@
     {
       "text": "Gem. Hack",
       "haendler": "L",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "DesinfektNachfüll",
@@ -18,12 +18,7 @@
     {
       "text": "Eier.18",
       "haendler": "N",
-      "erledigt": false
-    },
-    {
-      "text": "Bremsseil mit Führung lang, und evtl. Gegenstück",
-      "haendler": "",
-      "erledigt": false
+      "erledigt": true
     }
   ],
   "woerter": [
@@ -216,6 +211,7 @@
     "frikassee",
     "feuchtepap",
     "handyhalter",
+    "bremsseil mit führung lang, und evtl. gegenstück",
     "griller heinke",
     "hohmann kartoffelsalat",
     "hähnchen/putenbrust",
