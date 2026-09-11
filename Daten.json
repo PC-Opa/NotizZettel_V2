@@ -1,24 +1,9 @@
 {
   "notizen": [
     {
-      "text": "Gem. Hack",
-      "haendler": "L",
-      "erledigt": true
-    },
-    {
       "text": "DesinfektNachfüll",
       "haendler": "R",
       "erledigt": false
-    },
-    {
-      "text": "Weise Bohnen",
-      "haendler": "E",
-      "erledigt": false
-    },
-    {
-      "text": "Eier.18",
-      "haendler": "N",
-      "erledigt": true
     }
   ],
   "woerter": [
@@ -217,6 +202,9 @@
     "kartoffeln",
     "getränkekinder",
     "weiskohl",
-    "bremsseil mit führung lang, und evtl. gegenstück"
+    "bremsseil mit führung lang, und evtl. gegenstück",
+    "gem. hack",
+    "eier.18",
+    "weise bohnen"
   ]
 }
