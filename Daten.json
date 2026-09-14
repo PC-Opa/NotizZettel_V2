@@ -6,7 +6,7 @@
       "erledigt": false
     },
     {
-      "text": "Kaffeesahne",
+      "text": "Eier12",
       "haendler": "A",
       "erledigt": false
     }
@@ -34,6 +34,7 @@
     "DesinfektNachfüll",
     "DivKonserven",
     "Eier",
+    "Eier12",
     "Eier18",
     "Eis",
     "evtl",
@@ -168,6 +169,7 @@
     "reis",
     "lemon",
     "fleischwurst",
+    "kaffeesahne",
     "käse",
     "toast",
     "buttermilch",
