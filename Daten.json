@@ -29,6 +29,11 @@
       "text": "Gefl.Fleischwurst",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "Aufschnitt",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -37,6 +42,7 @@
     "Almighurt",
     "Apfel-Breaburn",
     "Apotheke",
+    "Aufschnitt",
     "B",
     "Balsamico",
     "Beckensteine",
