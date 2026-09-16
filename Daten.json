@@ -9,31 +9,6 @@
       "text": "Eier12",
       "haendler": "A",
       "erledigt": false
-    },
-    {
-      "text": "Kaffeesahne",
-      "haendler": "A",
-      "erledigt": false
-    },
-    {
-      "text": "Nektarinen",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Zwiebeln",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Gefl.Fleischwurst",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Aufschnitt",
-      "haendler": "L",
-      "erledigt": false
     }
   ],
   "woerter": [
@@ -237,6 +212,11 @@
     "desinfektnachfüll",
     "weise bohnen",
     "eier.18",
-    "eier"
+    "eier",
+    "kaffeesahne",
+    "nektarinen",
+    "aufschnitt",
+    "zwiebeln",
+    "gefl.fleischwurst"
   ]
 }
