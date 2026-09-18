@@ -14,6 +14,11 @@
       "text": "Apotheke",
       "haendler": "",
       "erledigt": false
+    },
+    {
+      "text": "Butter-Heinke",
+      "haendler": "",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -35,6 +40,7 @@
     "Bremsseil",
     "Brot",
     "Butter",
+    "Butter-Heinke",
     "Buttermilch",
     "Butterschmalz",
     "DesinfektNachfüll",
