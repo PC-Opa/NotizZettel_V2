@@ -9,6 +9,36 @@
       "text": "Eier12",
       "haendler": "A",
       "erledigt": false
+    },
+    {
+      "text": "RiHa",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Obst",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Magentropfen",
+      "haendler": "R",
+      "erledigt": false
+    },
+    {
+      "text": "Käse",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Wermut-Trocken,Apotheke",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "Magnesium",
+      "haendler": "R",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -119,6 +149,7 @@
     "Wein",
     "Weise",
     "Weiskohl",
+    "Wermut-TrockenApotheke",
     "Zimtstange",
     "Zwiebeln"
   ],
@@ -146,13 +177,10 @@
     "almighurt ?",
     "selter",
     "leinenöl",
-    "riha",
     "old spice-aftershafe",
     "rotwein",
     "pilze",
     "putenbrust",
-    "magnesium",
-    "magentropfen",
     "bockwurst",
     "petersilie",
     "apfel-breaburn",
@@ -171,7 +199,6 @@
     "reis",
     "lemon",
     "fleischwurst",
-    "käse",
     "toast",
     "buttermilch",
     "butter",
@@ -183,7 +210,6 @@
     "nudeln",
     "kreuterbutter",
     "suppengrün",
-    "obst",
     "milch",
     "b",
     "eis",
