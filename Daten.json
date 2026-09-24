@@ -6,11 +6,6 @@
       "erledigt": false
     },
     {
-      "text": "Eier12",
-      "haendler": "A",
-      "erledigt": false
-    },
-    {
       "text": "RiHa",
       "haendler": "L",
       "erledigt": false
@@ -245,6 +240,7 @@
     "kaffeesahne",
     "nektarinen",
     "aufschnitt",
-    "gefl.fleischwurst"
+    "gefl.fleischwurst",
+    "eier12"
   ]
 }
