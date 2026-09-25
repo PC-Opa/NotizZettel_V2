@@ -34,11 +34,22 @@
       "text": "Magnesium",
       "haendler": "R",
       "erledigt": false
+    },
+    {
+      "text": "Speckklüten",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Kaffee Heinke 5x",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
     "16x20",
     "40x60",
+    "5x",
     "Almighurt",
     "Apfel-Breaburn",
     "Apotheke",
@@ -87,6 +98,7 @@
     "Handyhalter",
     "Heinke",
     "Hohmann",
+    "Kaffee",
     "Kaffeesahne",
     "Kaffeesahne/milch",
     "Kartoffeln",
@@ -132,6 +144,7 @@
     "SchwRücken",
     "Selter",
     "Spätzle",
+    "Speckklüten",
     "Spice-Aftershafe",
     "Steak",
     "Suppengrün",
