@@ -11,11 +11,6 @@
       "erledigt": false
     },
     {
-      "text": "Magentropfen",
-      "haendler": "R",
-      "erledigt": false
-    },
-    {
       "text": "Käse",
       "haendler": "L",
       "erledigt": false
@@ -23,11 +18,6 @@
     {
       "text": "Wermut-Trocken,Apotheke",
       "haendler": "",
-      "erledigt": false
-    },
-    {
-      "text": "Magnesium",
-      "haendler": "R",
       "erledigt": false
     },
     {
@@ -250,6 +240,8 @@
     "eier12",
     "speckklüten",
     "kaffee heinke 5x",
-    "obst"
+    "obst",
+    "magnesium",
+    "magentropfen"
   ]
 }
