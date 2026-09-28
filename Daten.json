@@ -11,11 +11,6 @@
       "erledigt": false
     },
     {
-      "text": "Obst",
-      "haendler": "L",
-      "erledigt": true
-    },
-    {
       "text": "Magentropfen",
       "haendler": "R",
       "erledigt": false
@@ -34,16 +29,6 @@
       "text": "Magnesium",
       "haendler": "R",
       "erledigt": false
-    },
-    {
-      "text": "Speckklüten",
-      "haendler": "L",
-      "erledigt": true
-    },
-    {
-      "text": "Kaffee Heinke 5x",
-      "haendler": "L",
-      "erledigt": true
     }
   ],
   "woerter": [
@@ -254,6 +239,9 @@
     "gefl.fleischwurst",
     "apotheke",
     "butter-heinke",
-    "eier12"
+    "eier12",
+    "speckklüten",
+    "kaffee heinke 5x",
+    "obst"
   ]
 }
