@@ -29,6 +29,16 @@
       "text": "Magnesium",
       "haendler": "R",
       "erledigt": false
+    },
+    {
+      "text": "Zwiebeln",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Salami",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -212,7 +222,6 @@
     "kartoffeln",
     "zimtstange",
     "schwrücken",
-    "salami",
     "latschen",
     "toast",
     "brathering",
@@ -235,7 +244,6 @@
     "kaffeesahne",
     "nektarinen",
     "aufschnitt",
-    "zwiebeln",
     "gefl.fleischwurst",
     "apotheke",
     "butter-heinke",
