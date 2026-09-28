@@ -13,7 +13,7 @@
     {
       "text": "Obst",
       "haendler": "L",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Magentropfen",
@@ -38,12 +38,12 @@
     {
       "text": "Speckklüten",
       "haendler": "L",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Kaffee Heinke 5x",
       "haendler": "L",
-      "erledigt": false
+      "erledigt": true
     }
   ],
   "woerter": [
