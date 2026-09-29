@@ -6,23 +6,8 @@
       "erledigt": false
     },
     {
-      "text": "Käse",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
       "text": "Wermut-Trocken,Apotheke",
       "haendler": "",
-      "erledigt": false
-    },
-    {
-      "text": "Zwiebeln",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Salami",
-      "haendler": "L",
       "erledigt": false
     },
     {
@@ -244,6 +229,9 @@
     "obst",
     "magnesium",
     "magentropfen",
-    "riha"
+    "riha",
+    "käse",
+    "zwiebeln",
+    "salami"
   ]
 }
