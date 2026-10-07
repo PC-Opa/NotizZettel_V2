@@ -1,11 +1,6 @@
 {
   "notizen": [
     {
-      "text": "Gas",
-      "haendler": "Ac",
-      "erledigt": false
-    },
-    {
       "text": "Wermut-Trocken,Apotheke",
       "haendler": "",
       "erledigt": false
@@ -24,6 +19,16 @@
       "text": "Obst ?",
       "haendler": "",
       "erledigt": false
+    },
+    {
+      "text": "Destiliertes Wasser",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "Falsches Bitter Lemon",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -39,6 +44,7 @@
     "Beckensteine",
     "Bilderrahmen",
     "Birne",
+    "Bitter",
     "Bockwurst",
     "Bohnen",
     "Bohnensalat",
@@ -50,6 +56,7 @@
     "Buttermilch",
     "Butterschmalz",
     "DesinfektNachfüll",
+    "Destiliertes",
     "DivKonserven",
     "Eier",
     "Eier12",
@@ -57,6 +64,7 @@
     "Eis",
     "evtl",
     "f",
+    "Falsches",
     "FeuchtePap",
     "Fleischwurst",
     "Frikassee",
@@ -135,6 +143,7 @@
     "und",
     "Vakuum",
     "Waschmittel",
+    "Wasser",
     "Wein",
     "Weise",
     "Weiskohl",
@@ -241,6 +250,7 @@
     "obst",
     "zwiebeln",
     "salami",
-    "käse"
+    "käse",
+    "gas"
   ]
 }
