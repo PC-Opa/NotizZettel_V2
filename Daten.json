@@ -29,6 +29,11 @@
       "text": "FeuchtePap",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "Kaffeesahne",
+      "haendler": "N",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -236,7 +241,6 @@
     "desinfektnachfüll",
     "apotheke",
     "butter-heinke",
-    "kaffeesahne",
     "nektarinen",
     "aufschnitt",
     "gefl.fleischwurst",
