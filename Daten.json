@@ -1,11 +1,6 @@
 {
   "notizen": [
     {
-      "text": "Wermut-Trocken,Apotheke",
-      "haendler": "",
-      "erledigt": false
-    },
-    {
       "text": "Shampoo",
       "haendler": "",
       "erledigt": false
@@ -27,6 +22,11 @@
     },
     {
       "text": "Falsches Bitter Lemon",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "FeuchtePap",
       "haendler": "L",
       "erledigt": false
     }
@@ -225,7 +225,6 @@
     "griller heinke",
     "hohmann kartoffelsalat",
     "hähnchen/putenbrust",
-    "feuchtepap",
     "bohnensalat",
     "kartoffeln",
     "getränkekinder",
@@ -251,6 +250,7 @@
     "zwiebeln",
     "salami",
     "käse",
-    "gas"
+    "gas",
+    "wermut-trocken,apotheke"
   ]
 }
