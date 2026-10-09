@@ -39,6 +39,11 @@
       "text": "Destiliertes",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "Käse",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -258,7 +263,6 @@
     "obst",
     "zwiebeln",
     "salami",
-    "käse",
     "gas",
     "wermut-trocken,apotheke"
   ]
