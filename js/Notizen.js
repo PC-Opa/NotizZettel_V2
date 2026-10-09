@@ -650,7 +650,15 @@ document.addEventListener(
                 }
             );
         }
+        const btnGitHub =
+            document.getElementById("BtnGitHub");
 
+        if (btnGitHub) {
+            btnGitHub.addEventListener(
+                "click",
+                githubBereichUmschalten
+            );
+        }
         notizenStarten();
     }
 );
