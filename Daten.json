@@ -6,43 +6,8 @@
       "erledigt": false
     },
     {
-      "text": "Selter",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
       "text": "Obst ?",
       "haendler": "",
-      "erledigt": false
-    },
-    {
-      "text": "Destiliertes Wasser",
-      "haendler": "",
-      "erledigt": false
-    },
-    {
-      "text": "Falsches Bitter Lemon",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "FeuchtePap",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Kaffeesahne",
-      "haendler": "N",
-      "erledigt": false
-    },
-    {
-      "text": "Destiliertes",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Käse",
-      "haendler": "L",
       "erledigt": false
     },
     {
@@ -268,6 +233,13 @@
     "zwiebeln",
     "salami",
     "gas",
-    "wermut-trocken,apotheke"
+    "wermut-trocken,apotheke",
+    "feuchtepap",
+    "kaffeesahne",
+    "destiliertes",
+    "käse",
+    "destiliertes wasser",
+    "selter",
+    "falsches bitter lemon"
   ]
 }
