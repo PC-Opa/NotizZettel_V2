@@ -14,6 +14,11 @@
       "text": "Beckensteine",
       "haendler": "N",
       "erledigt": false
+    },
+    {
+      "text": "Lidl",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -88,6 +93,7 @@
     "Lavazza",
     "Leinenöl",
     "Lemon",
+    "Lidl",
     "Limetten",
     "Magentropfen",
     "Magnesium",
