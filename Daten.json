@@ -44,6 +44,11 @@
       "text": "Käse",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "Beckensteine",
+      "haendler": "N",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -203,7 +208,6 @@
     "kekse",
     "schnitzel",
     "sahne",
-    "beckensteine",
     "nudelsalat",
     "brot",
     "steak",
