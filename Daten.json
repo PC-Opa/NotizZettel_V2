@@ -1,23 +1,18 @@
 {
   "notizen": [
     {
-      "text": "Shampoo",
-      "haendler": "",
-      "erledigt": false
-    },
-    {
       "text": "Obst ?",
       "haendler": "",
       "erledigt": false
     },
     {
       "text": "Beckensteine",
-      "haendler": "N",
+      "haendler": "L",
       "erledigt": false
     },
     {
-      "text": "Lidl",
-      "haendler": "L",
+      "text": "Shampoo",
+      "haendler": "E",
       "erledigt": false
     }
   ],
@@ -246,6 +241,7 @@
     "käse",
     "destiliertes wasser",
     "selter",
-    "falsches bitter lemon"
+    "falsches bitter lemon",
+    "lidl"
   ]
 }
