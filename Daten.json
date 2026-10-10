@@ -1,6 +1,11 @@
 {
   "notizen": [
     {
+      "text": "Shampoo",
+      "haendler": "E",
+      "erledigt": false
+    },
+    {
       "text": "Obst ?",
       "haendler": "",
       "erledigt": false
@@ -8,11 +13,6 @@
     {
       "text": "Beckensteine",
       "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Shampoo",
-      "haendler": "E",
       "erledigt": false
     }
   ],
