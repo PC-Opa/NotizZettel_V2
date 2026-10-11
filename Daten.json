@@ -14,6 +14,11 @@
       "text": "Beckensteine",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "Zitronensäure",
+      "haendler": "R",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -135,6 +140,7 @@
     "Weiskohl",
     "Wermut-TrockenApotheke",
     "Zimtstange",
+    "Zitronensäure",
     "Zwiebeln"
   ],
   "geloescht": [
