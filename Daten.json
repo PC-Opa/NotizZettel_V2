@@ -1,26 +1,5 @@
 {
-  "notizen": [
-    {
-      "text": "Obst ?",
-      "haendler": "",
-      "erledigt": false
-    },
-    {
-      "text": "Beckensteine",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Shampoo",
-      "haendler": "E",
-      "erledigt": false
-    },
-    {
-      "text": "Zitronensäure",
-      "haendler": "R",
-      "erledigt": false
-    }
-  ],
+  "notizen": [],
   "woerter": [
     "16x20",
     "40x60",
@@ -248,6 +227,10 @@
     "destiliertes wasser",
     "selter",
     "falsches bitter lemon",
-    "lidl"
+    "lidl",
+    "shampoo",
+    "zitronensäure",
+    "beckensteine",
+    "obst ?"
   ]
 }
