@@ -1,5 +1,11 @@
 {
-  "notizen": [],
+  "notizen": [
+    {
+      "text": "Toast",
+      "haendler": "L",
+      "erledigt": false
+    }
+  ],
   "woerter": [
     "16x20",
     "40x60",
@@ -165,7 +171,6 @@
     "reis",
     "lemon",
     "fleischwurst",
-    "toast",
     "buttermilch",
     "butter",
     "katoffeln",
