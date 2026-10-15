@@ -4,6 +4,41 @@
       "text": "Toast",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "Kartoffeln",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Milch",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Petersilie",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Zwiebeln",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Speckwürfel",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Schokocreme",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Bonbon",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -23,6 +58,7 @@
     "Bockwurst",
     "Bohnen",
     "Bohnensalat",
+    "Bonbon",
     "Brathering",
     "Bremsseil",
     "Brot",
@@ -105,11 +141,13 @@
     "Rotwein",
     "Sahne",
     "Salami",
+    "Schokocreme",
     "SchwRücken",
     "Selter",
     "Shampoo",
     "Spätzle",
     "Speckklüten",
+    "Speckwürfel",
     "Spice-Aftershafe",
     "Steak",
     "Suppengrün",
@@ -156,7 +194,6 @@
     "pilze",
     "putenbrust",
     "bockwurst",
-    "petersilie",
     "apfel-breaburn",
     "birne",
     "schw.rücken",
@@ -181,7 +218,6 @@
     "nudeln",
     "kreuterbutter",
     "suppengrün",
-    "milch",
     "b",
     "eis",
     "balsamico",
@@ -201,7 +237,6 @@
     "hohmann kartoffelsalat",
     "hähnchen/putenbrust",
     "bohnensalat",
-    "kartoffeln",
     "getränkekinder",
     "weiskohl",
     "bremsseil mit führung lang, und evtl. gegenstück",
@@ -221,7 +256,6 @@
     "kaffee heinke 5x",
     "riha",
     "obst",
-    "zwiebeln",
     "salami",
     "gas",
     "wermut-trocken,apotheke",
