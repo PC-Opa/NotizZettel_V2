@@ -1,46 +1,5 @@
 {
-  "notizen": [
-    {
-      "text": "Toast",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Kartoffeln",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Milch",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Petersilie",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Zwiebeln",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Speckwürfel",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Schokocreme",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Bonbon",
-      "haendler": "L",
-      "erledigt": false
-    }
-  ],
+  "notizen": [],
   "woerter": [
     "16x20",
     "40x60",
@@ -270,6 +229,14 @@
     "shampoo",
     "zitronensäure",
     "beckensteine",
-    "obst ?"
+    "obst ?",
+    "bonbon",
+    "schokocreme",
+    "speckwürfel",
+    "zwiebeln",
+    "petersilie",
+    "milch",
+    "kartoffeln",
+    "toast"
   ]
 }
