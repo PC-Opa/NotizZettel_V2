@@ -1,5 +1,16 @@
 {
-  "notizen": [],
+  "notizen": [
+    {
+      "text": "Vanille-Extrakt",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "Toast",
+      "haendler": "L",
+      "erledigt": false
+    }
+  ],
   "woerter": [
     "16x20",
     "40x60",
@@ -115,6 +126,7 @@
     "Toast",
     "und",
     "Vakuum",
+    "Vanille-Extrakt",
     "Waschmittel",
     "Wasser",
     "Wein",
@@ -236,7 +248,6 @@
     "zwiebeln",
     "petersilie",
     "milch",
-    "kartoffeln",
-    "toast"
+    "kartoffeln"
   ]
 }
