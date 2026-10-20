@@ -3,17 +3,17 @@
     {
       "text": "Vanille-Extrakt",
       "haendler": "",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Toast",
       "haendler": "L",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Salami",
       "haendler": "L",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Tee",
@@ -23,22 +23,27 @@
     {
       "text": "Kaffeesahne",
       "haendler": "L",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Schokolade",
       "haendler": "",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Paprika rot",
       "haendler": "",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Milch",
       "haendler": "L",
-      "erledigt": false
+      "erledigt": true
+    },
+    {
+      "text": "Drillinge",
+      "haendler": "",
+      "erledigt": true
     }
   ],
   "woerter": [
@@ -69,6 +74,7 @@
     "DesinfektNachfüll",
     "Destiliertes",
     "DivKonserven",
+    "Drillinge",
     "Eier",
     "Eier12",
     "Eier18",
