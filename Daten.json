@@ -1,49 +1,9 @@
 {
   "notizen": [
     {
-      "text": "Vanille-Extrakt",
-      "haendler": "",
-      "erledigt": true
-    },
-    {
-      "text": "Toast",
-      "haendler": "L",
-      "erledigt": true
-    },
-    {
-      "text": "Salami",
-      "haendler": "L",
-      "erledigt": true
-    },
-    {
       "text": "Tee",
       "haendler": "A",
       "erledigt": false
-    },
-    {
-      "text": "Kaffeesahne",
-      "haendler": "L",
-      "erledigt": true
-    },
-    {
-      "text": "Schokolade",
-      "haendler": "",
-      "erledigt": true
-    },
-    {
-      "text": "Paprika rot",
-      "haendler": "",
-      "erledigt": true
-    },
-    {
-      "text": "Milch",
-      "haendler": "L",
-      "erledigt": true
-    },
-    {
-      "text": "Drillinge",
-      "haendler": "",
-      "erledigt": true
     }
   ],
   "woerter": [
@@ -285,6 +245,14 @@
     "zwiebeln",
     "speckwürfel",
     "schokocreme",
-    "bonbon"
+    "bonbon",
+    "vanille-extrakt",
+    "toast",
+    "salami",
+    "kaffeesahne",
+    "schokolade",
+    "paprika rot",
+    "milch",
+    "drillinge"
   ]
 }
