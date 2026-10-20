@@ -4,11 +4,6 @@
       "text": "Vanille-Extrakt",
       "haendler": "",
       "erledigt": false
-    },
-    {
-      "text": "Toast",
-      "haendler": "L",
-      "erledigt": false
     }
   ],
   "woerter": [
@@ -242,12 +237,13 @@
     "zitronensäure",
     "beckensteine",
     "obst ?",
-    "bonbon",
-    "schokocreme",
-    "speckwürfel",
-    "zwiebeln",
-    "petersilie",
+    "toast",
+    "kartoffeln",
     "milch",
-    "kartoffeln"
+    "petersilie",
+    "zwiebeln",
+    "speckwürfel",
+    "schokocreme",
+    "bonbon"
   ]
 }
