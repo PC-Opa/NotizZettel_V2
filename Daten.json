@@ -4,6 +4,41 @@
       "text": "Vanille-Extrakt",
       "haendler": "",
       "erledigt": false
+    },
+    {
+      "text": "Toast",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Salami",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Tee",
+      "haendler": "A",
+      "erledigt": false
+    },
+    {
+      "text": "Kaffeesahne",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Schokolade",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "Paprika rot",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "Milch",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -96,6 +131,7 @@
     "Nutella",
     "Obst",
     "Old",
+    "Paprika",
     "pc-opa",
     "Petersilie",
     "Pilze",
@@ -103,10 +139,12 @@
     "Putenbrust",
     "Reis",
     "RiHa",
+    "rot",
     "Rotwein",
     "Sahne",
     "Salami",
     "Schokocreme",
+    "Schokolade",
     "SchwRücken",
     "Selter",
     "Shampoo",
@@ -116,6 +154,7 @@
     "Spice-Aftershafe",
     "Steak",
     "Suppengrün",
+    "Tee",
     "TeewurstGrün",
     "Test",
     "Toast",
@@ -222,11 +261,9 @@
     "kaffee heinke 5x",
     "riha",
     "obst",
-    "salami",
     "gas",
     "wermut-trocken,apotheke",
     "feuchtepap",
-    "kaffeesahne",
     "destiliertes",
     "käse",
     "destiliertes wasser",
@@ -237,9 +274,7 @@
     "zitronensäure",
     "beckensteine",
     "obst ?",
-    "toast",
     "kartoffeln",
-    "milch",
     "petersilie",
     "zwiebeln",
     "speckwürfel",
