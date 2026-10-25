@@ -4,9 +4,55 @@
       "text": "Tee",
       "haendler": "A",
       "erledigt": false
+    },
+    {
+      "text": "RiHack",
+      "haendler": "A",
+      "erledigt": false
+    },
+    {
+      "text": "Kochschinken",
+      "haendler": "A",
+      "erledigt": false
+    },
+    {
+      "text": "Duftperlen",
+      "haendler": "A",
+      "erledigt": false
+    },
+    {
+      "text": "Mettwurst",
+      "haendler": "A",
+      "erledigt": false
+    },
+    {
+      "text": "Bockwurst 1000gr",
+      "haendler": "N",
+      "erledigt": false
+    },
+    {
+      "text": "Mettenden",
+      "haendler": "N",
+      "erledigt": false
+    },
+    {
+      "text": "Butter",
+      "haendler": "N",
+      "erledigt": false
+    },
+    {
+      "text": "Kaffeesahne/milch",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Spannbettlaken",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
+    "1000gr",
     "16x20",
     "40x60",
     "5x",
@@ -35,6 +81,7 @@
     "Destiliertes",
     "DivKonserven",
     "Drillinge",
+    "Duftperlen",
     "Eier",
     "Eier12",
     "Eier18",
@@ -72,6 +119,7 @@
     "Katoffeln",
     "Kekse",
     "Knabberkram",
+    "Kochschinken",
     "Kreuterbutter",
     "lang",
     "Laptop",
@@ -86,6 +134,8 @@
     "Magnesium",
     "Marmelade",
     "Mehl",
+    "Mettenden",
+    "Mettwurst",
     "Milch",
     "Milchreis",
     "mit",
@@ -105,6 +155,7 @@
     "Putenbrust",
     "Reis",
     "RiHa",
+    "RiHack",
     "rot",
     "Rotwein",
     "Sahne",
@@ -114,6 +165,7 @@
     "SchwRücken",
     "Selter",
     "Shampoo",
+    "Spannbettlaken",
     "Spätzle",
     "Speckklüten",
     "Speckwürfel",
@@ -180,7 +232,6 @@
     "lemon",
     "fleischwurst",
     "buttermilch",
-    "butter",
     "katoffeln",
     "marmelade",
     "butterschmalz",
@@ -194,7 +245,6 @@
     "balsamico",
     "gefl.jagdwurst",
     "teewurstgrün",
-    "kaffeesahne/milch",
     "eier",
     "zimtstange",
     "muskatnuss",
