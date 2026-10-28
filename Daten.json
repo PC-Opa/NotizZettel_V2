@@ -1,21 +1,6 @@
 {
   "notizen": [
     {
-      "text": "Tee",
-      "haendler": "A",
-      "erledigt": false
-    },
-    {
-      "text": "RiHack",
-      "haendler": "A",
-      "erledigt": false
-    },
-    {
-      "text": "Kochschinken",
-      "haendler": "A",
-      "erledigt": false
-    },
-    {
       "text": "Duftperlen",
       "haendler": "A",
       "erledigt": false
@@ -309,6 +294,9 @@
     "toast",
     "schokolade",
     "paprika rot",
-    "drillinge"
+    "drillinge",
+    "tee",
+    "rihack",
+    "kochschinken"
   ]
 }
