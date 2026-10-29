@@ -1,16 +1,6 @@
 {
   "notizen": [
     {
-      "text": "Duftperlen",
-      "haendler": "A",
-      "erledigt": false
-    },
-    {
-      "text": "Mettwurst",
-      "haendler": "A",
-      "erledigt": false
-    },
-    {
       "text": "Bockwurst 1000gr",
       "haendler": "N",
       "erledigt": false
@@ -295,6 +285,8 @@
     "paprika rot",
     "milch",
     "drillinge",
+    "duftperlen",
+    "mettwurst",
     "tee",
     "rihack",
     "kochschinken"
