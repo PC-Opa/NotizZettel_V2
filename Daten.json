@@ -16,23 +16,8 @@
       "erledigt": false
     },
     {
-      "text": "Kaffeesahne/milch",
-      "haendler": "L",
-      "erledigt": true
-    },
-    {
       "text": "Spannbettlaken",
       "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Natron",
-      "haendler": "E",
-      "erledigt": true
-    },
-    {
-      "text": "Brot",
-      "haendler": "E",
       "erledigt": false
     }
   ],
@@ -212,6 +197,7 @@
     "schnitzel",
     "sahne",
     "nudelsalat",
+    "brot",
     "steak",
     "reis",
     "lemon",
@@ -293,6 +279,8 @@
     "rihack",
     "kochschinken",
     "duftperlen",
-    "mettwurst"
+    "mettwurst",
+    "natron",
+    "kaffeesahne/milch"
   ]
 }
