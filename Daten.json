@@ -29,6 +29,11 @@
       "text": "Senf",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "Käse",
+      "haendler": "A",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -90,6 +95,7 @@
     "Handyhalter",
     "Heinke",
     "Hohmann",
+    "Kä",
     "Kaffee",
     "Kaffeesahne",
     "Kaffeesahne/milch",
@@ -263,7 +269,6 @@
     "wermut-trocken,apotheke",
     "feuchtepap",
     "destiliertes",
-    "käse",
     "destiliertes wasser",
     "selter",
     "falsches bitter lemon",
@@ -293,6 +298,7 @@
     "kochschinken",
     "kaffeesahne/milch",
     "natron",
-    "brot"
+    "brot",
+    "kä"
   ]
 }
