@@ -1,43 +1,13 @@
 {
   "notizen": [
     {
-      "text": "Bockwurst 1000gr",
-      "haendler": "N",
-      "erledigt": false
-    },
-    {
-      "text": "Mettenden",
-      "haendler": "N",
-      "erledigt": false
-    },
-    {
-      "text": "Butter",
-      "haendler": "N",
-      "erledigt": false
-    },
-    {
-      "text": "Spannbettlaken",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
       "text": "AAA Akku",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Tomatenmark",
       "haendler": "L",
       "erledigt": false
     },
     {
       "text": "Senf",
       "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Käse",
-      "haendler": "A",
       "erledigt": false
     }
   ],
@@ -279,6 +249,7 @@
     "feuchtepap",
     "kaffeesahne",
     "destiliertes",
+    "käse",
     "destiliertes wasser",
     "selter",
     "falsches bitter lemon",
@@ -306,6 +277,11 @@
     "mettwurst",
     "natron",
     "kaffeesahne/milch",
+    "bockwurst 1000gr",
+    "mettenden",
+    "butter",
+    "spannbettlaken",
+    "tomatenmark",
     "kä"
   ]
 }
