@@ -9,6 +9,11 @@
       "text": "Senf",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "RiHack",
+      "haendler": "N",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -271,7 +276,6 @@
     "paprika rot",
     "drillinge",
     "tee",
-    "rihack",
     "kochschinken",
     "duftperlen",
     "mettwurst",
