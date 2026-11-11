@@ -1,8 +1,8 @@
 {
   "notizen": [
     {
-      "text": "AAA Akku",
-      "haendler": "L",
+      "text": "Butter",
+      "haendler": "",
       "erledigt": false
     },
     {
@@ -11,13 +11,13 @@
       "erledigt": false
     },
     {
-      "text": "RiHack",
-      "haendler": "N",
+      "text": "AAA Akku",
+      "haendler": "L",
       "erledigt": false
     },
     {
-      "text": "Butter",
-      "haendler": "",
+      "text": "RiHack",
+      "haendler": "N",
       "erledigt": false
     },
     {
@@ -214,7 +214,6 @@
     "schnitzel",
     "sahne",
     "nudelsalat",
-    "brot",
     "steak",
     "reis",
     "lemon",
@@ -265,13 +264,10 @@
     "kaffee heinke 5x",
     "riha",
     "obst",
-    "salami",
     "gas",
     "wermut-trocken,apotheke",
     "feuchtepap",
-    "kaffeesahne",
     "destiliertes",
-    "käse",
     "destiliertes wasser",
     "selter",
     "falsches bitter lemon",
@@ -280,28 +276,32 @@
     "zitronensäure",
     "beckensteine",
     "obst ?",
-    "bonbon",
-    "schokocreme",
-    "speckwürfel",
-    "zwiebeln",
-    "petersilie",
-    "milch",
     "kartoffeln",
+    "petersilie",
+    "zwiebeln",
+    "speckwürfel",
+    "schokocreme",
+    "bonbon",
     "vanille-extrakt",
     "toast",
+    "salami",
+    "kaffeesahne",
     "schokolade",
     "paprika rot",
+    "milch",
     "drillinge",
-    "tee",
-    "kochschinken",
     "duftperlen",
     "mettwurst",
-    "natron",
+    "tee",
+    "kochschinken",
     "kaffeesahne/milch",
+    "natron",
+    "brot",
+    "kä",
+    "käse",
     "bockwurst 1000gr",
     "mettenden",
     "spannbettlaken",
-    "tomatenmark",
-    "kä"
+    "tomatenmark"
   ]
 }
