@@ -1,8 +1,8 @@
 {
   "notizen": [
     {
-      "text": "AAA Akku",
-      "haendler": "L",
+      "text": "Butter",
+      "haendler": "",
       "erledigt": false
     },
     {
@@ -11,8 +11,8 @@
       "erledigt": false
     },
     {
-      "text": "Butter",
-      "haendler": "",
+      "text": "AAA Akku",
+      "haendler": "L",
       "erledigt": false
     },
     {
@@ -270,12 +270,10 @@
     "kaffee heinke 5x",
     "riha",
     "obst",
-    "salami",
     "gas",
     "wermut-trocken,apotheke",
     "feuchtepap",
     "destiliertes",
-    "käse",
     "destiliertes wasser",
     "selter",
     "falsches bitter lemon",
@@ -284,29 +282,31 @@
     "zitronensäure",
     "beckensteine",
     "obst ?",
-    "bonbon",
-    "schokocreme",
-    "speckwürfel",
-    "zwiebeln",
-    "petersilie",
-    "milch",
     "kartoffeln",
+    "petersilie",
+    "zwiebeln",
+    "speckwürfel",
+    "schokocreme",
+    "bonbon",
     "vanille-extrakt",
     "toast",
+    "salami",
     "schokolade",
     "paprika rot",
+    "milch",
     "drillinge",
-    "tee",
-    "kochschinken",
     "duftperlen",
     "mettwurst",
-    "natron",
+    "tee",
+    "kochschinken",
     "kaffeesahne/milch",
+    "natron",
+    "kä",
+    "käse",
     "bockwurst 1000gr",
     "mettenden",
     "spannbettlaken",
     "tomatenmark",
-    "kä",
     "rihack",
     "wurstsalat"
   ]
