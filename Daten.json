@@ -14,6 +14,26 @@
       "text": "iso",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "LaFlute",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "Obst-Gemüse",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "Salami",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Käse",
+      "haendler": "L",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -91,6 +111,7 @@
     "Knabberkram",
     "Kochschinken",
     "Kreuterbutter",
+    "LaFlute",
     "lang",
     "Laptop",
     "LAPTOP-TEST-123",
@@ -117,6 +138,7 @@
     "Nudelsalat",
     "Nutella",
     "Obst",
+    "Obst-Gemüse",
     "Old",
     "Paprika",
     "pc-opa",
@@ -250,12 +272,10 @@
     "kaffee heinke 5x",
     "riha",
     "obst",
-    "salami",
     "gas",
     "wermut-trocken,apotheke",
     "feuchtepap",
     "destiliertes",
-    "käse",
     "destiliertes wasser",
     "selter",
     "falsches bitter lemon",
