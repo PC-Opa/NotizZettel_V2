@@ -39,6 +39,11 @@
       "text": "Magentropfen",
       "haendler": "R",
       "erledigt": false
+    },
+    {
+      "text": "Sahne",
+      "haendler": "N",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -225,7 +230,6 @@
     "pc-opa",
     "kekse",
     "schnitzel",
-    "sahne",
     "nudelsalat",
     "steak",
     "reis",
