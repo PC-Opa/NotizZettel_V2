@@ -34,6 +34,11 @@
       "text": "Käse",
       "haendler": "L",
       "erledigt": false
+    },
+    {
+      "text": "Magentropfen",
+      "haendler": "R",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -266,7 +271,6 @@
     "aufschnitt",
     "gefl.fleischwurst",
     "eier12",
-    "magentropfen",
     "magnesium",
     "speckklüten",
     "kaffee heinke 5x",
