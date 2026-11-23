@@ -9,31 +9,6 @@
       "text": "iso",
       "haendler": "L",
       "erledigt": false
-    },
-    {
-      "text": "Obst-Gemüse",
-      "haendler": "",
-      "erledigt": false
-    },
-    {
-      "text": "Salami",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Käse",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "Weiße Bohnen",
-      "haendler": "E",
-      "erledigt": false
-    },
-    {
-      "text": "Zwiebeln",
-      "haendler": "",
-      "erledigt": false
     }
   ],
   "woerter": [
@@ -314,6 +289,11 @@
     "aaa akku",
     "laflute",
     "magentropfen",
-    "sahne"
+    "sahne",
+    "obst-gemüse",
+    "salami",
+    "käse",
+    "weiße bohnen",
+    "zwiebeln"
   ]
 }
