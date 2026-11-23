@@ -1,11 +1,6 @@
 {
   "notizen": [
     {
-      "text": "AAA Akku",
-      "haendler": "L",
-      "erledigt": false
-    },
-    {
       "text": "Senf",
       "haendler": "L",
       "erledigt": false
@@ -13,11 +8,6 @@
     {
       "text": "iso",
       "haendler": "L",
-      "erledigt": false
-    },
-    {
-      "text": "LaFlute",
-      "haendler": "",
       "erledigt": false
     },
     {
@@ -36,13 +26,13 @@
       "erledigt": false
     },
     {
-      "text": "Magentropfen",
-      "haendler": "R",
+      "text": "Weiße Bohnen",
+      "haendler": "E",
       "erledigt": false
     },
     {
-      "text": "Sahne",
-      "haendler": "N",
+      "text": "Zwiebeln",
+      "haendler": "",
       "erledigt": false
     }
   ],
@@ -189,6 +179,7 @@
     "Wein",
     "Weise",
     "Weiskohl",
+    "Weiße",
     "Wermut-TrockenApotheke",
     "Wurstsalat",
     "Zimtstange",
@@ -295,7 +286,6 @@
     "bonbon",
     "schokocreme",
     "speckwürfel",
-    "zwiebeln",
     "petersilie",
     "milch",
     "kartoffeln",
@@ -320,6 +310,10 @@
     "butter",
     "kaffeesahne",
     "brot",
-    "fischermans"
+    "fischermans",
+    "aaa akku",
+    "laflute",
+    "magentropfen",
+    "sahne"
   ]
 }
