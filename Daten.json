@@ -1,19 +1,30 @@
 {
   "notizen": [
     {
-      "text": "Senf",
+      "text": "Shampoo",
+      "haendler": "R",
+      "erledigt": false
+    },
+    {
+      "text": "Bunte Tüte 3*",
+      "haendler": "",
+      "erledigt": false
+    },
+    {
+      "text": "FeuchtePap",
       "haendler": "L",
       "erledigt": false
     },
     {
-      "text": "iso",
-      "haendler": "L",
+      "text": "Salami",
+      "haendler": "N",
       "erledigt": false
     }
   ],
   "woerter": [
     "1000gr",
     "16x20",
+    "3*",
     "40x60",
     "5x",
     "AAA",
@@ -35,6 +46,7 @@
     "Brathering",
     "Bremsseil",
     "Brot",
+    "Bunte",
     "Butter",
     "Butter-Heinke",
     "Buttermilch",
@@ -146,6 +158,7 @@
     "Test",
     "Toast",
     "Tomatenmark",
+    "Tüte",
     "und",
     "Vakuum",
     "Vanille-Extrakt",
@@ -248,13 +261,11 @@
     "obst",
     "gas",
     "wermut-trocken,apotheke",
-    "feuchtepap",
     "destiliertes",
     "destiliertes wasser",
     "selter",
     "falsches bitter lemon",
     "lidl",
-    "shampoo",
     "zitronensäure",
     "beckensteine",
     "obst ?",
@@ -291,9 +302,10 @@
     "magentropfen",
     "sahne",
     "obst-gemüse",
-    "salami",
     "käse",
     "weiße bohnen",
-    "zwiebeln"
+    "zwiebeln",
+    "senf",
+    "iso"
   ]
 }
