@@ -19,6 +19,26 @@
       "text": "Salami",
       "haendler": "N",
       "erledigt": false
+    },
+    {
+      "text": "Iso",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Pizzagewürz",
+      "haendler": "E",
+      "erledigt": false
+    },
+    {
+      "text": "Brot",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Obst/Gemüse",
+      "haendler": "",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -126,11 +146,13 @@
     "Nutella",
     "Obst",
     "Obst-Gemüse",
+    "Obst/Gemüse",
     "Old",
     "Paprika",
     "pc-opa",
     "Petersilie",
     "Pilze",
+    "Pizzagewürz",
     "Pudding",
     "Putenbrust",
     "Reis",
@@ -295,7 +317,6 @@
     "wurstsalat",
     "butter",
     "kaffeesahne",
-    "brot",
     "fischermans",
     "aaa akku",
     "laflute",
@@ -305,7 +326,6 @@
     "käse",
     "weiße bohnen",
     "zwiebeln",
-    "senf",
-    "iso"
+    "senf"
   ]
 }
