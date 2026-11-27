@@ -39,6 +39,16 @@
       "text": "Obst/Gemüse",
       "haendler": "",
       "erledigt": false
+    },
+    {
+      "text": "Topa",
+      "haendler": "L",
+      "erledigt": false
+    },
+    {
+      "text": "Kaffeerührer",
+      "haendler": "Ac",
+      "erledigt": false
     }
   ],
   "woerter": [
@@ -108,6 +118,7 @@
     "iso",
     "Kä",
     "Kaffee",
+    "Kaffeerührer",
     "Kaffeesahne",
     "Kaffeesahne/milch",
     "Kartoffeln",
@@ -180,6 +191,7 @@
     "Test",
     "Toast",
     "Tomatenmark",
+    "Topa",
     "Tüte",
     "und",
     "Vakuum",
