@@ -8,7 +8,7 @@
     {
       "text": "Bunte Tüte 3*",
       "haendler": "",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "FeuchtePap",
@@ -18,7 +18,7 @@
     {
       "text": "Salami",
       "haendler": "N",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Iso",
@@ -28,17 +28,17 @@
     {
       "text": "Pizzagewürz",
       "haendler": "E",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Brot",
       "haendler": "L",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Obst/Gemüse",
       "haendler": "",
-      "erledigt": false
+      "erledigt": true
     },
     {
       "text": "Topa",
