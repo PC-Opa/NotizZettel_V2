@@ -6,39 +6,14 @@
       "erledigt": false
     },
     {
-      "text": "Bunte Tüte 3*",
-      "haendler": "",
-      "erledigt": true
-    },
-    {
       "text": "FeuchtePap",
       "haendler": "L",
       "erledigt": false
     },
     {
-      "text": "Salami",
-      "haendler": "N",
-      "erledigt": true
-    },
-    {
       "text": "Iso",
       "haendler": "L",
       "erledigt": false
-    },
-    {
-      "text": "Pizzagewürz",
-      "haendler": "E",
-      "erledigt": true
-    },
-    {
-      "text": "Brot",
-      "haendler": "L",
-      "erledigt": true
-    },
-    {
-      "text": "Obst/Gemüse",
-      "haendler": "",
-      "erledigt": true
     },
     {
       "text": "Topa",
@@ -338,6 +313,11 @@
     "käse",
     "weiße bohnen",
     "zwiebeln",
-    "senf"
+    "senf",
+    "bunte tüte 3*",
+    "salami",
+    "pizzagewürz",
+    "brot",
+    "obst/gemüse"
   ]
 }
